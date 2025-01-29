@@ -1,0 +1,148 @@
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+
+  <div class="d-flex align-items-center justify-content-between">
+    <a href="index.html" class="logo d-flex align-items-center">
+      <img src="assets/img/logo.png" alt="">
+      <span class="d-none d-lg-block"></span>
+    </a>
+    <i class="bi bi-list toggle-sidebar-btn"></i>
+  
+    <span class="d-none d-lg-block ms-5" style="font-size:larger;font-weight:700">HAIL & GHASHA DEV. PKG1 - Civil & SMEI Work at GOP</span>
+    
+  </div><!-- End Logo -->
+
+
+  <nav class="header-nav ms-auto">
+    <ul class="d-flex align-items-center">
+
+      <li class="nav-item d-block d-lg-none">
+        <a class="nav-link nav-icon search-bar-toggle " href="#">
+          <i class="bi bi-search"></i>
+        </a>
+      </li><!-- End Search Icon-->
+
+  
+
+      <li class="nav-item dropdown pe-3">
+
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+          <!-- <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle"> -->
+          <span class="d-none d-md-block dropdown-toggle ps-2">Hi, {{msg.isWelComeName$.value}} </span>
+        </a><!-- End Profile Iamge Icon -->
+
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+          
+          <li>
+            <a class="dropdown-item d-flex align-items-center" href="#">
+              <i class="bi bi-box-arrow-right"></i>
+              <a routerLink='/logout'><span>Sign Out</span></a>
+            </a>
+          </li>
+
+        </ul><!-- End Profile Dropdown Items -->
+      </li><!-- End Profile Nav -->
+
+    </ul>
+  </nav><!-- End Icons Navigation -->
+
+</header><!-- End Header -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link " [routerLink]="['masterfile']">
+          <i class="bi bi-person"></i>
+          <span>Master File</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <ng-template  [ngIf]="msg.$Role.value=='A'">
+        <li class="nav-item">
+          <a class="nav-link collapsed" [routerLink]="['lstBatch']">
+            <i class="bi bi-card-list"></i>
+            <span>Batches</span>
+          </a>
+        </li><!-- End Register Page Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link collapsed"  [routerLink]="['lstReceiveCard']">
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>C3 Cards Received from Exchange</span>
+          </a>
+        </li><!-- End Login Page Nav -->
+    
+        <li class="nav-item">
+          <a class="nav-link collapsed"[routerLink]="['lstActivateCard']">
+            <i class="bi bi-card-list"></i>
+            <span>C3 Cards Activation</span>
+          </a>
+        </li>
+    </ng-template>
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" [routerLink]="['ATMCard']">
+          <i class="bi bi-card-image"></i>
+          <span>Atm Card</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" [routerLink]="['ajescashATM']">
+          <i class="bi bi-cash"></i>
+          <span>Cash to AJEX ATM </span>
+        </a>
+      </li>
+
+     <li class="nav-item">
+        <a class="nav-link collapsed" [routerLink]="['cashbank']">
+          <i class="bi bi-bank"></i>
+          <span>Cash to Bank</span>
+        </a>
+      </li>
+
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed"  [routerLink]="['cancellation']">
+          <i class="bi bi-envelope"></i>
+          <span>Cancellation</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed">
+          <i class="bi bi-dash-circle"></i>
+          <span>General</span>
+        </a>
+      </li>
+      
+      
+      <ng-template  [ngIf]="msg.$Role.value=='A'">
+          
+          <li class="nav-item">
+            <a class="nav-link collapsed"[routerLink]="['inquiry']">
+              <i class="bi bi-binoculars"></i>
+              <span>Inquiry</span>
+            </a>
+          </li>
+      </ng-template>    
+          <!-- End Error 404 Page Nav -->
+      
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  
+    
+
+
+  
+  

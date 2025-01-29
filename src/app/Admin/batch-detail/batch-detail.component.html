@@ -1,0 +1,68 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Batch No: {{this.BatchNo}}</h1>
+    </div><!-- End Page Title -->
+    <section class="section">
+      <div class="row">
+    
+       <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+             
+              <!-- Table with hoverable rows -->
+              <table class="table table-hover table-bordered" id="table-data">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Status</th>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Emirated ID</th>
+                    <th>Nationality</th>
+                    <th>PP</th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr *ngFor="let e of Data;let i=index" >
+                    <td>{{i+1}}</td>
+                    <ng-template [ngIf]="e.status==2">
+                      <td ><span class="badge rounded-pill bg-success" style="pointer-events: none">Card Applied</span></td>
+                  </ng-template>
+
+                  <ng-template [ngIf]="e.status==3" >
+                    <td ><span class="badge rounded-pill bg-primary" style="pointer-events: none">Card Received</span></td>
+                  </ng-template>
+
+                <ng-template [ngIf]="e.status==4">
+                  <td ><span class="badge rounded-pill bg-warning " style="pointer-events: none">Card Activated</span></td>
+                  </ng-template>
+               
+                    <td>{{e.empCode}}</td>
+                    <td>{{e.empName}}</td>
+                    <td>{{e.designation}}</td>
+                    <td>{{e.emiratesIdNumber}}</td>
+                    <td>{{e.nationality}}</td>
+                    <td>{{e.passport}}</td>
+                  
+                  </tr>
+                </tbody>
+              </table>
+              <!-- End Table with hoverable rows -->
+              <app-rejected-batch [BatchNo]="this.BatchNo"></app-rejected-batch>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main><!-- End #main -->
+
+
+   
+ 
+
+
+

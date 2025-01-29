@@ -1,0 +1,49 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Batches</h1>
+      
+    </div><!-- End Page Title -->
+<section class="section">
+    <div class="row">
+  
+     <div class="col-lg-12">
+  
+        <div class="card">
+          <div class="card-body">
+           
+            <!-- Table with hoverable rows -->
+            <table class="table table-hover table-bordered ">
+              <thead>
+                <tr>
+                    <th>Batch No</th>
+                    <th>Generted On</th>
+                    <th>Generate By</th>
+                    <th>Action</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr *ngFor="let e of Batches" >
+                    <td>{{e.batchNo}}</td>
+                    <td>{{e.bgeneratedOn | date:'dd'}}/{{e.bgeneratedOn | date:'MM'}}/{{e.bgeneratedOn | date:'yyyy'}}</td>
+                    <td>{{e.bgeneratedBy}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary ms-5" (click)="ShowBatchDetail(e.batchNo)" >View Detail</button>
+                    </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+            <!-- End Table with hoverable rows -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+
+
+
+

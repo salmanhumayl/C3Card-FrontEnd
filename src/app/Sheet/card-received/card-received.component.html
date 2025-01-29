@@ -1,0 +1,56 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>C3 Card Receiving Process</h1>
+      
+    </div><!-- End Page Title -->
+<section class="section">
+    <div class="row">
+  
+     <div class="col-lg-12">
+  
+        <div class="card">
+          <div class="card-body">
+           
+            <!-- Table with hoverable rows -->
+            <table class="table table-hover table-bordered ">
+              <thead>
+                <tr>
+                    <th>Batch No</th>
+                    <th>Card Applied On</th>
+                    <th>Card Applied By</th>
+                    <th>Action</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr  *ngFor="let e of Cards" >
+                    <td>{{e.batchNo}}</td>
+            <td>{{e.cardAppliedOn | date:'dd'}}/{{e.cardAppliedOn | date:'MM'}}/{{e.cardAppliedOn | date:'yyyy'}}</td>
+            <td>{{e.cardAppliedBy}}</td>
+            <td>
+                <!-- <button type="button" class="btn btn-success"  (click)="ReceivedCard(e.batchNo)" >Received All</button> -->
+                <button type="button" class="btn btn-primary " (click)="CardDetail(e.batchNo)">Prcocess </button>
+            </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+            <!-- End Table with hoverable rows -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+
+
+
+
+
+
+
+
+
+
