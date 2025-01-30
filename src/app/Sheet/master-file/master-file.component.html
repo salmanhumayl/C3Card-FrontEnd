@@ -38,7 +38,7 @@
               <table class="table table-hover table-bordered" id="table-data">
                 <thead>
                   <tr>
-                    <th></th>
+                    <th>S.No</th>
                     <th>Status</th>
                     
                     <th scope="col">Code</th>
@@ -80,7 +80,7 @@
                   <ng-template [ngIf]="e.cardStatus==4">
                       <td><span class="badge rounded-pill bg-warning text-dark" style="pointer-events: none">Activated</span></td>
                   </ng-template> 
-                  <ng-template [ngIf]="e.cardStatus==-1">
+                  <ng-template [ngIf]="e.cardStatus==-1" >
                     <td><span class="badge rounded-pill bg-danger text-dark" style="pointer-events: none">Cancelled</span></td>
                 </ng-template> 
                 
@@ -133,16 +133,18 @@
                     <ng-template [ngIf]="e.cardStatus==0  &&  msg.$Role.value=='A'">
                       <td>
                            <!-- <button type="button" class="btn btn-primary btn-sm" (click)="openModel(template)">Mark as CBank</button>  -->
-                          <button type="button" class="btn btn-primary btn-sm mt-1" (click)="MarkAsBank(e.empCode,5)">Mark as Bank</button>
+                          <button type="button" class="btn btn-primary btn-sm mt-1" (click)="MarkAsBank(e.empCode,5,0)">Mark as Bank</button>
                       </td>
                     </ng-template>
 
                     <ng-template [ngIf]="e.cardStatus==-1  &&  msg.$Role.value=='A'">
                       <td>
-                          <button type="button" class="btn btn-danger btn-sm mt-1 " (click)="MarkAsBank(e.empCode,100)">Cancelled</button>
+                        <button type="button" class="btn btn-danger" (click)="MarkAsBank(e.empCode,100,e.eformId)"><i class="bi bi-exclamation-octagon"></i></button>
+                       
+                         
                       </td>
                     </ng-template>
-                  
+
                   </tr>
                 </tbody>
               </table>

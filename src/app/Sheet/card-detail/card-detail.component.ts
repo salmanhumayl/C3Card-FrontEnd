@@ -66,7 +66,7 @@ export class CardDetailComponent implements OnInit {
   checkAllCheckBox(ev: any) { // Angular 13
     
 		this.Detail.forEach(x => x.receivingStatus = ev.target.checked)
-    console.log(this.Detail);
+   
 	}
 
 	//isAllCheckBoxChecked() {

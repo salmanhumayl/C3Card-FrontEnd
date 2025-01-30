@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { MasterFileComponent } from './Sheet/master-file/master-file.component';
 import { TopnavComponent } from './Shared/topnav/topnav/topnav.component';
 import { SidebarComponent } from './Shared/sidebar/sidebar/sidebar.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CashtoBankComponent } from './Sheet/cashto-bank/cashto-bank.component';
 import { AtmCardComponent } from './Sheet/atm-card/atm-card.component';
 import { ListofBatachComponent } from './Sheet/listof-batach/listof-batach.component';
@@ -31,6 +31,7 @@ import { InquiryComponent } from './Sheet/inquiry/inquiry.component';
 import { BatchDetailComponent } from './Admin/batch-detail/batch-detail.component';
 import { RejectedBatchComponent } from './Admin/rejected-batch/rejected-batch.component';
 import { CancellationComponent } from './Sheet/cancellation/cancellation.component';
+import { JwtInterceptor } from './interceptor/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,11 @@ import { CancellationComponent } from './Sheet/cancellation/cancellation.compone
     NgxAwesomePopupModule.forRoot(),
     ConfirmBoxConfigModule.forRoot()
   ],
-  providers: [{provide: LocationStrategy,useClass:HashLocationStrategy}],
+  providers: [
+      {provide: LocationStrategy,useClass:HashLocationStrategy},
+      { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+    
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

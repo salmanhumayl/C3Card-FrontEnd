@@ -128,12 +128,12 @@ export class MasterFileComponent implements OnInit {
      
       }
 
-      MarkAsBank(empCode:string,Status:number)
+      MarkAsBank(empCode:string,Status:number,eformId:number)
       {
           const shoulddelete=window.confirm("Are you sure to Continue");
           if (shoulddelete){
           this.ngxService.start();
-          this.AJESservice.MarkAsBank(empCode,Status).subscribe((data)=>  {
+          this.AJESservice.MarkAsBank(empCode,Status,eformId).subscribe((data)=>  {
           
             var Result=JSON.parse(JSON.stringify(data));
             
@@ -146,6 +146,9 @@ export class MasterFileComponent implements OnInit {
                 alert("Move Cancelled Successfully");
               }
               this.RefreshData();
+            }
+            else{
+              alert("Something went wrong" + Result.message);
             }
           
           })

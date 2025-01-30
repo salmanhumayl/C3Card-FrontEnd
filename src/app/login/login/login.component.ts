@@ -27,15 +27,11 @@ export class LoginComponent {
     this.ngxService.start();
 
     this.AJESservice.Login(this.LoginModel).subscribe((response:any)=>{
-    //  var response=JSON.parse(JSON.stringify(response));
-      //     alert(response.isSuccess);
-      if (response.isSuccess==true){
+      if (response.token!=null){
         //this.authService.storeTokenvalidity(response.expiration);
         this.authService.storeToken(response.token);
         localStorage.setItem('Name', response.name);
-        localStorage.setItem('UName', response.userName);
         localStorage.setItem('Role', response.role);
-        
         this.msg.isLoggedIn$.next(true);
         this.msg.isWelComeName$.next(response.name);
         this.msg.$Role.next(response.role);
