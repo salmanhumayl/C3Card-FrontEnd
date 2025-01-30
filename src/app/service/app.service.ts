@@ -32,9 +32,9 @@ export class AJESService {
  // headers = new HttpHeaders().set('Access-Control-Allow-Origin', '**');
   constructor(private _http:HttpClient)
      {
-     //this.domain="http://ajes-webapp2.ajes.ae:4223/";
+     this.domain="http://ajes-webapp2.ajes.ae:4223/";
       
-    this.domain="https://localhost:7053/";
+    //this.domain="https://localhost:7053/";
      }
     
 
@@ -203,6 +203,14 @@ generateBatch():Observable<any>{
   
 }
 
+
+UpdateBatchReceivedDate(BatchNo:string,rDate:string):Observable<any>{
+  
+  return this._http.get<any>(this.domain + "api/Batch/UpdateBatchReceivedDate?BatchNo=" + BatchNo +"&ReceivedOn="+rDate);
+  
+}
+
+
 MarkAsBank(EmpCode:string,Status:number,eformId:number):Observable<string>{
   
 
@@ -226,9 +234,20 @@ BatchRevert (model :UpDateStatus) :Observable<any> {
 
 }
 
-
+DownloadATMCardRequest(BatchNo:string){
+  return this._http.get(this.domain + "api/AJESData/DownloadATMCardRequest?BatchNo=" + BatchNo,{observe:'response',responseType:'blob'});
+  
 }
 
+
+
+
+DailySummary():Observable<any>{
+  return this._http.get<any>(this.domain + "api/Batch/ShowSummary");
+  
+}
+
+}
 
 
 

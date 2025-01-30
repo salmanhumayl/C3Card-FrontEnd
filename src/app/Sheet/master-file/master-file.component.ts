@@ -142,8 +142,11 @@ export class MasterFileComponent implements OnInit {
               this.ngxService.stop();
               if (Status==5){
                 alert("Move to Bank File Successfully");
-              }else{
+              }else if (Status==100) {
                 alert("Move Cancelled Successfully");
+              }
+              else{
+                alert("Revert Successfully");
               }
               this.RefreshData();
             }

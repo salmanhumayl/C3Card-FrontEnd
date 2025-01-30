@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import {ModalModule,BsModalService} from 'ngx-bootstrap/modal';
 
 import { NgxUiLoaderModule,NgxUiLoaderRouterModule } from 'ngx-ui-loader';
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 
 
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ import { BatchDetailComponent } from './Admin/batch-detail/batch-detail.componen
 import { RejectedBatchComponent } from './Admin/rejected-batch/rejected-batch.component';
 import { CancellationComponent } from './Sheet/cancellation/cancellation.component';
 import { JwtInterceptor } from './interceptor/jwt.interceptor';
+import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { JwtInterceptor } from './interceptor/jwt.interceptor';
     InquiryComponent,
     BatchDetailComponent,
     RejectedBatchComponent,
-    CancellationComponent
+    CancellationComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,8 @@ import { JwtInterceptor } from './interceptor/jwt.interceptor';
     NgxUiLoaderRouterModule,
     ModalModule.forRoot(),
     NgxAwesomePopupModule.forRoot(),
-    ConfirmBoxConfigModule.forRoot()
+    ConfirmBoxConfigModule.forRoot(),
+    BsDatepickerModule.forRoot(),
   ],
   providers: [
       {provide: LocationStrategy,useClass:HashLocationStrategy},

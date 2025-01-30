@@ -83,8 +83,6 @@
                   <ng-template [ngIf]="e.cardStatus==-1" >
                     <td><span class="badge rounded-pill bg-danger text-dark" style="pointer-events: none">Cancelled</span></td>
                 </ng-template> 
-                
-                
                     <td>{{e.empCode}}</td>
                     <td>{{e.empName}}</td>
                     <td>{{e.offshoreYn}}</td>
@@ -139,7 +137,8 @@
 
                     <ng-template [ngIf]="e.cardStatus==-1  &&  msg.$Role.value=='A'">
                       <td>
-                        <button type="button" class="btn btn-danger" (click)="MarkAsBank(e.empCode,100,e.eformId)"><i class="bi bi-exclamation-octagon"></i></button>
+                        <button type="button" class="btn btn-danger btn-sm mt-1" (click)="MarkAsBank(e.empCode,100,0)">Cancelled</button>
+                        <button type="button" class="btn btn-warning btn-sm mt-1" (click)="MarkAsBank(e.empCode,0,e.eformId)">Revert</button>
                        
                          
                       </td>

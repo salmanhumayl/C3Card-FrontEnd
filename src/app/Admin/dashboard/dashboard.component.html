@@ -1,0 +1,156 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="row">
+
+            <!-- Sales Card -->
+            <div class="col-xxl-4 col-md-3">
+              <div class="card info-card sales-card">
+
+                <div class="card-body">
+                  <h5 class="card-title">Cash Salary </h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3"  *ngIf="isloading">
+                      <h6>{{DailySuumary.cash}}</h6>
+                    </div>
+                   
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Sales Card -->
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-4 col-md-3">
+              <div class="card info-card revenue-card">
+
+
+                <div class="card-body"  >
+                  <h5 class="card-title">Emirates ID (EPRO)</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3"  *ngIf="isloading">
+                      <h6>{{DailySuumary.emirates}}</h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+            <!-- Customers Card -->
+            <div class="col-xxl-4 col-md-3">
+
+              <div class="card info-card customers-card">
+
+         
+
+                <div class="card-body">
+                  <h5 class="card-title">C3 Card - Applied </h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3"  *ngIf="isloading">
+
+                      <h6 >{{DailySuumary.applied}}</h6>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End Customers Card -->
+
+               <!-- Customers Card -->
+               <div class="col-xxl-4 col-md-3">
+
+                <div class="card info-card customers-card">
+  
+           
+  
+                  <div class="card-body">
+                    <h5 class="card-title">C3 Card - Received </h5>
+  
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-people"></i>
+                      </div>
+                      <div class="ps-3"  *ngIf="isloading">
+                        <h6>{{DailySuumary.recevied}}</h6>
+                      </div>
+                    </div>
+  
+                  </div>
+                </div>
+  
+              </div><!-- End Customers Card -->
+         
+
+            <!-- Recent Sales -->
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+             
+                <div class="card-body">
+                  <h5 class="card-title">Daily Summary <span>| Today</span></h5>
+
+                  <!-- <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                        <th scope="col">Admin PRO Visa Status</th>
+                        <th scope="col">Civil</th>
+                        <th scope="col">SMP</th>
+                        <th scope="col">Grand Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let e of DailySuumary">
+                        <td>{{e.position}}</td>
+                        <td>{{e.evisa}}</td>
+                        <td>{{e.smpEvisa}}</td>
+                        <td>{{e.rGrandTotal}}</td>
+                      </tr>
+                    </tbody>
+                  </table> -->
+
+                </div>
+
+              </div>
+            </div><!-- End Recent Sales -->
+
+            <!-- Top Selling -->
+           
+
+          </div>
+        </div><!-- End Left side columns -->
+
+        <!-- Right side columns -->
+        
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->

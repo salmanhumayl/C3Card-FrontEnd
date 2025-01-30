@@ -27,9 +27,10 @@
                     <td>{{e.batchNo}}</td>
             <td>{{e.cardAppliedOn | date:'dd'}}/{{e.cardAppliedOn | date:'MM'}}/{{e.cardAppliedOn | date:'yyyy'}}</td>
             <td>{{e.cardAppliedBy}}</td>
+           
             <td>
-                <!-- <button type="button" class="btn btn-success"  (click)="ReceivedCard(e.batchNo)" >Received All</button> -->
-                <button type="button" class="btn btn-primary " (click)="CardDetail(e.batchNo)">Prcocess </button>
+                 <button type="button" class="btn btn-success "  (click)="CardReceivedOn(e.batchNo)" >Date Received On</button>
+                <button type="button" class="btn btn-primary ms-4" (click)="CardDetail(e.batchNo)">Prcocess </button>
             </td>
                   
                 </tr>
@@ -41,6 +42,65 @@
       </div>
     </div>
   </section>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal" [style.display]="showModal ? 'block' : 'none'">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+       
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+          <button type="button" class="close" data-dismiss="modal" (click) = "hide()" >&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              
+
+              <!-- Vertical Form -->
+              <form  class="row g-3 needs-validation" novalidate>
+
+
+               
+                <div class="col-12">
+                  <label for="inputNanme4" class="form-label">Received Date</label>
+                  <input type="text" class="form-control"
+                   id="receivedDate" 
+                   name="receivedDate"
+                   [(ngModel)]="brDate" 
+                   bsDatepicker
+                   [bsConfig]="datePickerConfig"/>
+                  
+
+                  
+                </div>
+                             
+              
+                <div class="text-center">
+                  <button  type="button" class="btn btn-primary w-10" (click)="update()" >Save</button>
+                      
+                 
+                </div>
+              </form><!-- Vertical Form -->
+
+            </div>
+          </div>
+
+            
+
+        </div>
+        
+        
+        
+      </div>
+    </div>
+</div>
+
 
 </main><!-- End #main -->
 

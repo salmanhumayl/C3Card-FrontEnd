@@ -14,6 +14,7 @@ import { LogoutComponent } from './logout/logout/logout.component';
 import { InquiryComponent } from './Sheet/inquiry/inquiry.component';
 import { BatchDetailComponent } from './Admin/batch-detail/batch-detail.component';
 import { CancellationComponent } from './Sheet/cancellation/cancellation.component';
+import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent,pathMatch:'full'},
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'VBDetail/:BatchNo',component:BatchDetailComponent},
   {path:'login',component:LoginComponent},
   {path:'logout',component:LogoutComponent},
+  {path:'dashboard',component:DashboardComponent},
   {path:'**',redirectTo:'masterfile',pathMatch:'full'}
 
   

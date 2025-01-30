@@ -51,6 +51,20 @@ export class ListofBatachComponent {
    
   }
 
+  downloadC3CardRequet(Batchno:string)
+  {
+    
+    this.ngxService.start();
+    this.AJESservice.DownloadATMCardRequest(Batchno).subscribe((data)=>  {
+    let blob:Blob=data.body as Blob;
+    let url=window.URL.createObjectURL(blob);
+    window.open(url);  
+    this.ngxService.stop();
+       
+  });
+
+  }
+
 
   ProcessBatch(BatchNo:string)
   {

@@ -28,7 +28,9 @@
                     <td>{{e.bgeneratedOn | date:'dd'}}/{{e.bgeneratedOn | date:'MM'}}/{{e.bgeneratedOn | date:'yyyy'}}</td>
                     <td>{{e.bgeneratedBy}}</td>
                     <td>
-                        <button type="button" class="btn btn-success" (click)="exportToExcel(e.batchNo)">Export To Excel</button>
+                        <!-- <button type="button" class="btn btn-success" (click)="exportToExcel(e.batchNo)">Export To Excel</button> -->
+                        <button type="button" class="btn btn-success" (click)="downloadC3CardRequet(e.batchNo)">Download C3 Card Request</button>
+
                         <button type="button" class="btn btn-danger ms-5">Revert</button>
                         <button type="button" class="btn btn-primary ms-5" (click)="ProcessBatch(e.batchNo)" >Applying for C3 Cards</button>
                     </td>
