@@ -67,7 +67,7 @@ export class MasterFileComponent implements OnInit {
     this.AJESservice.Filter(status).subscribe((data)=>  {
 
       this.MasterRecord=data;
-   
+      this.nTotalRecord=this.MasterRecord.length;
       this.ngxService.stop();
      
     });

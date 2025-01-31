@@ -67,6 +67,9 @@ PendingCardsReceving(){
   this.AJESservice.PendingCardsReceving().subscribe((data)=>  {
 
     this.Cards=data;
+  console.log(this.Cards);
+
+ 
     this.ngxService.stop();
   });
 }
@@ -92,6 +95,8 @@ hide()
 }
 
 update(){
+//alert(this.brDate);
+//alert(new Date(this.brDate.setDate(this.brDate.getDate()+1)).toUTCString());
 
   this.ngxService.start();
   this.AJESservice.UpdateBatchReceivedDate(this.BatchNo,new Date(this.brDate).toUTCString()).subscribe((data)=>  {
