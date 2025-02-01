@@ -57,15 +57,15 @@
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link " [routerLink]="['masterfile']">
-          <i class="bi bi-person"></i>
-          <span>Master File</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
-
       <ng-template  [ngIf]="msg.$Role.value=='A'">
+          <li class="nav-item">
+            <a class="nav-link " [routerLink]="['masterfile']">
+              <i class="bi bi-person"></i>
+              <span>Master File</span>
+            </a>
+          </li><!-- End Dashboard Nav -->
+
+    
         <li class="nav-item">
           <a class="nav-link collapsed" [routerLink]="['lstBatch']">
             <i class="bi bi-card-list"></i>
@@ -73,7 +73,7 @@
           </a>
         </li><!-- End Register Page Nav -->
         <li class="nav-item">
-          <a class="nav-link collapsed"  [routerLink]="['lstReceiveCard']">
+          <a class="nav-link collapsed"  [routerLink]="['lstCardAccNo']">
             <i class="bi bi-box-arrow-in-right"></i>
             <span>C3 Cards Account Received</span>
           </a>
@@ -92,8 +92,7 @@
             <span>C3 Cards Activation</span>
           </a>
         </li>
-    </ng-template>
-
+   
 
       <li class="nav-item">
         <a class="nav-link collapsed" [routerLink]="['ATMCard']">
@@ -131,7 +130,7 @@
       </li>
       
       
-      <ng-template  [ngIf]="msg.$Role.value=='A'">
+   
           
           <li class="nav-item">
             <a class="nav-link collapsed"[routerLink]="['inquiry']">

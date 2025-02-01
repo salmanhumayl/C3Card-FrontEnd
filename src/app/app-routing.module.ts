@@ -15,6 +15,8 @@ import { InquiryComponent } from './Sheet/inquiry/inquiry.component';
 import { BatchDetailComponent } from './Admin/batch-detail/batch-detail.component';
 import { CancellationComponent } from './Sheet/cancellation/cancellation.component';
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
+import { CardAccountreceivedComponent } from './Sheet/card-accountreceived/card-accountreceived.component';
+import { CardAccountDetailComponent } from './Sheet/card-account-detail/card-account-detail.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent,pathMatch:'full'},
@@ -23,7 +25,9 @@ const routes: Routes = [
   {path:'cashbank',component:CashtoBankComponent},
   {path:'ATMCard',component:AtmCardComponent},
   {path:'cancellation',component:CancellationComponent},
-    {path:'lstBatch',component:ListofBatachComponent},
+  {path:'lstBatch',component:ListofBatachComponent},
+  {path:'lstCardAccNo',component:CardAccountreceivedComponent},
+  {path:'viewAccountNoCard/:BatchNo',component:CardAccountDetailComponent},
   {path:'lstReceiveCard',component:CardReceivedComponent},
   {path:'lstActivateCard',component:CardActivationComponent},
   {path:'viewcard/:BatchNo',component:CardDetailComponent},

@@ -24,6 +24,7 @@ DailySummary(){
   this.ngxService.start();
   this.AJESservice.DailySummary().subscribe((data)=>  {
         this.DailySuumary=data;
+        console.log(data);
         this.isloading=true;
         this.ngxService.stop();
     });

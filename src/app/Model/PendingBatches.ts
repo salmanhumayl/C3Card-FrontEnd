@@ -8,6 +8,7 @@ export interface PendingBatches {
     nationality:string;
     receivingStatus: boolean;
     activationStatus:boolean;
+    accNoStatus:boolean;
     userName:string;
   
   }

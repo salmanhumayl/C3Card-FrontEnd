@@ -32,9 +32,9 @@ export class AJESService {
  // headers = new HttpHeaders().set('Access-Control-Allow-Origin', '**');
   constructor(private _http:HttpClient)
      {
-     this.domain="http://ajes-webapp2.ajes.ae:4223/";
+  //   this.domain="http://ajes-webapp2.ajes.ae:4223/";
       
- //   this.domain="https://localhost:7053/";
+    this.domain="https://localhost:7053/";
      }
     
 
@@ -144,6 +144,29 @@ RejectedBatchItems(BatchNo:string):Observable<any[]>{
 
 
 
+
+PendingCardAccountNo():Observable<any[]>{
+
+  return this._http.get<any[]>(this.domain + "api/AJESData/PendingCardAccountNo");
+}
+
+
+AccountCardDetail(BatchNo:string):Observable<PendingBatches[]>{
+ 
+  return this._http.get<PendingBatches[]>(this.domain + "api/AJESData/AccountCardDetail?BatchNo="+ BatchNo);
+}
+
+UpdateCardAccountStatus(CardList:PendingBatches[]):Observable<string>{
+ 
+  const headers = {
+    'Content-Type':'application/json'};
+
+  return this._http.post<string>(this.domain + "api/AJESData/UpdateCardAccountStatus",CardList,{headers});
+}
+
+
+
+
 PendingCardsReceving():Observable<any[]>{
   
   return this._http.get<any[]>(this.domain + "api/AJESData/PendingCardReceiving");
@@ -174,6 +197,8 @@ ExchangeexportToExcel(BatchNo:string):Observable<any[]>{
 CardProcess(BatchNo:string):Observable<string>{
   return this._http.get<string>(this.domain + "api/AJESData/CardApplied?BatchNo=" + BatchNo );
 }
+
+
 
 
 

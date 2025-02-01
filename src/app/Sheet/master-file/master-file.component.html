@@ -18,9 +18,10 @@
     Send    
   </button>-->
                   <button type="button" class="btn btn-secondary" (click)="Filter(0)">No Action</button>
-                  <button type="button" class="btn btn-info ms-3" (click)="Filter(1)">Batch Generated</button>
+                  <button type="button" class="btn btn-info ms-3" (click)="Filter(1)">Batch </button>
                   <button type="button" class="btn btn-success ms-3" (click)="Filter(2)">Card Applied</button>
-                  <button type="button" class="btn btn-primary ms-3" (click)="Filter(3)">Card Received</button>
+                  <button type="button" class="btn btn-success ms-3" (click)="Filter(8)">Acc/No Rvd</button>
+                  <button type="button" class="btn btn-primary ms-3" (click)="Filter(3)">Card Rvd</button>
                   <button type="button" class="btn btn-warning ms-3" (click)="Filter(4)">Card Activated</button>
                   <button type="button" class="btn btn-danger ms-3" (click)="Filter(-1)">Cancelled</button>
                   <button type="button" class="btn btn-link ms-3" (click)="RefreshData()">Refresh</button>&nbsp;
@@ -69,7 +70,11 @@
                   </ng-template>    
                   <ng-template [ngIf]="e.cardStatus==1" s>
                       <td><span class="badge rounded-pill bg-info text-dark" style="pointer-events: none">Batch Generated</span></td>
-                  </ng-template>    
+                  </ng-template>   
+                  
+                  <ng-template [ngIf]="e.cardStatus==8" s>
+                    <td><span class="badge rounded-pill bg-success" style="pointer-events: none">Acc/No RVD</span></td>
+                </ng-template>   
                   <ng-template [ngIf]="e.cardStatus==2" >
                       <td><span  class="badge rounded-pill bg-success" style="pointer-events: none">Applied</span></td>
                   </ng-template>    

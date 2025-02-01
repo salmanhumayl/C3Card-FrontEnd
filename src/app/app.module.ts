@@ -34,6 +34,8 @@ import { RejectedBatchComponent } from './Admin/rejected-batch/rejected-batch.co
 import { CancellationComponent } from './Sheet/cancellation/cancellation.component';
 import { JwtInterceptor } from './interceptor/jwt.interceptor';
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
+import { CardAccountreceivedComponent } from './Sheet/card-accountreceived/card-accountreceived.component';
+import { CardAccountDetailComponent } from './Sheet/card-account-detail/card-account-detail.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { DashboardComponent } from './Admin/dashboard/dashboard.component';
     BatchDetailComponent,
     RejectedBatchComponent,
     CancellationComponent,
-    DashboardComponent
+    DashboardComponent,
+    CardAccountreceivedComponent,
+    CardAccountDetailComponent
   ],
   imports: [
     BrowserModule,

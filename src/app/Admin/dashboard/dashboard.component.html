@@ -1,14 +1,14 @@
 <main id="main" class="main">
 
-    <div class="pagetitle">
+  <!-- <div class="pagetitle">
       <h1>Dashboard</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item active">Dashboard</li>
         </ol>
-      </nav>
-    </div><!-- End Page Title -->
+      </nav> 
+    </div>--><!-- End Page Title - -->
 
     <section class="section dashboard">
       <div class="row">
@@ -18,11 +18,11 @@
           <div class="row">
 
             <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-3">
+            <div class="col-xxl-4 col-md-2">
               <div class="card info-card sales-card">
 
                 <div class="card-body">
-                  <h5 class="card-title">Cash Salary </h5>
+                  <h5 class="card-title">Cash Salary Count </h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -39,7 +39,7 @@
             </div><!-- End Sales Card -->
 
             <!-- Revenue Card -->
-            <div class="col-xxl-4 col-md-3">
+            <div class="col-xxl-4 col-md-2">
               <div class="card info-card revenue-card">
 
 
@@ -60,14 +60,14 @@
             </div><!-- End Revenue Card -->
 
             <!-- Customers Card -->
-            <div class="col-xxl-4 col-md-3">
+            <div class="col-xxl-4 col-md-2">
 
               <div class="card info-card customers-card">
 
          
 
                 <div class="card-body">
-                  <h5 class="card-title">C3 Card - Applied </h5>
+                  <h5 class="card-title">C3 Card-Applied Not Rvd</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -85,7 +85,31 @@
             </div><!-- End Customers Card -->
 
                <!-- Customers Card -->
-               <div class="col-xxl-4 col-md-3">
+               <div class="col-xxl-4 col-md-2">
+
+                <div class="card info-card customers-card">
+  
+           
+  
+                  <div class="card-body">
+                    <h5 class="card-title">C3 Card-A/C#  Received </h5>
+  
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-people"></i>
+                      </div>
+                      <div class="ps-3"  *ngIf="isloading">
+                        <h6>{{DailySuumary.accountNoRvd}}</h6>
+                      </div>
+                    </div>
+  
+                  </div>
+                </div>
+  
+              </div><!-- End Customers Card -->
+
+               <!-- Customers Card -->
+               <div class="col-xxl-4 col-md-2">
 
                 <div class="card info-card customers-card">
   
@@ -114,27 +138,100 @@
               <div class="card recent-sales overflow-auto">
 
              
-                <div class="card-body">
-                  <h5 class="card-title">Daily Summary <span>| Today</span></h5>
+                <div class="card-body" *ngIf="isloading">
+                  <!-- <h5 class="card-title">Daily Summary <span>| Today</span></h5> -->
 
-                  <!-- <table class="table table-borderless datatable">
+                <table class="table table-borderless datatable">
                     <thead>
-                      <tr>
-                        <th scope="col">Admin PRO Visa Status</th>
-                        <th scope="col">Civil</th>
-                        <th scope="col">SMP</th>
-                        <th scope="col">Grand Total</th>
-                      </tr>
+                      <th></th>
+                     <th>Cash Salary Count</th>   
+                     <th>Emirates ID (EPRO)</th>   
+                     <th>C3 Card-Applied Not Rvd</th>   
+                     <th>C3 Card-A/C# Received</th>   
+                     <th>C3 Card - Received</th> 
                     </thead>
                     <tbody>
-                      <tr *ngFor="let e of DailySuumary">
-                        <td>{{e.position}}</td>
-                        <td>{{e.evisa}}</td>
-                        <td>{{e.smpEvisa}}</td>
-                        <td>{{e.rGrandTotal}}</td>
+                      <tr >
+                        <td style="font-size:large;">On Island</td>
+                        <td style="font-size:large;">{{DailySuumary.onCash}}</td>
+                        <td style="font-size:large;">{{DailySuumary.onEmiratesID}}</td>
+                        <td style="font-size:large;">{{DailySuumary.onCardApplied}}</td>
+                        <td style="font-size:large;">{{DailySuumary.onAccRvd}}</td>
+                        <td style="font-size:large;">{{DailySuumary.onCardRvd}}</td>
+                      </tr>
+
+                      <tr>
+                        <td style="font-size:large;">Off Island</td>
+                        <td style="font-size:large;">{{DailySuumary.offCash}}</td>
+                        <td style="font-size:large;">{{DailySuumary.offEmiratesID}}</td>
+                        <td style="font-size:large;">{{DailySuumary.offCardApplied}}</td>
+                        <td style="font-size:large;">{{DailySuumary.offAccRvd}}</td>
+                        <td style="font-size:large;">{{DailySuumary.offCardRvd}}</td>
                       </tr>
                     </tbody>
-                  </table> -->
+                  </table> 
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <th style="width: 20%;font-size:medium">Balance Cards To Apply</th>
+                     <th style="width: 12%;">Total Count</th>   
+                     <th style="width: 12%;">AJES</th>   
+                     <th style="width: 12%;">Civil</th>   
+                     <th style="width: 15%;">Mechanical</th>   
+                     <th style="width: 12%;">E&I</th> 
+                    </thead>
+                    <tbody>
+                      <tr >
+                        <td style="font-size:large;">On Island</td>
+                        <td style="font-size:large;"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+
+                      <tr>
+                        <td style="font-size:large;">Off Island</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table> 
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <th style="width: 20%;font-size:medium">Cards Applied</th>
+                     <th style="width: 12%;">Total Count</th>   
+                     <th style="width: 12%;">AJES</th>   
+                     <th style="width: 12%;">Civil</th>   
+                     <th style="width: 15%;">Mechanical</th>   
+                     <th style="width: 12%;">E&I</th> 
+                    </thead>
+                    <tbody>
+                      <tr >
+                        <td style="font-size:large;">On Island</td>
+                        <td style="font-size:large;"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+
+                      <tr>
+                        <td style="font-size:large;">Off Island</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table> 
 
                 </div>
 

@@ -14,7 +14,7 @@ import { AJESService } from 'src/app/service/app.service';
 export class CardDetailComponent implements OnInit {
   BatchNo:any;
   Detail:PendingBatches[];
- // Detail:any[];
+ 
   allSelected=false;
   showModal:boolean=false;
   UpdateModel:UpDateStatus=new UpDateStatus();
