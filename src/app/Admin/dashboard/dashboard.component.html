@@ -214,23 +214,35 @@
                     <tbody>
                       <tr >
                         <td style="font-size:large;">On Island</td>
-                        <td style="font-size:large;"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td style="font-size:large;">{{DailySuumary.onAppliedTotal}}</td>
+                        <td style="font-size:large;">{{DailySuumary.onAJESApplied}}</td>
+                        <td style="font-size:large;">{{DailySuumary.onCivilApplied}}</td>
+                        <td style="font-size:large;">{{DailySuumary.onMecApplied}}</td>
+                        <td style="font-size:large;">{{DailySuumary.onEIApplied}}</td>
                       </tr>
 
                       <tr>
                         <td style="font-size:large;">Off Island</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td style="font-size:large;">{{DailySuumary.offAppledTotal}}</td>
+                        <td style="font-size:large;">{{DailySuumary.offajesApplied}}</td>
+                        <td style="font-size:large;">{{DailySuumary.offCivilApplied}}</td>
+                        <td style="font-size:large;">{{DailySuumary.offMecApplied}}</td>
+                        <td style="font-size:large;">{{DailySuumary.offeiApplied}}</td>
                       </tr>
                     </tbody>
+                    <tfoot>
+                      <tr>
+                        <td style="font-weight:bold;font-size:large">Total</td>
+                        <td style="font-weight:bold;font-size:large">{{DailySuumary.onAppliedTotal + DailySuumary.offAppledTotal}}</td>
+                        <td style="font-weight:bold;font-size:large">{{DailySuumary.onAJESApplied + DailySuumary.offajesApplied}}</td>
+                        <td style="font-weight:bold;font-size:large">{{DailySuumary.onCivilApplied + DailySuumary.offCivilApplied}}</td>
+                        <td style="font-weight:bold;font-size:large">{{DailySuumary.onMecApplied + DailySuumary.offMecApplied}}</td>
+                        <td style="font-weight:bold;font-size:large">{{DailySuumary.onEIApplied + DailySuumary.offeiApplied}}</td>
+                       
+
+                        
+                      </tr>
+                    </tfoot>
                   </table> 
 
                 </div>

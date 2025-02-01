@@ -38,7 +38,9 @@
                 <ng-template [ngIf]="e.status==4">
                   <td ><span class="badge rounded-pill bg-warning " style="pointer-events: none">Card Activated</span></td>
                   </ng-template>
-               
+                  <ng-template [ngIf]="e.status==8">
+                    <td ><span class="badge rounded-pill bg-danger " style="pointer-events: none">Acc/No Received</span></td>
+                    </ng-template>
                     <td>{{e.empCode}}</td>
                     <td>{{e.empName}}</td>
                     <td>{{e.designation}}</td>
