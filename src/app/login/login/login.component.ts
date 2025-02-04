@@ -35,7 +35,7 @@ export class LoginComponent {
         this.msg.isLoggedIn$.next(true);
         this.msg.isWelComeName$.next(response.name);
         this.msg.$Role.next(response.role);
-        this.router.navigate(['dashboard']);  
+        this.router.navigate(['/masterfile']);  
         this.ngxService.stop();
        }
        else{

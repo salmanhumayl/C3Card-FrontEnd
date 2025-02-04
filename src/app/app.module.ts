@@ -9,6 +9,7 @@ import {ModalModule,BsModalService} from 'ngx-bootstrap/modal';
 
 import { NgxUiLoaderModule,NgxUiLoaderRouterModule } from 'ngx-ui-loader';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
+import { ToastrModule } from 'ngx-toastr';
 
 
 import { AppComponent } from './app.component';
@@ -73,6 +74,14 @@ import { CardAccountDetailComponent } from './Sheet/card-account-detail/card-acc
     NgxAwesomePopupModule.forRoot(),
     ConfirmBoxConfigModule.forRoot(),
     BsDatepickerModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 10000, // 15 seconds
+       positionClass:'toast-botton-left',
+       preventDuplicates:true,
+       closeButton: true,
+       progressBar: true,
+
+    }),
   ],
   providers: [
       {provide: LocationStrategy,useClass:HashLocationStrategy},

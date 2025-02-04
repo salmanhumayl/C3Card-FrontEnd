@@ -32,7 +32,7 @@ export class AJESService {
  // headers = new HttpHeaders().set('Access-Control-Allow-Origin', '**');
   constructor(private _http:HttpClient)
      {
-    this.domain="http://ajes-webapp2.ajes.ae:4223/";
+  this.domain="http://ajes-webapp2.ajes.ae:4223/";
       
    // this.domain="https://localhost:7053/";
      }
@@ -226,6 +226,15 @@ UpdateCardActivation(CardList:PendingBatches[]):Observable<string>{
 generateBatch():Observable<any>{
   
   return this._http.get<any>(this.domain + "api/AJESData/GenerateBatch");
+  
+}
+
+
+
+
+UpdateBatchAccountNoDate(BatchNo:string,rDate:string):Observable<any>{
+  
+  return this._http.get<any>(this.domain + "api/Batch/UpdateBatchAccountNoDate?BatchNo=" + BatchNo +"&ReceivedOn="+rDate);
   
 }
 

@@ -12,22 +12,47 @@ export class DashboardComponent implements OnInit {
   isloading:boolean=false;
 
   constructor(private AJESservice:AJESService,private ngxService:NgxUiLoaderService){}
-  ngOnInit(): void {
-    this.DailySummary();
+   ngOnInit(): void {
+  
+     this.DailySummary();
   
 
 }
 
 
-DailySummary(){
+ DailySummary(){
 
   this.ngxService.start();
-  this.AJESservice.DailySummary().subscribe((data)=>  {
-        this.DailySuumary=data;
-        console.log(data);
-        this.isloading=true;
-        this.ngxService.stop();
-    });
+   this.AJESservice.DailySummary().subscribe((data) => {
+
+    this.DailySuumary = data;
+    this.ngxService.stop();
+    this.isloading = true;
+
+  }
+  );
+ }
+
+
+DailySummarynext(){
+
+  
+  this.AJESservice.DailySummary().subscribe(
+      {
+
+        next:(data)=>{
+        
+          this.DailySuumary=data;
+           this.ngxService.stop()
+            
+    },
+    complete:()=>{
+      this.ngxService.stop()
+      this.isloading=true;
+     ;      
+    }
+  
+  });
  }
 
 

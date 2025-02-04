@@ -66,4 +66,25 @@ CardAccountReceivedOn(BatchNo:string)
     this.showModal = true;  
 
 }
+
+hide()
+{
+    this.showModal = false;
+}
+
+update(){
+  //alert(this.brDate);
+  //alert(new Date(this.brDate.setDate(this.brDate.getDate()+1)).toUTCString());
+  
+    this.ngxService.start();
+    this.AJESservice.UpdateBatchAccountNoDate(this.BatchNo,new Date(this.brDate).toUTCString()).subscribe((data)=>  {
+  
+      
+      this.ngxService.stop();
+      this.hide();
+      this.PendingCardAccountNo();
+    });
+  }
+
+
 }

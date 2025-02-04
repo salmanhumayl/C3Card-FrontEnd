@@ -29,7 +29,7 @@ export class ListofBatachComponent {
     this.AJESservice.ListOfBatches().subscribe((data)=>  {
 
       this.Batches=data;
-      
+     
       this.ngxService.stop();
     });
   }

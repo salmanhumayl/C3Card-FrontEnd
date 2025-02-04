@@ -9,6 +9,7 @@ import { MessengerService } from 'src/app/service/messenger.service';
 
 
 import { LogDetails } from 'src/app/Model/LogDetails';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -33,7 +34,7 @@ export class MasterFileComponent implements OnInit {
 
     
   constructor(private AJESservice:AJESService,private modelService:BsModalService,
-    private ngxService:NgxUiLoaderService, public msg:MessengerService){
+    private ngxService:NgxUiLoaderService, public msg:MessengerService,private toastrService:ToastrService){
 
 
     }
@@ -63,6 +64,7 @@ export class MasterFileComponent implements OnInit {
 
   Filter(status:number)
   {
+    
     this.ngxService.start();
     this.AJESservice.Filter(status).subscribe((data)=>  {
 
@@ -75,7 +77,9 @@ export class MasterFileComponent implements OnInit {
 
     generateBatch()
     {
-         // const shoulddelete=window.confirm("Are you sure to generate Batch");
+     
+    
+      // const shoulddelete=window.confirm("Are you sure to generate Batch");
           //if (shoulddelete){}
 
 
@@ -101,7 +105,7 @@ export class MasterFileComponent implements OnInit {
             if (value.success){
               this.ngxService.start();
              
-             this.UserLogModel.UserName="Salman";
+            
               this.AJESservice.generateBatch().subscribe((data)=>  {
               
                 var Result=JSON.parse(JSON.stringify(data));
@@ -109,11 +113,13 @@ export class MasterFileComponent implements OnInit {
                 if (Result.message=="Generated")
                 {
                   this.ngxService.stop();
-                  alert("Batch Generated!!");
+                  alert("Batch Generated!! Successfully");
+                //  this.toastrService.success("Batch Generated!! Successfully");
                   this.RefreshData();
                 }
                 else{
                   this.ngxService.stop();
+                 // this.toastrService.success("Not Record Found during Batch Generation!!!!!");
                   alert("Not Record Found during Batch Generation!!!!!");
                   this.RefreshData();
 
