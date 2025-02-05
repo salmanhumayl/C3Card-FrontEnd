@@ -18,11 +18,11 @@
           <div class="row">
 
             <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-2">
+            <div class="col-xxl-4 col-md-3">
               <div class="card info-card sales-card">
 
                 <div class="card-body">
-                  <h5 class="card-title">Cash Salary Count </h5>
+                  <h5 class="card-title">Cash Salary Count (Ezware Emp Master) </h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -38,13 +38,34 @@
               </div>
             </div><!-- End Sales Card -->
 
+            <div class="col-xxl-4 col-md-2">
+              <div class="card info-card revenue-card">
+
+
+                <div class="card-body"  >
+                  <h5 class="card-title">To be Applied</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3"  *ngIf="isloading">
+                      <h6>{{DailySuumary.emirateIDTobeApplied}}</h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+
             <!-- Revenue Card -->
             <div class="col-xxl-4 col-md-2">
               <div class="card info-card revenue-card">
 
 
                 <div class="card-body"  >
-                  <h5 class="card-title">Emirates ID (EPRO)</h5>
+                  <h5 class="card-title">Emirates ID Issued (EPRO)</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -59,7 +80,8 @@
               </div>
             </div><!-- End Revenue Card -->
 
-            <!-- Customers Card -->
+      
+        
             <div class="col-xxl-4 col-md-2">
 
               <div class="card info-card customers-card">
@@ -67,7 +89,7 @@
          
 
                 <div class="card-body">
-                  <h5 class="card-title">Card-Applied Not Rvd</h5>
+                  <h5 class="card-title">Account Under Process</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -85,14 +107,14 @@
             </div><!-- End Customers Card -->
 
                <!-- Customers Card -->
-               <div class="col-xxl-4 col-md-2">
+               <div class="col-xxl-4 col-md-3">
 
                 <div class="card info-card customers-card">
   
            
   
                   <div class="card-body">
-                    <h5 class="card-title">Card-A/C#  Received </h5>
+                    <h5 class="card-title">Card-Under Process </h5>
   
                     <div class="d-flex align-items-center">
                       <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -106,10 +128,69 @@
                   </div>
                 </div>
   
+                
+
+
               </div><!-- End Customers Card -->
 
+              <div class="col-xxl-4 col-md-3">
+
+                <div class="card info-card customers-card">
+  
+           
+  
+                  <div class="card-body">
+                    <h5 class="card-title">Bank Salary Count (Ezware Emp Master) </h5>
+  
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-people"></i>
+                      </div>
+                      <div class="ps-3"  *ngIf="isloading">
+                        <h6>{{DailySuumary.htransfer + DailySuumary.hcash}}</h6>
+                      </div>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                
+
+
+              </div><!-- End Customers Card -->
+
+
+              
+
+              <div class="col-xxl-4 col-md-2">
+
+                <div class="card info-card customers-card">
+  
+           
+  
+                  <div class="card-body">
+                    <h5 class="card-title">Total </h5>
+  
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-people"></i>
+                      </div>
+                      <div class="ps-3"  *ngIf="isloading">
+                        <h6>{{DailySuumary.cash + DailySuumary.htransfer + DailySuumary.hcash}} </h6>
+                      </div>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                
+
+
+              </div><!-- End Customers Card --> 
+
+
                <!-- Customers Card -->
-               <div class="col-xxl-4 col-md-2">
+               <div class="col-xxl-4 col-md-3">
 
                 <div class="card info-card customers-card">
   
@@ -159,160 +240,104 @@
                     </div><!-- End Customers Card -->
          
 
-            <!-- Recent Sales -->
+
+                                 <!-- Recent Sales -->
             <div class="col-12">
               <div class="card recent-sales overflow-auto">
 
              
                 <div class="card-body" *ngIf="isloading">
                   <!-- <h5 class="card-title">Daily Summary <span>| Today</span></h5> -->
+                  <div style="background-color: red;display:flex;Justify-content:space-around" >
+                    <button type="button"></button>  
+                    <button type="button" class="btn btn-secondary">To be Applied</button>
+                    <button type="button" class="btn btn-secondary">Account Under Process </button>
+                    <button type="button" class="btn btn-secondary">Card Under Process</button>
+                    <button type="button" class="btn btn-secondary">Bank Card RVD</button>
+                    <button type="button" class="btn btn-secondary">Total</button>
+                  </div>  
+                <table class="table table-borderless datatable" style="border: solid;font-size:large;">
+                  <thead>
+                   <th>Department</th>
+                   <th>Off-Shore</th> 
+                   <th>On-Shore</th>
+                   <th>Off-Shore</th> 
+                   <th>On-Shore</th>
+                   <th>Off-Shore</th> 
+                   <th>On-Shore</th>
+                   <th>Off-Shore</th> 
+                   <th>On-Shore</th>
+                   <th>Off-Shore</th> 
+                   <th>On-Shore</th>
+                  </thead>
+                  <tr style="border: solid">
+                    <td>AJES</td>
+                    <td>{{DailySuumary.balOffAJES}}</td>
+                    <td>{{DailySuumary.balOnAJES}}</td>
+                    <td>{{DailySuumary.offajesApplied}}</td>
+                    <td>{{DailySuumary.onAJESApplied}}</td>
+                    <td>{{DailySuumary.accAJESN}}</td>
+                    <td>{{DailySuumary.accAJESY}}</td>
+                    <td>{{DailySuumary.cardAJESN}}</td>
+                    <td>{{DailySuumary.cardAJESY}}</td>
 
-                <table class="table table-borderless datatable">
-                    <thead>
-                      <th></th>
-                     <th>Cash Salary Count</th>   
-                     <th>Emirates ID (EPRO)</th>   
-                     <th>C3 Card-Applied Not Rvd</th>   
-                     <th>C3 Card-A/C# Received</th>   
-                     <th>C3 Card - Received</th> 
-                    </thead>
-                    <tbody>
-                      <tr >
-                        <td style="font-size:large;">On Island</td>
-                        <td style="font-size:large;">{{DailySuumary.onCash}}</td>
-                        <td style="font-size:large;">{{DailySuumary.onEmiratesID}}</td>
-                        <td style="font-size:large;">{{DailySuumary.onCardApplied}}</td>
-                        <td style="font-size:large;">{{DailySuumary.onAccRvd}}</td>
-                        <td style="font-size:large;">{{DailySuumary.onCardRvd}}</td>
-                      </tr>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr style="border: solid">
+                    <td>Civil</td>
+                    <td>{{DailySuumary.balOnCivil}}</td>
+                    <td>{{DailySuumary.balOffCivil}}</td>
+                    <td>{{DailySuumary.offCivilApplied}}</td>
+                    <td>{{DailySuumary.onCivilApplied}}</td>
+                    <td>{{DailySuumary.accCivilN}}</td>
+                    <td>{{DailySuumary.accCivilY}}</td>
+                    <td>{{DailySuumary.cardCivilN}}</td>
+                    <td>{{DailySuumary.cardCivilY}}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr style="border: solid">
+                    <td>Mechanical</td>
+                    <td>{{DailySuumary.balOffMec}}</td>
+                    <td>{{DailySuumary.balOnMec}}</td>
+                    <td>{{DailySuumary.offMecApplied}}</td>
+                    <td>{{DailySuumary.onMecApplied}}</td>
+                    <td>{{DailySuumary.accMechnicalN}}</td>
+                    <td>{{DailySuumary.accMechnicalY}}</td>
+                    <td>{{DailySuumary.cardMechnical}}</td>
+                    <td>{{DailySuumary.cardMechnicalY}}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>E&I</td>
+                    <td>{{DailySuumary.balOffEI}}</td>
+                    <td>{{DailySuumary.balOnEI}}</td>
+                    <td>{{DailySuumary.offeiApplied}}</td>
+                    <td>{{DailySuumary.onEIApplied}}</td>
+                    <td>{{DailySuumary.accEIN}}</td>
+                    <td>{{DailySuumary.accEIY}}</td>
+                    <td>{{DailySuumary.cardEIN}}</td>
+                    <td>{{DailySuumary.cardEIY}}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table> 
 
-                      <tr>
-                        <td style="font-size:large;">Off Island</td>
-                        <td style="font-size:large;">{{DailySuumary.offCash}}</td>
-                        <td style="font-size:large;">{{DailySuumary.offEmiratesID}}</td>
-                        <td style="font-size:large;">{{DailySuumary.offCardApplied}}</td>
-                        <td style="font-size:large;">{{DailySuumary.offAccRvd}}</td>
-                        <td style="font-size:large;">{{DailySuumary.offCardRvd}}</td>
-                      </tr>
-                    </tbody>
-                  </table> 
-
-                  <table class="table table-borderless datatable">
-                    <thead>
-                      <th style="width: 20%;font-size:medium">Balance Cards To Apply</th>
-                      <th style="width: 12%;">Total Count</th>   
-                     <th style="width: 12%;">AJES</th>   
-                     <th style="width: 12%;">Civil</th>   
-                     <th style="width: 15%;">Mechanical</th>   
-                     <th style="width: 12%;">E&I</th> 
-                    </thead>
-                    <tbody>
-                      <tr >
-                        <td style="font-size:large;">On Island</td>
-                        <td style="font-size:large;">{{DailySuumary.balOnn}}</td>
-                        <td style="font-size:large;">{{DailySuumary.balOnAJES}}</td>
-                        <td style="font-size:large;">{{DailySuumary.balOnCivil}}</td>
-                        <td style="font-size:large;">{{DailySuumary.balOnMec}}</td>
-                        <td style="font-size:large;">{{DailySuumary.balOnEI}}</td>
-                      </tr>
-
-                      <tr>
-                        <td style="font-size:large;">Off Island</td>
-                        <td style="font-size:large;">{{DailySuumary.balOff}}</td>
-                        <td style="font-size:large;">{{DailySuumary.balOffAJES}}</td>
-                        <td style="font-size:large;">{{DailySuumary.balOffCivil}}</td>
-                        <td style="font-size:large;">{{DailySuumary.balOffMec}}</td>
-                        <td style="font-size:large;">{{DailySuumary.balOffEI}}</td>
-                      </tr>
-                    </tbody>
-
-                    <tfoot>
-                      <tr>
-                        <td></td>
-                        <td  style="font-weight:bold;font-size:medium">{{DailySuumary.balOnn + DailySuumary.balOff}}</td>
-                        <td style="font-weight:bold;font-size:large">{{DailySuumary.balOnAJES + DailySuumary.balOffAJES}}</td>
-                        <td style="font-weight:bold;font-size:large">{{DailySuumary.balOnCivil + DailySuumary.balOffCivil}} </td>
-                        <td style="font-weight:bold;font-size:large">{{DailySuumary.balOnMec + DailySuumary.balOffMec}} </td>
-                        <td style="font-weight:bold;font-size:large">{{DailySuumary.balOnEI + DailySuumary.balOffEI }}</td>
-                       
-                       
-                      </tr>
-                      </tfoot>
-                  </table> 
-
-                  <table class="table table-borderless datatable">
-                    <thead>
-                      <th style="width: 20%;font-size:medium">Cards Applied Not Rvd</th>
-                     <th style="width: 12%;">Total Count</th>   
-                     <th style="width: 12%;">AJES</th>   
-                     <th style="width: 12%;">Civil</th>   
-                     <th style="width: 15%;">Mechanical</th>   
-                     <th style="width: 12%;">E&I</th> 
-                    </thead>
-                    <tbody>
-                      <tr >
-                        <td style="font-size:large;">On Island</td>
-                        <td style="font-size:large;">{{DailySuumary.onAppliedTotal}}</td>
-                        <td style="font-size:large;">{{DailySuumary.onAJESApplied}}</td>
-                        <td style="font-size:large;">{{DailySuumary.onCivilApplied}}</td>
-                        <td style="font-size:large;">{{DailySuumary.onMecApplied}}</td>
-                        <td style="font-size:large;">{{DailySuumary.onEIApplied}}</td>
-                      </tr>
-
-                      <tr>
-                        <td style="font-size:large;">Off Island</td>
-                        <td style="font-size:large;">{{DailySuumary.offAppledTotal}}</td>
-                        <td style="font-size:large;">{{DailySuumary.offajesApplied}}</td>
-                        <td style="font-size:large;">{{DailySuumary.offCivilApplied}}</td>
-                        <td style="font-size:large;">{{DailySuumary.offMecApplied}}</td>
-                        <td style="font-size:large;">{{DailySuumary.offeiApplied}}</td>
-                      </tr>
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <td style="font-weight:bold;font-size:medium"></td>
-                        <td style="font-weight:bold;font-size:large">{{DailySuumary.onAppliedTotal + DailySuumary.offAppledTotal}}</td>
-                        <td style="font-weight:bold;font-size:large">{{DailySuumary.onAJESApplied + DailySuumary.offajesApplied}}</td>
-                        <td style="font-weight:bold;font-size:large">{{DailySuumary.onCivilApplied + DailySuumary.offCivilApplied}}</td>
-                        <td style="font-weight:bold;font-size:large">{{DailySuumary.onMecApplied + DailySuumary.offMecApplied}}</td>
-                        <td style="font-weight:bold;font-size:large">{{DailySuumary.onEIApplied + DailySuumary.offeiApplied}}</td>
-                        
-                      </tr>
-                      <tr>
-                        <td style="font-weight:bold;font-size:medium">Total</td>
-                        <td style="font-weight:bold;font-size:large">{{DailySuumary.balOnn + DailySuumary.balOff +  DailySuumary.onAppliedTotal +  DailySuumary.offAppledTotal}}</td>
-                        <td style="font-weight:bold;font-size:large">{{ DailySuumary.balOnAJES + DailySuumary.balOffAJES +  DailySuumary.onAJESApplied +  DailySuumary.offajesApplied}}</td>
-                        <td style="font-weight:bold;font-size:large">{{ DailySuumary.balOnCivil + DailySuumary.balOffCivil + DailySuumary.onCivilApplied + DailySuumary.offCivilApplied}}</td>
-                        <td style="font-weight:bold;font-size:large">{{DailySuumary.balOnMec + DailySuumary.balOffMec +  DailySuumary.onMecApplied + DailySuumary.offMecApplied}}</td>
-                        <td style="font-weight:bold;font-size:large">{{DailySuumary.balOnEI  + DailySuumary.balOffEI +  DailySuumary.onEIApplied + DailySuumary.offeiApplied}}</td>
-                      </tr> 
-                    
-                    <tr>
-                      <td style="font-weight:bold;font-size:medium">Bank /C3 Card</td>
-                      <td style="font-weight:bold;font-size:large">{{DailySuumary.htransfer + DailySuumary.hcash}}</td>
-                      <td style="font-weight:bold;font-size:large">{{DailySuumary.hajes + DailySuumary.cajes}}</td>
-                      <td style="font-weight:bold;font-size:large">{{DailySuumary.hCivil}}</td>
-                      <td style="font-weight:bold;font-size:large">{{DailySuumary.hMec}}</td>
-                      <td style="font-weight:bold;font-size:large">{{DailySuumary.hEI}}</td>
-                      
-                    </tr>
-                    <tr>
-                      <td style="font-weight:bold;font-size:medium">Total GOP Head Count</td>
-                      <td style="font-weight:bold;font-size:large"></td>
-                      <td style="font-weight:bold;font-size:large"></td>
-                      <td style="font-weight:bold;font-size:large"></td>
-                      <td style="font-weight:bold;font-size:large"></td>
-                      <td style="font-weight:bold;font-size:large"></td>
-                      
-                    </tr>
-
-                    </tfoot>
-                  </table> 
+                 
 
                 </div>
 
               </div>
-            </div><!-- End Recent Sales -->
+            </div><!-- End Recent Sales --> 
+                    <!--New One -->
+
+
+
+
+            <!-- Recent Sales -->
+          
 
             <!-- Top Selling -->
            
