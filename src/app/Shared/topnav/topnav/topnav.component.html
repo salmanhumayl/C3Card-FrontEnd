@@ -34,10 +34,11 @@
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="#">
+            <a class="dropdown-item d-flex align-items-center" routerLink='/logout'>
               <i class="bi bi-box-arrow-right"></i>
-              <a routerLink='/logout'><span>Sign Out</span></a>
-            </a>
+              <span>Sign Out</span>
+            
+          </a>
           </li>
 
         </ul><!-- End Profile Dropdown Items -->
@@ -75,14 +76,14 @@
         <li class="nav-item">
           <a class="nav-link collapsed"  [routerLink]="['lstCardAccNo']">
             <i class="bi bi-box-arrow-in-right"></i>
-            <span>Account Received</span>
+            <span>Account# Received</span>
           </a>
         </li><!-- End Login Page Nav -->
     
         <li class="nav-item">
           <a class="nav-link collapsed"  [routerLink]="['lstReceiveCard']">
             <i class="bi bi-box-arrow-in-right"></i>
-            <span>C3 Cards Received from Exchange</span>
+            <span>C3 Cards Received </span>
           </a>
         </li><!-- End Login Page Nav -->
     
@@ -97,7 +98,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" [routerLink]="['ATMCard']">
           <i class="bi bi-card-image"></i>
-          <span>Atm Card</span>
+          <span>ATM Card</span>
         </a>
       </li>
 
@@ -122,12 +123,7 @@
           <span>Cancellation</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed">
-          <i class="bi bi-dash-circle"></i>
-          <span>General</span>
-        </a>
-      </li>
+      
       
       
    

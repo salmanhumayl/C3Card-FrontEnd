@@ -1,0 +1,72 @@
+
+      
+
+      
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            font-size: 18px;
+            text-align: center; /* Align text to the left */
+        }
+
+        th {
+            background-color: #f2f2f2; /* Light gray background for header */
+            font-weight: bold;
+            font-size: 14px;
+	         text-align: center; /* Center text in all header cells */
+        }
+	hr {
+	    padding-bottom: 0px!important;
+	}
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 600px) {
+            table {
+                display: block; /* Make table a block element */
+                overflow-x: auto; /* Enable horizontal scrolling */
+            }
+
+            thead {
+                display: block; /* Make table header a block element */
+            }
+
+            th, td {
+                width: auto; /* Set width to auto for better responsiveness */
+                white-space: nowrap; /* Prevent text from wrapping */
+                padding: 10px; /* Increase padding for smaller screens */
+                font-size: 12px; /* Slightly smaller font size */
+
+            }
+            th{
+                text-align: center; /* Center header text on smaller screens */
+            }
+
+            /* Hide header on smaller screens - optional */
+            /* thead tr {
+                display: none;
+            } */
+
+            /* Stack table cells vertically on smaller screens */
+            /* tr {
+                border: 1px solid #ddd;
+                display: block;
+            }
+             td{
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+                white-space: normal;
+             }
+             td:before{
+                position: absolute;
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                content: attr(data-label);
+                font-weight: bold;
+             }*/
+        }

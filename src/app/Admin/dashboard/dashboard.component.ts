@@ -33,6 +33,9 @@ export class DashboardComponent implements OnInit {
   );
  }
 
+ Refresh(){
+  this.DailySummary();
+ }
 
 DailySummarynext(){
 

@@ -243,88 +243,112 @@
 
                                  <!-- Recent Sales -->
             <div class="col-12">
-              <div class="card recent-sales overflow-auto">
+              <div class="card recent-sales overflow-auto" >
 
              
                 <div class="card-body" *ngIf="isloading">
-                  <!-- <h5 class="card-title">Daily Summary <span>| Today</span></h5> -->
-                  <div style="background-color: red;display:flex;Justify-content:space-around" >
-                    <button type="button"></button>  
-                    <button type="button" class="btn btn-secondary">To be Applied</button>
-                    <button type="button" class="btn btn-secondary">Account Under Process </button>
-                    <button type="button" class="btn btn-secondary">Card Under Process</button>
-                    <button type="button" class="btn btn-secondary">Bank Card RVD</button>
-                    <button type="button" class="btn btn-secondary">Total</button>
-                  </div>  
-                <table class="table table-borderless datatable" style="border: solid;font-size:large;">
-                  <thead>
-                   <th>Department</th>
-                   <th>Off-Shore</th> 
-                   <th>On-Shore</th>
-                   <th>Off-Shore</th> 
-                   <th>On-Shore</th>
-                   <th>Off-Shore</th> 
-                   <th>On-Shore</th>
-                   <th>Off-Shore</th> 
-                   <th>On-Shore</th>
-                   <th>Off-Shore</th> 
-                   <th>On-Shore</th>
-                  </thead>
-                  <tr style="border: solid">
-                    <td>AJES</td>
-                    <td>{{DailySuumary.balOffAJES}}</td>
-                    <td>{{DailySuumary.balOnAJES}}</td>
-                    <td>{{DailySuumary.offajesApplied}}</td>
-                    <td>{{DailySuumary.onAJESApplied}}</td>
-                    <td>{{DailySuumary.accAJESN}}</td>
-                    <td>{{DailySuumary.accAJESY}}</td>
-                    <td>{{DailySuumary.cardAJESN}}</td>
-                    <td>{{DailySuumary.cardAJESY}}</td>
+                
+                  <table class="table table-hover borderless datatable"  style="border: solid;font-size:large;">
+                    <thead>
+                        <tr>
+                <th>Department </th>
+                <th colspan="2">
+                        To be Applied <br>  Off-Shore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On-Shore
+                      </th>
+                <th colspan="2">
+                        Account Under Prcocess <br>  Off-Shore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On-Shore
+                      </th>
+                <th colspan="2">
+                        Card under Prcoess <br>  Off-Shore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On-Shore
+                      </th>
+                <th colspan="2">
+                        Bank/Card Receceived <br>  Off-Shore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On-Shore
+                      </th>
+                <th colspan="2">
+                        Total <br>  Off-Shore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On-Shore
+                      </th>
+            
+                        </tr>
+                    </thead>
+                    <tbody style="border: solid">
+                      <tr style="border: solid"> 
+                        <td data-label="Header 1">AJES</td>
+                        <td>{{DailySuumary.balOffAJES}}</td>
+                        <td>{{DailySuumary.balOnAJES}}</td>
+                        <td>{{DailySuumary.offajesApplied}}</td>
+                        <td>{{DailySuumary.onAJESApplied}}</td>
+                        <td>{{DailySuumary.accAJESN}}</td>
+                        <td>{{DailySuumary.accAJESY}}</td>
+                        <td>{{DailySuumary.cardAJESN}}</td>
+                        <td>{{DailySuumary.cardAJESY}}</td>
+                        <td>{{DailySuumary.hAJSoff}}</td>
+                        <td>{{DailySuumary.ajesOn}}</td>  
+                    </tr>
+                        <tr style="border: solid">
+                            <td data-label="Header 1">Civil</td>
+                            <td>{{DailySuumary.balOffCivil}}</td>
+                            <td>{{DailySuumary.balOnCivil}}</td>
+                            <td>{{DailySuumary.offCivilApplied}}</td>
+                            <td>{{DailySuumary.onCivilApplied}}</td>
+                            <td>{{DailySuumary.accCivilN}}</td>
+                            <td>{{DailySuumary.accCivilY}}</td>
+                            <td>{{DailySuumary.cardCivilN}}</td>
+                            <td>{{DailySuumary.cardCivilY}}</td>
+                            <td>{{DailySuumary.hCiviloff}}</td>
+                            <td>{{DailySuumary.civilOn}}</td>
+                        </tr>
+                        <tr style="border: solid">
+                            <td data-label="Header 1">Mechanical</td>
+                            <td>{{DailySuumary.balOffMec}}</td>
+                            <td>{{DailySuumary.balOnMec}}</td>
+                            <td>{{DailySuumary.offMecApplied}}</td>
+                            <td>{{DailySuumary.onMecApplied}}</td>
+                            <td>{{DailySuumary.accMechnicalN}}</td>
+                            <td>{{DailySuumary.accMechnicalY}}</td>
+                            <td>{{DailySuumary.cardMechnical}}</td>
+                            <td>{{DailySuumary.cardMechnicalY}}</td>
+                            <td>{{DailySuumary.hMecoff}}</td>
+                            <td>{{DailySuumary.mecOn}}</td>
+                        </tr>
+                        <tr style="border: solid">
+                            <td data-label="Header 1">E&I</td>
+                            <td>{{DailySuumary.balOffEI}}</td>
+                            <td>{{DailySuumary.balOnEI}}</td>
+                            <td>{{DailySuumary.offeiApplied}}</td>
+                            <td>{{DailySuumary.onEIApplied}}</td>
+                            <td>{{DailySuumary.accEIN}}</td>
+                            <td>{{DailySuumary.accEIY}}</td>
+                            <td>{{DailySuumary.cardEIN}}</td>
+                            <td>{{DailySuumary.cardEIY}}</td>
+                            <td>{{DailySuumary.hEIoff}}</td>
+                            <td>{{DailySuumary.eiOn}}</td>
+                           
+                        </tr>
 
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr style="border: solid">
-                    <td>Civil</td>
-                    <td>{{DailySuumary.balOnCivil}}</td>
-                    <td>{{DailySuumary.balOffCivil}}</td>
-                    <td>{{DailySuumary.offCivilApplied}}</td>
-                    <td>{{DailySuumary.onCivilApplied}}</td>
-                    <td>{{DailySuumary.accCivilN}}</td>
-                    <td>{{DailySuumary.accCivilY}}</td>
-                    <td>{{DailySuumary.cardCivilN}}</td>
-                    <td>{{DailySuumary.cardCivilY}}</td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr style="border: solid">
-                    <td>Mechanical</td>
-                    <td>{{DailySuumary.balOffMec}}</td>
-                    <td>{{DailySuumary.balOnMec}}</td>
-                    <td>{{DailySuumary.offMecApplied}}</td>
-                    <td>{{DailySuumary.onMecApplied}}</td>
-                    <td>{{DailySuumary.accMechnicalN}}</td>
-                    <td>{{DailySuumary.accMechnicalY}}</td>
-                    <td>{{DailySuumary.cardMechnical}}</td>
-                    <td>{{DailySuumary.cardMechnicalY}}</td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>E&I</td>
-                    <td>{{DailySuumary.balOffEI}}</td>
-                    <td>{{DailySuumary.balOnEI}}</td>
-                    <td>{{DailySuumary.offeiApplied}}</td>
-                    <td>{{DailySuumary.onEIApplied}}</td>
-                    <td>{{DailySuumary.accEIN}}</td>
-                    <td>{{DailySuumary.accEIY}}</td>
-                    <td>{{DailySuumary.cardEIN}}</td>
-                    <td>{{DailySuumary.cardEIY}}</td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                </table> 
+                     
+                      <tr style="background-color: darkgray;">
+                          <td style="font-weight: bold;">Total</td>
+                          <td>{{DailySuumary.balOffAJES + DailySuumary.balOffCivil + DailySuumary.balOffMec +  DailySuumary.balOffEI}}</td>
+                          <td>{{DailySuumary.balOnAJES +  DailySuumary.balOnCivil +  DailySuumary.balOnMec +  DailySuumary.balOnEI}}</td>
+                          <td>{{DailySuumary.offajesApplied + DailySuumary.offCivilApplied + DailySuumary.offMecApplied + DailySuumary.offeiApplied}}</td>
+                          <td>{{DailySuumary.onAJESApplied + DailySuumary.onCivilApplied + DailySuumary.onMecApplied+  DailySuumary.onEIApplied}}</td>
+                          <td>{{DailySuumary.accAJESN +  DailySuumary.accCivilN + DailySuumary.accMechnicalN + DailySuumary.accEIN}}</td>
+                          <td>{{DailySuumary.accAJESY + DailySuumary.accCivilY + DailySuumary.accMechnicalY+  DailySuumary.accEIY}}</td>
+                          <td>{{DailySuumary.cardAJESN + DailySuumary.cardCivilN + DailySuumary.cardMechnical + DailySuumary.cardEIN}}</td>
+                          <td>{{DailySuumary.cardAJESY + DailySuumary.cardCivilY + DailySuumary.cardMechnicalY + DailySuumary.cardEIY}}</td>
+                          <td>{{DailySuumary.hAJSoff +  DailySuumary.hCiviloff +  DailySuumary.hMecoff +  DailySuumary.hEIoff}} </td>
+                          <td>{{DailySuumary.ajesOn +  DailySuumary.civilOn + DailySuumary.mecOn +  DailySuumary.eiOn}}</td>
+                      </tr>
 
+
+                        
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-success ms-3" (click)="Refresh()">Refresh</button>
+
+
+                 
+             
                  
 
                 </div>
