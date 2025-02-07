@@ -38,8 +38,11 @@ export class LoginComponent {
         if (response.role=="A"){
             this.router.navigate(['/masterfile']);  
         }
-        else{
+        else if(response.role=="O"){
           this.router.navigate(['/dashboard']);
+        }
+        else {
+          this.router.navigate(['/offdashboard',true]);
         }
         this.ngxService.stop();
        }

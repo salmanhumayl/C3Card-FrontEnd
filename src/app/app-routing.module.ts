@@ -17,6 +17,8 @@ import { CancellationComponent } from './Sheet/cancellation/cancellation.compone
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { CardAccountreceivedComponent } from './Sheet/card-accountreceived/card-accountreceived.component';
 import { CardAccountDetailComponent } from './Sheet/card-account-detail/card-account-detail.component';
+import { OfflinedashboardComponent } from './Admin/offlinedashboard/offlinedashboard.component';
+import { AppliedComponent } from './Admin/Listing/applied/applied.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent,pathMatch:'full'},
@@ -37,6 +39,8 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'logout',component:LogoutComponent},
   {path:'dashboard',component:DashboardComponent},
+  {path:'offdashboard/:show',component:OfflinedashboardComponent},
+  {path:'listing/:lstType',component:AppliedComponent},
   {path:'**',redirectTo:'masterfile',pathMatch:'full'}
 
   

@@ -52,12 +52,16 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
-      <li class="nav-item">
-        <a class="nav-link "[routerLink]="['dashboard']">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
+      <ng-template  [ngIf]="msg.$Role.value=='A'  || msg.$Role.value=='O'">
+        <li class="nav-item">
+          <a class="nav-link "[routerLink]="['dashboard']">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li><!-- End Dashboard Nav -->
+      </ng-template>  
+
+
       <ng-template  [ngIf]="msg.$Role.value=='A'">
           <li class="nav-item">
             <a class="nav-link " [routerLink]="['masterfile']">
@@ -123,10 +127,6 @@
           <span>Cancellation</span>
         </a>
       </li>
-      
-      
-      
-   
           
           <li class="nav-item">
             <a class="nav-link collapsed"[routerLink]="['inquiry']">
@@ -134,7 +134,16 @@
               <span>Inquiry</span>
             </a>
           </li>
-      </ng-template>    
+      </ng-template>  
+      
+      <ng-template  [ngIf]="msg.$Role.value=='S'">
+      <li class="nav-item">
+        <a class="nav-link collapsed"[routerLink]="['offdashboard',true]">
+          <i class="bi bi-binoculars"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>    
+     </ng-template>  
           <!-- End Error 404 Page Nav -->
       
     </ul>

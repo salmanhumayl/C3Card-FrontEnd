@@ -28,7 +28,7 @@ export class BatchDetailComponent implements OnInit {
     this.ngxService.start();
     this.AJESservice.BatchDetail(this.BatchNo).subscribe((data)=>  {
       this.Data=data;
-      console.log(this.Data);
+     // console.log(this.Data);
       this.ngxService.stop();
     });
 

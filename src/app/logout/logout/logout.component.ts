@@ -16,8 +16,8 @@ export class LogoutComponent  implements OnInit{
   this.msg.isWelComeName$.next('');
   this.msg.$Role.next('');
 
-  //window.location.href="http://localhost:4200";
-  window.location.href="http://ajes-webApp2.ajes.ae/AJESCMS";
+  window.location.href="http://localhost:4200";
+ // window.location.href="http://ajes-webApp2.ajes.ae/AJESCMS";
 
   }
 }

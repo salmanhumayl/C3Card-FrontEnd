@@ -1,0 +1,53 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>{{this.Heading}}</h1>
+      
+    </div><!-- End Page Title -->
+<section class="section">
+    <div class="row">
+  
+     <div class="col-lg-12">
+
+        <div class="card">
+          <div class="card-body">
+          
+            <!-- Table with hoverable rows -->
+            <table class="table table-hover table-bordered ">
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>OffShore</th>
+                    <th>Designation</th>
+                    <th>Remarks</th>
+                    <th>EM.ID</th>
+                    <th>Nationality</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr *ngFor="let e of Detail;let i=index" >
+                  <td>{{i+1}}</td>
+                    <td>{{e.empCode}}</td>
+                    <td>{{e.empName}}</td>
+                    <td>{{e.offshoreYn}}</td>
+                    <td>{{e.designation}}</td>
+                    <td>{{e.empRef2}}</td>
+                    <td>{{e.emiratesIdNumber}}</td>
+                    <td>{{e.nationality}}</td>
+                 
+                </tr>
+              </tbody>
+            </table>
+            <!-- End Table with hoverable rows -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+
+</main><!-- End #main -->

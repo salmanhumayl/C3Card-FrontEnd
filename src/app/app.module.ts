@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
-import {ModalModule,BsModalService} from 'ngx-bootstrap/modal';
+import {ModalModule} from 'ngx-bootstrap/modal';
 
 import { NgxUiLoaderModule,NgxUiLoaderRouterModule } from 'ngx-ui-loader';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
@@ -37,6 +37,9 @@ import { JwtInterceptor } from './interceptor/jwt.interceptor';
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { CardAccountreceivedComponent } from './Sheet/card-accountreceived/card-accountreceived.component';
 import { CardAccountDetailComponent } from './Sheet/card-account-detail/card-account-detail.component';
+import { OfflinedashboardComponent } from './Admin/offlinedashboard/offlinedashboard.component';
+import { AppliedComponent } from './Admin/Listing/applied/applied.component';
+import { MyModelComponent } from './Admin/Listing/my-model/my-model.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +63,10 @@ import { CardAccountDetailComponent } from './Sheet/card-account-detail/card-acc
     CancellationComponent,
     DashboardComponent,
     CardAccountreceivedComponent,
-    CardAccountDetailComponent
+    CardAccountDetailComponent,
+    OfflinedashboardComponent,
+    AppliedComponent,
+    MyModelComponent
   ],
   imports: [
     BrowserModule,
@@ -83,11 +89,13 @@ import { CardAccountDetailComponent } from './Sheet/card-account-detail/card-acc
 
     }),
   ],
+  
   providers: [
       {provide: LocationStrategy,useClass:HashLocationStrategy},
       { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
-    
+      
     ],
-  bootstrap: [AppComponent]
+  
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

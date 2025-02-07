@@ -32,9 +32,9 @@ export class AJESService {
  // headers = new HttpHeaders().set('Access-Control-Allow-Origin', '**');
   constructor(private _http:HttpClient)
      {
-    this.domain="http://ajes-webapp2.ajes.ae:4223/";
+   // this.domain="http://ajes-webapp2.ajes.ae:4223/";
       
-   // this.domain="https://localhost:7053/";
+    this.domain="https://localhost:7053/";
      }
     
 
@@ -277,10 +277,24 @@ DownloadATMCardRequest(BatchNo:string){
 
 
 
-DailySummary():Observable<any>{
-  return this._http.get<any>(this.domain + "api/Batch/ShowSummary");
+DailySummary(DatEnd:boolean):Observable<any>{
+  return this._http.get<any>(this.domain + "api/Batch/ShowSummary?DatEnd=" + DatEnd);   //querystring 
   
 }
+
+ProcessOfflineDashboard(filterDate:string):Observable<any>{
+
+  return this._http.get<any>(this.domain + "api/Batch/ProcessOfflineDashboard/" + filterDate ); //Route Parameter 
+  
+}
+
+ShowListing(lstType:string):Observable<any>{
+
+  return this._http.get<any>(this.domain + "api/Batch/Listing/" + lstType ); //Route Parameter 
+  
+}
+
+
 
 }
 
