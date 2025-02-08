@@ -2,6 +2,7 @@
 export interface PendingBatches {
     BatchNo: string;
     empCode: string;
+    projectCode:string;
     empName:string;
     designation:string
     emiratesIdNumber:string;

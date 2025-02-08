@@ -32,9 +32,9 @@ export class AJESService {
  // headers = new HttpHeaders().set('Access-Control-Allow-Origin', '**');
   constructor(private _http:HttpClient)
      {
-   // this.domain="http://ajes-webapp2.ajes.ae:4223/";
+    this.domain="http://ajes-webapp2.ajes.ae:4223/";
       
-    this.domain="https://localhost:7053/";
+   //this.domain="https://localhost:7053/";
      }
     
 
@@ -194,8 +194,8 @@ ExchangeexportToExcel(BatchNo:string):Observable<any[]>{
   return this._http.get<any[]>(this.domain + "api/AJESData/ATMCardRequestToExchange?BatchNo=" + BatchNo);
 }
 
-CardProcess(BatchNo:string):Observable<string>{
-  return this._http.get<string>(this.domain + "api/AJESData/CardApplied?BatchNo=" + BatchNo );
+CardProcess(BatchNo:string,ProjectCode:string):Observable<string>{
+  return this._http.get<string>(this.domain + "api/AJESData/CardApplied?BatchNo=" + BatchNo + "&ProjectCode=" + ProjectCode);
 }
 
 
@@ -223,9 +223,9 @@ UpdateCardActivation(CardList:PendingBatches[]):Observable<string>{
 
 
 
-generateBatch():Observable<any>{
+generateBatch(ProjectCode:string):Observable<any>{
   
-  return this._http.get<any>(this.domain + "api/AJESData/GenerateBatch");
+  return this._http.get<any>(this.domain + "api/AJESData/GenerateBatch?ProjectCode=" + ProjectCode);
   
 }
 
@@ -246,10 +246,10 @@ UpdateBatchReceivedDate(BatchNo:string,rDate:string):Observable<any>{
 }
 
 
-MarkAsBank(EmpCode:string,Status:number,eformId:number):Observable<string>{
+MarkAsBank(EmpCode:string,Status:number,eformId:number,projectCode:string):Observable<string>{
   
 
-  return this._http.get<string>(this.domain + "api/AJESData/MarkAsBank?EmpCode=" + EmpCode +"&Status=" + Status +"&eFORMID=" +eformId );
+  return this._http.get<string>(this.domain + "api/AJESData/MarkAsBank?EmpCode=" + EmpCode +"&Status=" + Status +"&eFORMID=" +eformId +"&projectCode=" + projectCode);
   
 }
 

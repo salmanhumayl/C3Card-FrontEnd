@@ -83,10 +83,12 @@ this.Detail.forEach(item=>{
   }
   
 
-  Revert(EmpCode:string)
+  Revert(EmpCode:string,ProjectCode:string)
   {
-    
+    alert(ProjectCode);
       this.UpdateModel.EmpCode=EmpCode;
+      this.UpdateModel.projectCode=ProjectCode;
+
       this.showModal = true;  
   
       
@@ -101,7 +103,7 @@ this.Detail.forEach(item=>{
   }
 onSubmitlogin(form:NgForm)
   {
-    if ( this.UpdateModel.Status==99)
+    if ( this.UpdateModel.Status==99)// no option selected....
      return;
      this.UpdateModel.BatchNo=this.BatchNo;
       

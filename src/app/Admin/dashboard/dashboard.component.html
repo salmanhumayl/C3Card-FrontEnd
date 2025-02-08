@@ -150,7 +150,7 @@
                         <i class="bi bi-people"></i>
                       </div>
                       <div class="ps-3"  *ngIf="isloading">
-                        <h6>{{DailySuumary.htransfer + DailySuumary.hcash}}</h6>
+                        <h6>{{DailySuumary.htransfer}}</h6>
                       </div>
                     </div>
   
@@ -179,7 +179,7 @@
                         <i class="bi bi-people"></i>
                       </div>
                       <div class="ps-3"  *ngIf="isloading">
-                        <h6>{{DailySuumary.cash + DailySuumary.htransfer + DailySuumary.hcash}} </h6>
+                        <h6>{{DailySuumary.cash + DailySuumary.htransfer}} </h6>
                       </div>
                     </div>
   
@@ -195,12 +195,12 @@
                <!-- Customers Card -->
                <div class="col-xxl-4 col-md-3">
 
-                <div class="card info-card customers-card">
+                <div class="card info-card customers-card" style="background-color:lightgray;">
   
            
   
-                  <div class="card-body">
-                    <h5 class="card-title">Card - Received </h5>
+                  <div class="card-body" >
+                    <h5 class="card-title">Card - Received (Info) </h5>
   
                     <div class="d-flex align-items-center">
                       <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -218,14 +218,14 @@
               </div><!-- End Customers Card -->
 
                      <!-- Customers Card -->
-                     <div class="col-xxl-4 col-md-2">
+                     <div class="col-xxl-4 col-md-3">
 
-                      <div class="card info-card customers-card">
+                      <div class="card info-card customers-card" style="background-color:lightgray;">
         
                  
         
-                        <div class="card-body">
-                          <h5 class="card-title">Card - Activated </h5>
+                        <div class="card-body" >
+                          <h5 class="card-title">Card - Activated (Info) </h5>
         
                           <div class="d-flex align-items-center">
                             <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -265,7 +265,7 @@
                         Card under Prcoess <br>  Off-Shore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On-Shore
                       </th>
                 <th colspan="2">
-                        Bank/Card Receceived <br>  Off-Shore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On-Shore
+                        Bank/Card Received <br>  Off-Shore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On-Shore
                       </th>
                 <th colspan="2">
                         Total <br>  Off-Shore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On-Shore
@@ -276,71 +276,84 @@
                     <tbody style="border: solid">
                       <tr style="border: solid"> 
                         <td data-label="Header 1">AJES</td>
-                        <td>{{DailySuumary.balOffAJES}}</td>
                         <td>{{DailySuumary.balOnAJES}}</td>
-                        <td>{{DailySuumary.offajesApplied}}</td>
+                        <td>{{DailySuumary.balOffAJES}}</td>
+                   
                         <td>{{DailySuumary.onAJESApplied}}</td>
-                        <td>{{DailySuumary.accAJESN}}</td>
+                        <td>{{DailySuumary.offajesApplied}}</td>
+                        
                         <td>{{DailySuumary.accAJESY}}</td>
-                        <td>{{DailySuumary.cardAJESN}}</td>
-                        <td>{{DailySuumary.cardAJESY}}</td>
+                        <td>{{DailySuumary.accAJESN}}</td>
+                    
+                        <td>{{DailySuumary.ajesOn}}</td>
                         <td>{{DailySuumary.hAJSoff}}</td>
-                        <td>{{DailySuumary.ajesOn}}</td>  
+                      
+                        <td>{{DailySuumary.ajesOn + DailySuumary.totalAjesY}}</td>  
+                        <td>{{DailySuumary.hAJSoff + DailySuumary.totalAjesN}}</td>
+                        
                     </tr>
                         <tr style="border: solid">
                             <td data-label="Header 1">Civil</td>
-                            <td>{{DailySuumary.balOffCivil}}</td>
                             <td>{{DailySuumary.balOnCivil}}</td>
-                            <td>{{DailySuumary.offCivilApplied}}</td>
+                            <td>{{DailySuumary.balOffCivil}}</td>
                             <td>{{DailySuumary.onCivilApplied}}</td>
-                            <td>{{DailySuumary.accCivilN}}</td>
+                            <td>{{DailySuumary.offCivilApplied}}</td>
                             <td>{{DailySuumary.accCivilY}}</td>
-                            <td>{{DailySuumary.cardCivilN}}</td>
-                            <td>{{DailySuumary.cardCivilY}}</td>
-                            <td>{{DailySuumary.hCiviloff}}</td>
+                            <td>{{DailySuumary.accCivilN}}</td>
                             <td>{{DailySuumary.civilOn}}</td>
+                            <td>{{DailySuumary.hCiviloff}}</td>
+                        
+                            <td>{{DailySuumary.civilOn +DailySuumary.totalCivilY}}</td>
+                            <td>{{DailySuumary.hCiviloff + DailySuumary.totalCivilN}}</td>
+                            
                         </tr>
                         <tr style="border: solid">
                             <td data-label="Header 1">Mechanical</td>
-                            <td>{{DailySuumary.balOffMec}}</td>
                             <td>{{DailySuumary.balOnMec}}</td>
-                            <td>{{DailySuumary.offMecApplied}}</td>
+                            <td>{{DailySuumary.balOffMec}}</td>
                             <td>{{DailySuumary.onMecApplied}}</td>
-                            <td>{{DailySuumary.accMechnicalN}}</td>
+                            <td>{{DailySuumary.offMecApplied}}</td>
                             <td>{{DailySuumary.accMechnicalY}}</td>
-                            <td>{{DailySuumary.cardMechnical}}</td>
-                            <td>{{DailySuumary.cardMechnicalY}}</td>
-                            <td>{{DailySuumary.hMecoff}}</td>
+                            <td>{{DailySuumary.accMechnicalN}}</td>
                             <td>{{DailySuumary.mecOn}}</td>
+                            <td>{{DailySuumary.hMecoff}}</td>
+
+                            <td>{{DailySuumary.mecOn + DailySuumary.totalMecY}}</td>
+                            <td>{{DailySuumary.hMecoff + DailySuumary.totalMecN}}</td>
+                            
                         </tr>
                         <tr style="border: solid">
                             <td data-label="Header 1">E&I</td>
-                            <td>{{DailySuumary.balOffEI}}</td>
                             <td>{{DailySuumary.balOnEI}}</td>
-                            <td>{{DailySuumary.offeiApplied}}</td>
+                            <td>{{DailySuumary.balOffEI}}</td>
                             <td>{{DailySuumary.onEIApplied}}</td>
-                            <td>{{DailySuumary.accEIN}}</td>
+                            <td>{{DailySuumary.offeiApplied}}</td>
                             <td>{{DailySuumary.accEIY}}</td>
-                            <td>{{DailySuumary.cardEIN}}</td>
-                            <td>{{DailySuumary.cardEIY}}</td>
-                            <td>{{DailySuumary.hEIoff}}</td>
+                            <td>{{DailySuumary.accEIN}}</td>
                             <td>{{DailySuumary.eiOn}}</td>
+                            <td>{{DailySuumary.hEIoff}}</td>
+
+                            <td>{{DailySuumary.eiOn + DailySuumary.totalEIY}}</td>
+                            <td>{{DailySuumary.hEIoff + DailySuumary.totalEIN}}</td>
+                           
                            
                         </tr>
 
                      
                       <tr style="background-color: darkgray;">
                           <td style="font-weight: bold;">Total</td>
-                          <td>{{DailySuumary.balOffAJES + DailySuumary.balOffCivil + DailySuumary.balOffMec +  DailySuumary.balOffEI}}</td>
+                         
                           <td>{{DailySuumary.balOnAJES +  DailySuumary.balOnCivil +  DailySuumary.balOnMec +  DailySuumary.balOnEI}}</td>
-                          <td>{{DailySuumary.offajesApplied + DailySuumary.offCivilApplied + DailySuumary.offMecApplied + DailySuumary.offeiApplied}}</td>
+                          <td>{{DailySuumary.balOffAJES + DailySuumary.balOffCivil + DailySuumary.balOffMec +  DailySuumary.balOffEI}}</td>
                           <td>{{DailySuumary.onAJESApplied + DailySuumary.onCivilApplied + DailySuumary.onMecApplied+  DailySuumary.onEIApplied}}</td>
-                          <td>{{DailySuumary.accAJESN +  DailySuumary.accCivilN + DailySuumary.accMechnicalN + DailySuumary.accEIN}}</td>
+                          <td>{{DailySuumary.offajesApplied + DailySuumary.offCivilApplied + DailySuumary.offMecApplied + DailySuumary.offeiApplied}}</td>
                           <td>{{DailySuumary.accAJESY + DailySuumary.accCivilY + DailySuumary.accMechnicalY+  DailySuumary.accEIY}}</td>
-                          <td>{{DailySuumary.cardAJESN + DailySuumary.cardCivilN + DailySuumary.cardMechnical + DailySuumary.cardEIN}}</td>
-                          <td>{{DailySuumary.cardAJESY + DailySuumary.cardCivilY + DailySuumary.cardMechnicalY + DailySuumary.cardEIY}}</td>
-                          <td>{{DailySuumary.hAJSoff +  DailySuumary.hCiviloff +  DailySuumary.hMecoff +  DailySuumary.hEIoff}} </td>
+                          <td>{{DailySuumary.accAJESN +  DailySuumary.accCivilN + DailySuumary.accMechnicalN + DailySuumary.accEIN}}</td>
                           <td>{{DailySuumary.ajesOn +  DailySuumary.civilOn + DailySuumary.mecOn +  DailySuumary.eiOn}}</td>
+                          <td>{{DailySuumary.hAJSoff +  DailySuumary.hCiviloff +  DailySuumary.hMecoff +  DailySuumary.hEIoff}} </td>
+                          <td>{{DailySuumary.ajesOn + DailySuumary.totalAjesY + DailySuumary.civilOn +DailySuumary.totalCivilY + DailySuumary.mecOn + DailySuumary.totalMecY + DailySuumary.eiOn + DailySuumary.totalEIY}}</td>
+                          <td>{{DailySuumary.hAJSoff + DailySuumary.totalAjesN  + DailySuumary.hCiviloff + DailySuumary.totalCivilN + DailySuumary.hMecoff + DailySuumary.totalMecN +  DailySuumary.hEIoff + DailySuumary.totalEIN}}</td>
+                         
                       </tr>
 
 

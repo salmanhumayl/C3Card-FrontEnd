@@ -50,6 +50,7 @@ export class MasterFileComponent implements OnInit {
     this.AJESservice.GetMasterFile().subscribe((data)=>  {
 
       this.MasterRecord=data;
+      
       this.nTotalRecord=this.MasterRecord.length;
      
      this.ngxService.stop();
@@ -75,9 +76,9 @@ export class MasterFileComponent implements OnInit {
     });
     }
 
-    generateBatch()
+    generateBatch(projectCode:string)
     {
-     
+    
     
       // const shoulddelete=window.confirm("Are you sure to generate Batch");
           //if (shoulddelete){}
@@ -106,7 +107,7 @@ export class MasterFileComponent implements OnInit {
               this.ngxService.start();
              
             
-              this.AJESservice.generateBatch().subscribe((data)=>  {
+              this.AJESservice.generateBatch(projectCode).subscribe((data)=>  {
               
                 var Result=JSON.parse(JSON.stringify(data));
                 
@@ -134,12 +135,12 @@ export class MasterFileComponent implements OnInit {
      
       }
 
-      MarkAsBank(empCode:string,Status:number,eformId:number)
+      MarkAsBank(empCode:string,Status:number,eformId:number,projectCode:string)
       {
           const shoulddelete=window.confirm("Are you sure to Continue");
           if (shoulddelete){
           this.ngxService.start();
-          this.AJESservice.MarkAsBank(empCode,Status,eformId).subscribe((data)=>  {
+          this.AJESservice.MarkAsBank(empCode,Status,eformId,projectCode).subscribe((data)=>  {
           
             var Result=JSON.parse(JSON.stringify(data));
             

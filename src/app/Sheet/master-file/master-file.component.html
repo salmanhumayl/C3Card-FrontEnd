@@ -26,7 +26,7 @@
                   <button type="button" class="btn btn-danger ms-3" (click)="Filter(-1)">Cancelled</button>
                   <button type="button" class="btn btn-link ms-3" (click)="RefreshData()">Refresh</button>&nbsp;
                   <ng-template [ngIf]="msg.$Role.value=='A'">
-                  <button type="button" class="btn btn-danger rounded-pill ms-5 " style="margin-right: 0rlh;" (click)="generateBatch()">Generate Batch</button>&nbsp;
+                  <button type="button" class="btn btn-danger rounded-pill ms-5 " style="margin-right: 0rlh;" (click)="generateBatch('8069')">Generate Batch</button>&nbsp;
                   <button type="button" class="btn btn-success ms-5" (click)="ExportToExcel()">Export To Excel</button>
                 </ng-template>
               </div>
@@ -136,14 +136,14 @@
                     <ng-template [ngIf]="e.cardStatus==0  &&  msg.$Role.value=='A'">
                       <td>
                            <!-- <button type="button" class="btn btn-primary btn-sm" (click)="openModel(template)">Mark as CBank</button>  -->
-                          <button type="button" class="btn btn-primary btn-sm mt-1" (click)="MarkAsBank(e.empCode,5,0)">Mark as Bank</button>
+                          <button type="button" class="btn btn-primary btn-sm mt-1" (click)="MarkAsBank(e.empCode,5,0,e.projectCode)">Mark as Bank</button>
                       </td>
                     </ng-template>
 
                     <ng-template [ngIf]="e.cardStatus==-1  &&  msg.$Role.value=='A'">
                       <td>
-                        <button type="button" class="btn btn-danger btn-sm mt-1" (click)="MarkAsBank(e.empCode,100,0)">Cancelled</button>
-                        <button type="button" class="btn btn-warning btn-sm mt-1" (click)="MarkAsBank(e.empCode,0,e.eformId)">Revert</button>
+                        <button type="button" class="btn btn-danger btn-sm mt-1" (click)="MarkAsBank(e.empCode,100,0,e.projectCode)">Cancelled</button>
+                        <button type="button" class="btn btn-warning btn-sm mt-1" (click)="MarkAsBank(e.empCode,0,e.eformId,e.projectCode)">Revert</button>
                        
                          
                       </td>

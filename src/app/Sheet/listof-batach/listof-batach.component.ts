@@ -66,13 +66,13 @@ export class ListofBatachComponent {
   }
 
 
-  ProcessBatch(BatchNo:string)
+  ProcessBatch(BatchNo:string,ProjectCode:string)
   {
    
     const shoulddelete=window.confirm("Are you sure to Applied Card");
     if (shoulddelete){
     this.ngxService.start();
-    this.AJESservice.CardProcess(BatchNo).subscribe((data)=>  {
+    this.AJESservice.CardProcess(BatchNo,ProjectCode).subscribe((data)=>  {
      
       var Result=JSON.parse(JSON.stringify(data));
       
