@@ -36,7 +36,7 @@ export class CardAccountDetailComponent implements OnInit {
       this.AJESservice.AccountCardDetail(this.BatchNo).subscribe((data)=>  {
     
         this.Detail=data;
-       console.log(this.Detail);
+     //  console.log(this.Detail);
        
         this.ngxService.stop();
       });

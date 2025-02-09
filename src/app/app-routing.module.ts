@@ -19,6 +19,7 @@ import { CardAccountreceivedComponent } from './Sheet/card-accountreceived/card-
 import { CardAccountDetailComponent } from './Sheet/card-account-detail/card-account-detail.component';
 import { OfflinedashboardComponent } from './Admin/offlinedashboard/offlinedashboard.component';
 import { AppliedComponent } from './Admin/Listing/applied/applied.component';
+import { DayEndMessageComponent } from './Admin/day-end-message/day-end-message.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent,pathMatch:'full'},
@@ -41,6 +42,7 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'offdashboard/:show',component:OfflinedashboardComponent},
   {path:'listing/:lstType',component:AppliedComponent},
+  {path:'DayEnd',component:DayEndMessageComponent},
   {path:'**',redirectTo:'masterfile',pathMatch:'full'}
 
   

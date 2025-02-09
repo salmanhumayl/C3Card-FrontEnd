@@ -40,6 +40,7 @@ import { CardAccountDetailComponent } from './Sheet/card-account-detail/card-acc
 import { OfflinedashboardComponent } from './Admin/offlinedashboard/offlinedashboard.component';
 import { AppliedComponent } from './Admin/Listing/applied/applied.component';
 import { MyModelComponent } from './Admin/Listing/my-model/my-model.component';
+import { DayEndMessageComponent } from './Admin/day-end-message/day-end-message.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { MyModelComponent } from './Admin/Listing/my-model/my-model.component';
     CardAccountDetailComponent,
     OfflinedashboardComponent,
     AppliedComponent,
-    MyModelComponent
+    MyModelComponent,
+    DayEndMessageComponent
   ],
   imports: [
     BrowserModule,

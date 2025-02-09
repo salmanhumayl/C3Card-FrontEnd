@@ -85,7 +85,7 @@ this.Detail.forEach(item=>{
 
   Revert(EmpCode:string,ProjectCode:string)
   {
-    alert(ProjectCode);
+   
       this.UpdateModel.EmpCode=EmpCode;
       this.UpdateModel.projectCode=ProjectCode;
 
