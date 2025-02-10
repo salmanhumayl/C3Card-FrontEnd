@@ -41,7 +41,7 @@ const routes: Routes = [
   {path:'logout',component:LogoutComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'offdashboard/:show',component:OfflinedashboardComponent},
-  {path:'listing/:lstType',component:AppliedComponent},
+  {path:'listing/:lstType/:dEnd',component:AppliedComponent},
   {path:'DayEnd',component:DayEndMessageComponent},
   {path:'**',redirectTo:'masterfile',pathMatch:'full'}
 

@@ -32,9 +32,9 @@ export class AJESService {
  // headers = new HttpHeaders().set('Access-Control-Allow-Origin', '**');
   constructor(private _http:HttpClient)
      {
-   // this.domain="http://ajes-webapp2.ajes.ae:4223/";
+    this.domain="http://ajes-webapp2.ajes.ae:4223/";
       
-   this.domain="https://localhost:7053/";
+ // this.domain="https://localhost:7053/";
      }
     
 
@@ -89,6 +89,12 @@ Filter(status:number):Observable<any[]>{
    
 
   return this._http.get<any[]>(this.domain + "api/AJESData/FilterStatus?Status=" + status);
+  
+}
+
+UnMatchedEmiratedID():Observable<any[]>{
+
+  return this._http.get<any[]>(this.domain + "api/AJESData/UnMatchedEmiratedID/" + "8069")
   
 }
 
@@ -282,15 +288,21 @@ DailySummary(DatEnd:boolean):Observable<any>{
   
 }
 
+
+OfflineDashboard():Observable<any>{
+
+  return this._http.get<any>(this.domain + "api/Batch/OfflineDashboard" ); //Route Parameter 
+  
+}
 ProcessOfflineDashboard(filterDate:string):Observable<any>{
 
   return this._http.get<any>(this.domain + "api/Batch/ProcessOfflineDashboard/" + filterDate ); //Route Parameter 
   
 }
 
-ShowListing(lstType:string):Observable<any>{
+ShowListing(lstType:string,pramvaluedEnd:string):Observable<any>{
 
-  return this._http.get<any>(this.domain + "api/Batch/Listing/" + lstType ); //Route Parameter 
+  return this._http.get<any>(this.domain + "api/Batch/Listing/" + lstType + "/" + pramvaluedEnd ); //Route Parameter 
   
 }
 

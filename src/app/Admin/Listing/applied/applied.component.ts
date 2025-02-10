@@ -10,6 +10,7 @@ import { AJESService } from 'src/app/service/app.service';
 })
 export class AppliedComponent implements OnInit{
   pramvalue:any;
+  pramvaluedEnd:any
   Detail:any[];
   Heading:string;
 
@@ -19,6 +20,8 @@ export class AppliedComponent implements OnInit{
     
      this.route.paramMap.subscribe(param=>{
       this.pramvalue=param.get('lstType');
+      this.pramvaluedEnd=param.get('dEnd');
+      
 
       if (this.pramvalue=="Applied")
       {
@@ -35,7 +38,7 @@ export class AppliedComponent implements OnInit{
 
 ShowListing(){
   this.ngxService.start();
-  this.AJESservice.ShowListing( this.pramvalue).subscribe((data)=>  {
+  this.AJESservice.ShowListing( this.pramvalue,this.pramvaluedEnd).subscribe((data)=>  {
 
     this.Detail=data;
     this.ngxService.stop();

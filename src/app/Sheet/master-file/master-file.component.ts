@@ -76,6 +76,19 @@ export class MasterFileComponent implements OnInit {
     });
     }
 
+    UnMatchedEmiratedID()
+    {
+      
+      this.ngxService.start();
+      this.AJESservice.UnMatchedEmiratedID().subscribe((data)=>  {
+  
+        this.MasterRecord=data;
+        this.nTotalRecord=this.MasterRecord.length;
+        this.ngxService.stop();
+       
+      });
+      }
+
     generateBatch(projectCode:string)
     {
     

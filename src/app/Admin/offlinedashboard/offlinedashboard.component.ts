@@ -10,28 +10,47 @@ import { AJESService } from 'src/app/service/app.service';
 export class OfflinedashboardComponent implements OnInit {
 
   Data:any;
+  filterDates:any;
+  selectedValue:string;
+  showDashnoard:boolean=false;
 
 constructor(private AJESservice:AJESService,private ngxService:NgxUiLoaderService){}
    ngOnInit(): void {
   
-     this.ProcessOfflineDashboard();
+     this.ShowDashboard();
   
 
 }
 
 
-ProcessOfflineDashboard(){
+ShowDashboard(){
 
-  const filterOn=new Date().toISOString().split('T')[0];
   this.ngxService.start();
-   this.AJESservice.ProcessOfflineDashboard(filterOn).subscribe((data) => {
+   this.AJESservice.OfflineDashboard().subscribe((data) => {
+     this.filterDates = data;
+     console.log(this.filterDates);
+     this.ngxService.stop();
+  
 
+  }
+  );
+ }
+
+ ProcessOfflineDashboard(){
+  
+  //const filterOn=new Date().toISOString().split('T')[0];
+  this.ngxService.start();
+   this.AJESservice.ProcessOfflineDashboard(this.selectedValue).subscribe((data) => {
+    //var Result=JSON.parse(JSON.stringify(data));
     this.Data = data;
-    console.log(this.Data);
+    this.showDashnoard=true;
     this.ngxService.stop();
   
 
   }
   );
  }
+
+
+
 }

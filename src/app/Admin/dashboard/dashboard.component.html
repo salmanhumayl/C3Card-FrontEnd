@@ -95,7 +95,13 @@
                     
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <a [routerLink]="['/listing','Applied']"><i class="bi bi-people"></i></a>
+                      <ng-template  [ngIf]="msg.$Role.value=='S'">
+                        <a [routerLink]="['/listing','Applied',DailySuumary.dayEndOn]"><i class="bi bi-people"></i></a>
+                      </ng-template>  
+                      <ng-template  [ngIf]="msg.$Role.value=='A'">
+                        <i class="bi bi-people"></i>
+                      </ng-template>
+                      
                     </div>
                     <div class="ps-3"  *ngIf="isloading">
 
@@ -121,7 +127,12 @@
   
                     <div class="d-flex align-items-center">
                       <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                        <a [routerLink]="['/listing','AccNo']"><i class="bi bi-people"></i></a>
+                        <ng-template  [ngIf]="msg.$Role.value=='S'">
+                           <a [routerLink]="['/listing','AccNo']"><i class="bi bi-people"></i></a>
+                       </ng-template>
+                       <ng-template  [ngIf]="msg.$Role.value=='A'">
+                        <i class="bi bi-people"></i>
+                      </ng-template>
                       </div>
                       <div class="ps-3"  *ngIf="isloading">
                         <h6>{{DailySuumary.accountNoRvd}}</h6>
@@ -365,7 +376,7 @@
                  
                   <button type="button" class="btn btn-success" (click)="Refresh()">Refresh</button>
                 </ng-template>
-                <ng-template [ngIf]="msg.$Role.value=='AX'">
+                <ng-template [ngIf]="msg.$Role.value=='A'">
                   <span class="right">
                    <button type="button" class="btn btn-danger button-container" (click)="InitiateDayEnd()">DayEnd Prcoess</button>
                    </span>  
