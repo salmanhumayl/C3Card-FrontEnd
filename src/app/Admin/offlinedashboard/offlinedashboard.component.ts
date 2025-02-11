@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { AJESService } from 'src/app/service/app.service';
 
@@ -10,38 +11,29 @@ import { AJESService } from 'src/app/service/app.service';
 export class OfflinedashboardComponent implements OnInit {
 
   Data:any;
-  filterDates:any;
-  selectedValue:string;
+  selectedDate:any;
   showDashnoard:boolean=false;
+  filterOn:any
 
-constructor(private AJESservice:AJESService,private ngxService:NgxUiLoaderService){}
+constructor(private AJESservice:AJESService,private ngxService:NgxUiLoaderService,private route:ActivatedRoute){}
    ngOnInit(): void {
+    this.route.paramMap.subscribe(param=>{
+      this.selectedDate=param.get('selectedDate');
+       this.filterOn=new Date(this.selectedDate).toISOString().split('T')[0];
+     this.ProcessOfflineDashboard();
   
-     this.ShowDashboard();
-  
-
-}
-
-
-ShowDashboard(){
-
-  this.ngxService.start();
-   this.AJESservice.OfflineDashboard().subscribe((data) => {
-     this.filterDates = data;
-     console.log(this.filterDates);
-     this.ngxService.stop();
+    }
+    );
   
 
-  }
-  );
- }
+   }
+
 
  ProcessOfflineDashboard(){
   
   //const filterOn=new Date().toISOString().split('T')[0];
   this.ngxService.start();
-   this.AJESservice.ProcessOfflineDashboard(this.selectedValue).subscribe((data) => {
-    //var Result=JSON.parse(JSON.stringify(data));
+    this.AJESservice.ProcessOfflineDashboard(this.selectedDate).subscribe((data) => {
     this.Data = data;
     this.showDashnoard=true;
     this.ngxService.stop();

@@ -64,7 +64,27 @@ export class ListofBatachComponent {
   });
 
   }
-
+  RevertBatch(BatchNo:string,ProjectCode:string)
+  {
+   
+    const shoulddelete=window.confirm("Are you sure to Revert Batch");
+    if (shoulddelete){
+    this.ngxService.start();
+    this.AJESservice.RevertFullBatch(BatchNo,ProjectCode).subscribe((data)=>  {
+     
+      var Result=JSON.parse(JSON.stringify(data));
+      
+      if (Result.message=="Process")
+      {
+        this.ngxService.stop();
+        alert("Revert Successfully");
+        this.ListOfBatches();
+      }
+     
+     
+    })
+    }
+  }
 
   ProcessBatch(BatchNo:string,ProjectCode:string)
   {

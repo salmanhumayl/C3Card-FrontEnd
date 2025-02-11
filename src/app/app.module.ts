@@ -41,6 +41,7 @@ import { OfflinedashboardComponent } from './Admin/offlinedashboard/offlinedashb
 import { AppliedComponent } from './Admin/Listing/applied/applied.component';
 import { MyModelComponent } from './Admin/Listing/my-model/my-model.component';
 import { DayEndMessageComponent } from './Admin/day-end-message/day-end-message.component';
+import { FilterofflinedashboardComponent } from './Admin/filterofflinedashboard/filterofflinedashboard.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { DayEndMessageComponent } from './Admin/day-end-message/day-end-message.
     OfflinedashboardComponent,
     AppliedComponent,
     MyModelComponent,
-    DayEndMessageComponent
+    DayEndMessageComponent,
+    FilterofflinedashboardComponent
   ],
   imports: [
     BrowserModule,

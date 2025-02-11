@@ -1,0 +1,46 @@
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { AJESService } from 'src/app/service/app.service';
+
+@Component({
+  selector: 'app-filterofflinedashboard',
+  templateUrl: './filterofflinedashboard.component.html',
+  styleUrls: ['./filterofflinedashboard.component.css']
+})
+export class FilterofflinedashboardComponent {
+
+  filterDates:any;
+  selectedValue:string;
+constructor(private AJESservice:AJESService,private ngxService:NgxUiLoaderService,private router:Router){}
+   ngOnInit(): void {
+  
+     this.ShowDashboard();
+  
+
+}
+
+  ShowDashboard(){
+
+    this.ngxService.start();
+     this.AJESservice.OfflineDashboard().subscribe((data) => {
+     this.filterDates = data;
+      this.ngxService.stop();
+    
+  
+    }
+    );
+   }
+
+    onSubmitlogin(form:NgForm){
+    //alert(this.filterDates);
+
+    const filterOn=new Date(this.filterDates).toISOString().split('T')[0];
+   // alert(filterOn);
+    this.router.navigate(['/offlinedashboard',filterOn])
+    
+    
+   }
+  
+}

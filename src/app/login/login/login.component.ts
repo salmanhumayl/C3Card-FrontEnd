@@ -42,7 +42,7 @@ export class LoginComponent {
           this.router.navigate(['/dashboard']);
         }
         else {
-          this.router.navigate(['/offdashboard',true]);
+          this.router.navigate(['/filteroffdashboard']);
         }
         this.ngxService.stop();
        }

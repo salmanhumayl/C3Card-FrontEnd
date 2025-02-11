@@ -59,9 +59,19 @@
             <span>Dashboard</span>
           </a>
         </li><!-- End Dashboard Nav -->
+        <li class="nav-item">
+          <a class="nav-link collapsed"[routerLink]="['filteroffdashboard']">
+            <i class="bi bi-binoculars"></i>
+            <span>OffLine Dashboard</span>
+          </a>
+        </li>    
+     
+
       </ng-template>  
 
 
+    
+ 
       <ng-template  [ngIf]="msg.$Role.value=='A'">
           <li class="nav-item">
             <a class="nav-link " [routerLink]="['masterfile']">
@@ -138,7 +148,7 @@
       
       <ng-template  [ngIf]="msg.$Role.value=='S'">
         <li class="nav-item">
-          <a class="nav-link collapsed"[routerLink]="['offdashboard',true]">
+          <a class="nav-link collapsed"[routerLink]="['filteroffdashboard']">
             <i class="bi bi-binoculars"></i>
             <span>Dashboard</span>
           </a>

@@ -15,7 +15,10 @@ export class DashboardComponent implements OnInit {
   @Input()
   DailySuumary:any;
   showModal:boolean=false;
- DayEndPwd:string;
+  DayEndPwd:string;
+ 
+  @Input()
+  selectedValue:string;
 
   isloading:boolean=false;
   pramvalue:any;
@@ -31,8 +34,9 @@ export class DashboardComponent implements OnInit {
     this.route.paramMap.subscribe(param=>{
       this.pramvalue=param.get('show');
    
-      if (!this.pramvalue==true)
+      if (this.selectedValue==undefined  )
       {
+      
          this.DailySummary();
   
       }

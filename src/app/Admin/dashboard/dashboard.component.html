@@ -18,15 +18,20 @@
           <div class="row">
 
             <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-3">
-              <div class="card info-card sales-card">
+            <div class="col-xxl-4 col-md-3"  >
+              <div class="card info-card sales-card"  >
 
-                <div class="card-body">
+                <div class="card-body"  >
                   <h5 class="card-title">Cash Salary Count (Ezware Emp Master) </h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people"></i>
+                      <ng-template  [ngIf]="this.selectedValue!=undefined">
+                        <a [routerLink]="['/listing','Cash',selectedValue]"><i class="bi bi-people"></i></a>
+                      </ng-template>  
+                      <ng-template  [ngIf]="this.selectedValue==undefined">
+                        <i class="bi bi-people"></i>
+                      </ng-template>
                     </div>
                     <div class="ps-3"  *ngIf="isloading">
                       <h6>{{DailySuumary.cash}}</h6>
@@ -87,18 +92,16 @@
               <div class="card info-card customers-card">
 
          
-              
-                   
                 <div class="card-body">
                   
                     <h5 class="card-title">Account Under Process</h5>
                     
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <ng-template  [ngIf]="msg.$Role.value=='S'">
-                        <a [routerLink]="['/listing','Applied',DailySuumary.dayEndOn]"><i class="bi bi-people"></i></a>
+                      <ng-template  [ngIf]="this.selectedValue!=undefined">
+                        <a [routerLink]="['/listing','Applied',selectedValue]"><i class="bi bi-people"></i></a>
                       </ng-template>  
-                      <ng-template  [ngIf]="msg.$Role.value=='A'">
+                      <ng-template  [ngIf]="this.selectedValue==undefined">
                         <i class="bi bi-people"></i>
                       </ng-template>
                       
@@ -127,10 +130,10 @@
   
                     <div class="d-flex align-items-center">
                       <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                        <ng-template  [ngIf]="msg.$Role.value=='S'">
-                           <a [routerLink]="['/listing','AccNo']"><i class="bi bi-people"></i></a>
+                        <ng-template  [ngIf]="this.selectedValue!=undefined">
+                           <a [routerLink]="['/listing','AccNo',selectedValue]"><i class="bi bi-people"></i></a>
                        </ng-template>
-                       <ng-template  [ngIf]="msg.$Role.value=='A'">
+                       <ng-template  [ngIf]="this.selectedValue==undefined">
                         <i class="bi bi-people"></i>
                       </ng-template>
                       </div>
@@ -147,7 +150,7 @@
 
               </div><!-- End Customers Card -->
 
-              <div class="col-xxl-4 col-md-3">
+              <div class="col-xxl-4 col-md-4">
 
                 <div class="card info-card customers-card">
   
@@ -178,11 +181,11 @@
 
               <div class="col-xxl-4 col-md-2">
 
-                <div class="card info-card customers-card">
+                <div class="card info-card customers-card" style="background-color: yellow;">
   
            
   
-                  <div class="card-body">
+                  <div class="card-body" >
                     <h5 class="card-title">Total </h5>
   
                     <div class="d-flex align-items-center">
@@ -278,7 +281,7 @@
                 <th colspan="2">
                         Bank/Card Received <br>  Off-Shore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On-Shore
                       </th>
-                <th colspan="2">
+                <th colspan="2" style="background-color: yellow;">
                         Total <br>  Off-Shore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On-Shore
                       </th>
             
@@ -299,8 +302,8 @@
                         <td>{{DailySuumary.ajesOn}}</td>
                         <td>{{DailySuumary.hAJSoff}}</td>
                       
-                        <td>{{DailySuumary.ajesOn + DailySuumary.totalAjesY}}</td>  
-                        <td>{{DailySuumary.hAJSoff + DailySuumary.totalAjesN}}</td>
+                        <td style="background-color: yellow;">{{DailySuumary.ajesOn + DailySuumary.totalAjesY}}</td>  
+                        <td style="background-color: yellow;">{{DailySuumary.hAJSoff + DailySuumary.totalAjesN}}</td>
                         
                     </tr>
                         <tr style="border: solid">
@@ -314,8 +317,8 @@
                             <td>{{DailySuumary.civilOn}}</td>
                             <td>{{DailySuumary.hCiviloff}}</td>
                         
-                            <td>{{DailySuumary.civilOn +DailySuumary.totalCivilY}}</td>
-                            <td>{{DailySuumary.hCiviloff + DailySuumary.totalCivilN}}</td>
+                            <td style="background-color:yellow;">{{DailySuumary.civilOn +DailySuumary.totalCivilY}}</td>
+                            <td style="background-color:yellow;">{{DailySuumary.hCiviloff + DailySuumary.totalCivilN}}</td>
                             
                         </tr>
                         <tr style="border: solid">
@@ -329,8 +332,8 @@
                             <td>{{DailySuumary.mecOn}}</td>
                             <td>{{DailySuumary.hMecoff}}</td>
 
-                            <td>{{DailySuumary.mecOn + DailySuumary.totalMecY}}</td>
-                            <td>{{DailySuumary.hMecoff + DailySuumary.totalMecN}}</td>
+                            <td style="background-color:yellow;">{{DailySuumary.mecOn + DailySuumary.totalMecY}}</td>
+                            <td style="background-color:yellow;">{{DailySuumary.hMecoff + DailySuumary.totalMecN}}</td>
                             
                         </tr>
                         <tr style="border: solid">
@@ -344,8 +347,8 @@
                             <td>{{DailySuumary.eiOn}}</td>
                             <td>{{DailySuumary.hEIoff}}</td>
 
-                            <td>{{DailySuumary.eiOn + DailySuumary.totalEIY}}</td>
-                            <td>{{DailySuumary.hEIoff + DailySuumary.totalEIN}}</td>
+                            <td style="background-color:yellow;">{{DailySuumary.eiOn + DailySuumary.totalEIY}}</td>
+                            <td style="background-color:yellow;">{{DailySuumary.hEIoff + DailySuumary.totalEIN}}</td>
                            
                            
                         </tr>
@@ -362,8 +365,8 @@
                           <td>{{DailySuumary.accAJESN +  DailySuumary.accCivilN + DailySuumary.accMechnicalN + DailySuumary.accEIN}}</td>
                           <td>{{DailySuumary.ajesOn +  DailySuumary.civilOn + DailySuumary.mecOn +  DailySuumary.eiOn}}</td>
                           <td>{{DailySuumary.hAJSoff +  DailySuumary.hCiviloff +  DailySuumary.hMecoff +  DailySuumary.hEIoff}} </td>
-                          <td>{{DailySuumary.ajesOn + DailySuumary.totalAjesY + DailySuumary.civilOn +DailySuumary.totalCivilY + DailySuumary.mecOn + DailySuumary.totalMecY + DailySuumary.eiOn + DailySuumary.totalEIY}}</td>
-                          <td>{{DailySuumary.hAJSoff + DailySuumary.totalAjesN  + DailySuumary.hCiviloff + DailySuumary.totalCivilN + DailySuumary.hMecoff + DailySuumary.totalMecN +  DailySuumary.hEIoff + DailySuumary.totalEIN}}</td>
+                          <td style="background-color:yellow;">{{DailySuumary.ajesOn + DailySuumary.totalAjesY + DailySuumary.civilOn +DailySuumary.totalCivilY + DailySuumary.mecOn + DailySuumary.totalMecY + DailySuumary.eiOn + DailySuumary.totalEIY}}</td>
+                          <td style="background-color:yellow;">{{DailySuumary.hAJSoff + DailySuumary.totalAjesN  + DailySuumary.hCiviloff + DailySuumary.totalCivilN + DailySuumary.hMecoff + DailySuumary.totalMecN +  DailySuumary.hEIoff + DailySuumary.totalEIN}}</td>
                          
                       </tr>
 
@@ -372,11 +375,11 @@
                     </tbody>
                 </table>
                 <div class ="button-container">
-                <ng-template [ngIf]="msg.$Role.value=='A'">
+                <ng-template [ngIf]="msg.$Role.value=='A' && this.selectedValue==undefined">
                  
                   <button type="button" class="btn btn-success" (click)="Refresh()">Refresh</button>
                 </ng-template>
-                <ng-template [ngIf]="msg.$Role.value=='A'">
+                <ng-template [ngIf]="msg.$Role.value=='A' && this.selectedValue==undefined">
                   <span class="right">
                    <button type="button" class="btn btn-danger button-container" (click)="InitiateDayEnd()">DayEnd Prcoess</button>
                    </span>  

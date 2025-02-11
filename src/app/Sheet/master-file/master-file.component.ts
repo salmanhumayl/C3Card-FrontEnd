@@ -222,7 +222,7 @@ ExportToExcel(){
 
          let data=document.getElementById("table-data");
 
-         const ws:XLSX.WorkSheet=XLSX.utils.table_to_sheet(data)
+         const ws:XLSX.WorkSheet=XLSX.utils.table_to_sheet(data,{raw:true});
 
       /**Generate workbook and add the sheet  */
         const wb:XLSX.WorkBook=XLSX.utils.book_new();

@@ -20,6 +20,7 @@ import { CardAccountDetailComponent } from './Sheet/card-account-detail/card-acc
 import { OfflinedashboardComponent } from './Admin/offlinedashboard/offlinedashboard.component';
 import { AppliedComponent } from './Admin/Listing/applied/applied.component';
 import { DayEndMessageComponent } from './Admin/day-end-message/day-end-message.component';
+import { FilterofflinedashboardComponent } from './Admin/filterofflinedashboard/filterofflinedashboard.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent,pathMatch:'full'},
@@ -40,7 +41,8 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'logout',component:LogoutComponent},
   {path:'dashboard',component:DashboardComponent},
-  {path:'offdashboard/:show',component:OfflinedashboardComponent},
+  {path:'filteroffdashboard',component:FilterofflinedashboardComponent},
+  {path:'offlinedashboard/:selectedDate',component:OfflinedashboardComponent},
   {path:'listing/:lstType/:dEnd',component:AppliedComponent},
   {path:'DayEnd',component:DayEndMessageComponent},
   {path:'**',redirectTo:'masterfile',pathMatch:'full'}
