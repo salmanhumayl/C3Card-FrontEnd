@@ -34,11 +34,11 @@ constructor(private AJESservice:AJESService,private ngxService:NgxUiLoaderServic
    }
 
     onSubmitlogin(form:NgForm){
-    //alert(this.filterDates);
+    //alert(this.selectedValue);
 
-    const filterOn=new Date(this.filterDates).toISOString().split('T')[0];
-   // alert(filterOn);
-    this.router.navigate(['/offlinedashboard',filterOn])
+    //const filterOn=new Date(this.selectedValue).toISOString().split('T')[0];
+    //alert(filterOn);
+    this.router.navigate(['/offlinedashboard',this.selectedValue])
     
     
    }

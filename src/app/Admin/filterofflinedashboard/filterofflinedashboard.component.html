@@ -13,7 +13,7 @@
                 <label for="inputAddress" class="form-label">Date </label>
                 <select class="form-select" id="dates" name="dates" [(ngModel)]="selectedValue">
                     <option value=99 selected >Please Select</option>
-                  <option *ngFor="let option of filterDates" >
+                    <option *ngFor="let option of filterDates" [value]="option">
                    {{option}}</option>
                 
               </select>

@@ -32,7 +32,7 @@
                     <td>{{e.empCode}}</td>
                     <td>{{e.empName}}</td>
                     <ng-template [ngIf]="e.joiningDate!=null">
-                      <td>{{e.joiningDate}}</td>
+                      <td>{{e.joiningDate | date:'dd'}}/{{e.joiningDate | date:'MM'}}/{{e.joiningDate | date:'yyyy'}}</td>
                    </ng-template>    
                     <ng-template [ngIf]="e.joiningDate==null">
                       <td></td>
