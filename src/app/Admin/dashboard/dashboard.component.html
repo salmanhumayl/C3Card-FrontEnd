@@ -172,7 +172,12 @@
   
                     <div class="d-flex align-items-center">
                       <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                        <i class="bi bi-people"></i>
+                        <ng-template  [ngIf]="this.selectedValue!=undefined">
+                          <a [routerLink]="['/listing','BCard',selectedValue]"><i class="bi bi-people"></i></a>
+                      </ng-template>
+                      <ng-template  [ngIf]="this.selectedValue==undefined">
+                       <i class="bi bi-people"></i>
+                     </ng-template>
                       </div>
                       <div class="ps-3"  *ngIf="isloading">
                         <h6>{{DailySuumary.htransfer}}</h6>
@@ -201,7 +206,12 @@
   
                     <div class="d-flex align-items-center">
                       <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                        <i class="bi bi-people"></i>
+                        <ng-template  [ngIf]="this.selectedValue!=undefined">
+                          <a [routerLink]="['/lstTotal',selectedValue]"><i class="bi bi-people"></i></a>
+                      </ng-template>
+                      <ng-template  [ngIf]="this.selectedValue==undefined">
+                       <i class="bi bi-people"></i>
+                     </ng-template>
                       </div>
                       <div class="ps-3"  *ngIf="isloading">
                         <h6>{{DailySuumary.cash + DailySuumary.htransfer}} </h6>
@@ -229,7 +239,12 @@
   
                     <div class="d-flex align-items-center">
                       <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                        <i class="bi bi-people"></i>
+                        <ng-template  [ngIf]="this.selectedValue!=undefined">
+                          <a [routerLink]="['/listing','RVD',selectedValue]"><i class="bi bi-people"></i></a>
+                      </ng-template>
+                      <ng-template  [ngIf]="this.selectedValue==undefined">
+                       <i class="bi bi-people"></i>
+                     </ng-template>
                       </div>
                       <div class="ps-3"  *ngIf="isloading">
                         <h6>{{DailySuumary.recevied}}</h6>
@@ -254,7 +269,12 @@
         
                           <div class="d-flex align-items-center">
                             <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                              <i class="bi bi-people"></i>
+                              <ng-template  [ngIf]="this.selectedValue!=undefined">
+                                <a [routerLink]="['/listing','ACT',selectedValue]"><i class="bi bi-people"></i></a>
+                            </ng-template>
+                            <ng-template  [ngIf]="this.selectedValue==undefined">
+                             <i class="bi bi-people"></i>
+                           </ng-template>
                             </div>
                             <div class="ps-3"  *ngIf="isloading">
                               <h6>{{DailySuumary.activated}}</h6>
@@ -409,6 +429,24 @@
                         <tr *ngFor="let row of getTableData()">
                           <td>{{ row.particular }}</td>
                           <td *ngFor="let day of DailySuumary.ldailyClosing">{{ row[day.closingDate] }}</td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+
+
+                    <table class="table table-hover borderless datatable" style="border: solid;font-size:large;" >
+                      <thead>
+                        <tr>
+                          <th>Particular</th>
+                          <th *ngFor="let day of DailySuumary.lTotalClosing">{{day.closingDate | date:'dd'}}/{{day.closingDate | date:'MM'}}/{{day.closingDate | date:'yy'}}</th>
+                         
+                        </tr>
+                      </thead>
+                      <tbody style="border: solid">
+                        <tr *ngFor="let row of getTableDataTotal()">
+                          <td style="background-color: yellow;">{{ row.particular }}</td>
+                          <td *ngFor="let day of DailySuumary.lTotalClosing" style="background-color: yellow;">{{ row[day.closingDate] }}</td>
                         </tr>
                         
                       </tbody>

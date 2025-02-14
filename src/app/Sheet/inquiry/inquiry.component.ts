@@ -26,7 +26,7 @@ export class InquiryComponent {
     this.AJESservice.ListOfBatchesHistory().subscribe((data)=>  {
 
       this.Batches=data;
-      
+   
       this.ngxService.stop();
     });
   }
@@ -40,7 +40,7 @@ export class InquiryComponent {
   {
     
     this.ngxService.start();
-    this.AJESservice.DownloadATMCardRequest(Batchno).subscribe((data)=>  {
+    this.AJESservice.DownloadATMCardRequestInquiry(Batchno).subscribe((data)=>  {
     let blob:Blob=data.body as Blob;
     let url=window.URL.createObjectURL(blob);
     window.open(url);  

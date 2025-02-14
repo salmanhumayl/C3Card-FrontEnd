@@ -34,7 +34,7 @@ export class AJESService {
      {
     this.domain="http://ajes-webapp2.ajes.ae:4223/";
       
-  //this.domain="https://localhost:7053/";
+   //  this.domain="https://localhost:7053/";
      }
     
 
@@ -145,9 +145,10 @@ BatchDetail(BatchNo:string):Observable<any[]>{
 RejectedBatchItems(BatchNo:string):Observable<any[]>{
   return this._http.get<any[]>(this.domain + "api/AJESData/RejectedBatchItems?BatchNo=" +BatchNo);
 }
+BatchesMovement(BatchNo:string,ProjectCode:String):Observable<any[]>{
 
-
-
+  return this._http.get<any[]>(this.domain + "api/AJESData/BatchesMovement/" + BatchNo + "/" + ProjectCode );
+}
 
 
 
@@ -279,10 +280,14 @@ BatchRevert (model :UpDateStatus) :Observable<any> {
 }
 
 DownloadATMCardRequest(BatchNo:string){
-  return this._http.get(this.domain + "api/AJESData/DownloadATMCardRequest?BatchNo=" + BatchNo,{observe:'response',responseType:'blob'});
+  return this._http.get(this.domain + "api/AJESData/DownloadATMCardRequest/" + BatchNo,{observe:'response',responseType:'blob'});
   
 }
 
+DownloadATMCardRequestInquiry(BatchNo:string){
+  return this._http.get(this.domain + "api/AJESData/DownloadATMCardRequestInquiry/" + BatchNo,{observe:'response',responseType:'blob'});
+  
+}
 
 
 
@@ -305,6 +310,12 @@ ProcessOfflineDashboard(filterDate:string):Observable<any>{
 ShowListing(lstType:string,pramvaluedEnd:string):Observable<any>{
 
   return this._http.get<any>(this.domain + "api/Batch/Listing/" + lstType + "/" + pramvaluedEnd ); //Route Parameter 
+  
+}
+
+ShowListingTotal(pramvaluedEnd:string):Observable<any>{
+
+  return this._http.get<any>(this.domain + "api/Batch/ProcessTotalOfflineDashboard/"  + pramvaluedEnd ); //Route Parameter 
   
 }
 

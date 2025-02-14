@@ -42,6 +42,8 @@ import { AppliedComponent } from './Admin/Listing/applied/applied.component';
 import { MyModelComponent } from './Admin/Listing/my-model/my-model.component';
 import { DayEndMessageComponent } from './Admin/day-end-message/day-end-message.component';
 import { FilterofflinedashboardComponent } from './Admin/filterofflinedashboard/filterofflinedashboard.component';
+import { CardMovementComponent } from './Admin/card-movement/card-movement.component';
+import { TotalComponent } from './Admin/total/total.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,9 @@ import { FilterofflinedashboardComponent } from './Admin/filterofflinedashboard/
     AppliedComponent,
     MyModelComponent,
     DayEndMessageComponent,
-    FilterofflinedashboardComponent
+    FilterofflinedashboardComponent,
+    CardMovementComponent,
+    TotalComponent
   ],
   imports: [
     BrowserModule,

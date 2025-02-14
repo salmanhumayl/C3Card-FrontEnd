@@ -76,13 +76,38 @@ export class DashboardComponent implements OnInit {
   
       return transformedData;
     }
+
+    getTableDataTotal(): any[] {
+      let transformedDataTotal: any[] = [];
+    
+      let categoriesTotal = [
+        { key: "totalOff", label: "Off-Shore" },
+        { key: "totalOn", label: "On-Shore" },
+        
+      ];
+  
+      categoriesTotal.forEach(categorytotal => {
+        let rowTotal: any = { particular: categorytotal.label };
+
+        let total = 0;
+        
+        this.DailySuumary.lTotalClosing.forEach((dayTotal:any) => {
+        
+          rowTotal[dayTotal.closingDate] = dayTotal[categorytotal.key];
+          
+         // total += day[category.key];
+        });
+  
+       //  row["Total"] = total;
+       transformedDataTotal.push(rowTotal);
+      });
+    
+      return transformedDataTotal;
+    }
      
    ngOnInit(): void {
 
-    
-
-
-  
+      
     this.route.paramMap.subscribe(param=>{
       this.pramvalue=param.get('show');
    
