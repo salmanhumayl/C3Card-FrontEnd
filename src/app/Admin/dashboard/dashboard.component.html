@@ -387,7 +387,7 @@
                         </tr>
 
                      
-                      <tr style="background-color: darkgray;">
+                      <tr style="background-color: darkgray;font-weight: bold">
                           <td style="font-weight: bold;">Total</td>
                          
                           <td>{{DailySuumary.balOnAJES +  DailySuumary.balOnCivil +  DailySuumary.balOnMec +  DailySuumary.balOnEI}}</td>
@@ -432,6 +432,15 @@
                         </tr>
                         
                       </tbody>
+                      <tfoot>
+                        <tr *ngFor="let row of getTableDataGrandTotal()">
+                          <td style="background-color: yellow;font-weight:bold">{{ row.particular }}</td>
+                          <td *ngFor="let day of DailySuumary.lTotalClosing" style="background-color: yellow;font-weight:bold">{{ row[day.closingDate] }}</td>
+
+                        </tr>
+                      </tfoot>
+
+
                     </table>
 
 
@@ -450,6 +459,7 @@
                         </tr>
                         
                       </tbody>
+                    
                     </table>
                
                   </div>

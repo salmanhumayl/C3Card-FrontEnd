@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { PendingBatches } from 'src/app/Model/PendingBatches';
 import { UpDateStatus } from 'src/app/Model/UpDateStatus';
@@ -18,9 +19,25 @@ export class CardAccountDetailComponent implements OnInit {
   allSelected=false;
   showModal:boolean=false;
   UpdateModel:UpDateStatus=new UpDateStatus();
+  brDate:Date;
+  
+  lItemSelected:boolean=false;
+
+    datePickerConfig:Partial<BsDatepickerConfig>
+  
+
    constructor(private AJESservice:AJESService,private route:ActivatedRoute,private ngxService:NgxUiLoaderService){
   
-      
+    this.datePickerConfig=Object.assign({},
+      {
+        todayHighlight: true,
+        containerClass:'theme-dark-blue',
+        showWeekNumbers:false,
+        dateInputFormat:'DD/MM/YYYY',
+        customTodayClass:'custom-today-class'
+       
+        
+      });
   
     }
   
@@ -46,9 +63,20 @@ export class CardAccountDetailComponent implements OnInit {
 
     ReceviedAccountNoCards()
   {
-
     
-     this.ngxService.start();
+    this.Detail.forEach(item =>
+      {
+        if (item.accNoStatus==true && this.brDate!=undefined){
+          item.accNoReceivedOn=new Date(this.brDate);
+           this.lItemSelected=true;
+        }
+      });
+
+    if (!this.lItemSelected){
+      alert("Both Date and Employee must be selected for processing!..");
+      return;
+    }
+    this.ngxService.start();
     
      this.AJESservice.UpdateCardAccountStatus(this.Detail).subscribe((data)=>  {
       var Result=JSON.parse(JSON.stringify(data));
@@ -57,6 +85,8 @@ export class CardAccountDetailComponent implements OnInit {
         this.ngxService.stop();
         alert("C3 Card Acc No Received Successfully ");
         this.getDetail();
+       
+        this.lItemSelected=false;
       }
     
     });

@@ -11,6 +11,8 @@ export interface PendingBatches {
     activationStatus:boolean;
     accNoStatus:boolean;
     emidstatus:boolean;
+    accNoReceivedOn:Date;
+    actualCardReceivedOn:Date;
     userName:string;
   
   }

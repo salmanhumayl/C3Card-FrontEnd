@@ -71,6 +71,7 @@ export class DashboardComponent implements OnInit {
         });
   
        //  row["Total"] = total;
+       console.log(row);
         transformedData.push(row);
       });
   
@@ -104,6 +105,28 @@ export class DashboardComponent implements OnInit {
     
       return transformedDataTotal;
     }
+
+
+    getTableDataGrandTotal(): any[] {
+        let transformedDataTotal: any[] = [];
+        
+        let rowTotal: any = { particular: "Total" };
+
+        let total = 0;
+        
+        this.DailySuumary.ldailyClosing.forEach((dayTotal:any) => {
+      //  console.log(dayTotal.closingDate);
+      //  console.log(dayTotal["toBeApplied"]);
+     //   console.log(dayTotal["accUnderProcess"]);
+          rowTotal[dayTotal.closingDate] = dayTotal["toBeApplied"] + dayTotal["accUnderProcess"] + dayTotal["cardunderProcess"] + dayTotal["bankCard"];
+      
+        });
+      //  console.log(rowTotal);
+        transformedDataTotal.push(rowTotal);
+         return transformedDataTotal;
+    }
+    
+    
      
    ngOnInit(): void {
 

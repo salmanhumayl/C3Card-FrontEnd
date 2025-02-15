@@ -67,7 +67,7 @@ PendingCardsReceving(){
   this.AJESservice.PendingCardsReceving().subscribe((data)=>  {
 
     this.Cards=data;
-  console.log(this.Cards);
+  //console.log(this.Cards);
 
  
     this.ngxService.stop();

@@ -14,13 +14,26 @@ import { AJESService } from 'src/app/service/app.service';
 export class CardDetailComponent implements OnInit {
   BatchNo:any;
   Detail:PendingBatches[];
- 
+  brDate:Date;
   allSelected=false;
   showModal:boolean=false;
+  lItemSelected:boolean=false;
   UpdateModel:UpDateStatus=new UpDateStatus();
+
+  datePickerConfig: { todayHighlight: boolean; containerClass: string; showWeekNumbers: boolean; dateInputFormat: string; customTodayClass: string; };
+  
   constructor(private AJESservice:AJESService,private route:ActivatedRoute,private ngxService:NgxUiLoaderService){
 
-    
+    this.datePickerConfig=Object.assign({},
+      {
+        todayHighlight: true,
+        containerClass:'theme-dark-blue',
+        showWeekNumbers:false,
+        dateInputFormat:'DD/MM/YYYY',
+        customTodayClass:'custom-today-class'
+       
+        
+      });
 
   }
 
@@ -46,7 +59,19 @@ export class CardDetailComponent implements OnInit {
   ReceviedCards()
   {
 
-    
+    this.Detail.forEach(item =>
+      {
+        if (item.receivingStatus==true && this.brDate!=undefined){
+          item.actualCardReceivedOn=new Date(this.brDate);
+           this.lItemSelected=true;
+        }
+      });
+
+      if (!this.lItemSelected){
+        alert("Both Date and Employee must be selected for processing!..");
+        return;
+      }
+
      this.ngxService.start();
     
      this.AJESservice.UpdateCardReceivingStatus(this.Detail).subscribe((data)=>  {
@@ -56,6 +81,7 @@ export class CardDetailComponent implements OnInit {
         this.ngxService.stop();
         alert("C3 Card Received Successfully ");
         this.getDetail();
+        this.lItemSelected=false;
       }
     
     });

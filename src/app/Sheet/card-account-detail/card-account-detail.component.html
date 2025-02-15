@@ -1,20 +1,37 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>View Detail Batch No :  {{BatchNo}}</h1>
+      <h1>Batch No :  {{BatchNo}}</h1>
       
     </div><!-- End Page Title -->
 <section class="section">
+    
+    <div class="row">
+          <div class="card">
+            <div class="card-body">
+          <div class="col-lg-6">
+                <label for="inputNanme4" class="form-label" style="font-weight: bold;font-size: medium;">Select Date Account No Received</label>
+                <input type="text" class="form-control"
+                id="receivedDate" 
+                name="receivedDate"
+                [(ngModel)]="brDate" 
+                bsDatepicker
+                [bsConfig]="datePickerConfig"/>              
+          </div>
+          <div class="col-lg-6">
+            <button type="button" class="btn btn-success btn-lg mt-4" (click)="ReceviedAccountNoCards()">Save  
+                </button>
+      
+          </div>
+        </div>
+          </div>
+    </div>
+
     <div class="row">
   
      <div class="col-lg-12">
 
-      <div class="card">
-        <div class="card-body">
-         <button type="button" class="btn btn-success btn-lg" (click)="ReceviedAccountNoCards()">C3 Card Acc/No # Received  </button>
-         </div>
-       </div>   
-  
+      
         <div class="card">
           <div class="card-body">
           
