@@ -45,6 +45,7 @@ import { FilterofflinedashboardComponent } from './Admin/filterofflinedashboard/
 import { CardMovementComponent } from './Admin/card-movement/card-movement.component';
 import { TotalComponent } from './Admin/total/total.component';
 import { PendingBatchesComponent } from './Sheet/pending-batches/pending-batches.component';
+import { OnlinelistingComponent } from './Admin/onlinelisting/onlinelisting.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { PendingBatchesComponent } from './Sheet/pending-batches/pending-batches
     FilterofflinedashboardComponent,
     CardMovementComponent,
     TotalComponent,
-    PendingBatchesComponent
+    PendingBatchesComponent,
+    OnlinelistingComponent
   ],
   imports: [
     BrowserModule,

@@ -71,7 +71,7 @@ export class DashboardComponent implements OnInit {
         });
   
        //  row["Total"] = total;
-       console.log(row);
+     //  console.log(row);
         transformedData.push(row);
       });
   

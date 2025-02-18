@@ -31,7 +31,7 @@
                         <a [routerLink]="['/listing','Cash',selectedValue]"><i class="bi bi-people"></i></a>
                       </ng-template>  
                       <ng-template  [ngIf]="this.selectedValue==undefined">
-                        <i class="bi bi-people"></i>
+                        <a [routerLink]="['/onlinelisting','Cash']"><i class="bi bi-people"></i></a>
                       </ng-template>
                     </div>
                     <div class="ps-3"  *ngIf="isloading">
@@ -84,7 +84,7 @@
                         <a [routerLink]="['/listing','EMID',selectedValue]"><i class="bi bi-people"></i></a>
                       </ng-template>  
                       <ng-template  [ngIf]="this.selectedValue==undefined">
-                        <i class="bi bi-people"></i>
+                        <a [routerLink]="['/onlinelisting','EMID']"><i class="bi bi-people"></i></a>
                       </ng-template>
                     </div>
                     <div class="ps-3"  *ngIf="isloading">
@@ -113,7 +113,7 @@
                         <a [routerLink]="['/listing','Applied',selectedValue]"><i class="bi bi-people"></i></a>
                       </ng-template>  
                       <ng-template  [ngIf]="this.selectedValue==undefined">
-                        <i class="bi bi-people"></i>
+                        <a [routerLink]="['/onlinelisting','Applied']"><i class="bi bi-people"></i></a>
                       </ng-template>
                       
                     </div>
@@ -145,7 +145,7 @@
                            <a [routerLink]="['/listing','AccNo',selectedValue]"><i class="bi bi-people"></i></a>
                        </ng-template>
                        <ng-template  [ngIf]="this.selectedValue==undefined">
-                        <i class="bi bi-people"></i>
+                        <a [routerLink]="['/onlinelisting','AccNo']"><i class="bi bi-people"></i></a>
                       </ng-template>
                       </div>
                       <div class="ps-3"  *ngIf="isloading">
@@ -176,7 +176,7 @@
                           <a [routerLink]="['/listing','BCard',selectedValue]"><i class="bi bi-people"></i></a>
                       </ng-template>
                       <ng-template  [ngIf]="this.selectedValue==undefined">
-                       <i class="bi bi-people"></i>
+                        <a [routerLink]="['/onlinelisting','BCard']"><i class="bi bi-people"></i></a>
                      </ng-template>
                       </div>
                       <div class="ps-3"  *ngIf="isloading">
@@ -210,7 +210,7 @@
                           <a [routerLink]="['/lstTotal',selectedValue]"><i class="bi bi-people"></i></a>
                       </ng-template>
                       <ng-template  [ngIf]="this.selectedValue==undefined">
-                       <i class="bi bi-people"></i>
+                        <a [routerLink]="['/onlinelisting','Total']"><i class="bi bi-people"></i></a>
                      </ng-template>
                       </div>
                       <div class="ps-3"  *ngIf="isloading">
