@@ -154,10 +154,30 @@ export class DashboardComponent implements OnInit {
 }
 
 
+
+Download(){
+
+  this.ngxService.start();
+   this.AJESservice.DownloadDailySummary(false,true).subscribe((data) => {
+
+    let blob:Blob=data.body as Blob;
+    let url=window.URL.createObjectURL(blob);
+    window.open(url);  
+
+    
+    this.ngxService.stop();
+   
+    this.isloading = true;
+  
+  }
+  );
+ }
+
+
  DailySummary(){
 
   this.ngxService.start();
-   this.AJESservice.DailySummary(false).subscribe((data) => {
+   this.AJESservice.DailySummary(false,false).subscribe((data) => {
 
     this.DailySuumary = data;
 
@@ -180,7 +200,7 @@ export class DashboardComponent implements OnInit {
 DailySummarynext(){
 
   
-  this.AJESservice.DailySummary(true).subscribe(
+  this.AJESservice.DailySummary(false,false).subscribe(
       {
 
         next:(data)=>{
@@ -216,7 +236,7 @@ StartDayEndProcess()
 
    if (this.DayEndPwd=="AJES1234"){
     this.ngxService.start();
-    this.AJESservice.DailySummary(true).subscribe((data) => {
+    this.AJESservice.DailySummary(true,false).subscribe((data) => {
      this.ngxService.stop();
      this.router.navigate(['DayEnd']);
      

@@ -4,6 +4,7 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 import * as XLSX from 'xlsx';
 
 import { AJESService } from 'src/app/service/app.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listof-batach',
@@ -17,7 +18,9 @@ export class ListofBatachComponent {
    ATMExchange:any[];
    
 
-   constructor(private AJESservice:AJESService,private modelService:BsModalService,private ngxService:NgxUiLoaderService){}
+   constructor(private AJESservice:AJESService,private modelService:BsModalService,private ngxService:NgxUiLoaderService,
+    private router:Router
+   ){}
      
     ngOnInit(): void {
   
@@ -107,5 +110,11 @@ export class ListofBatachComponent {
     })
     }
   }
+
+  batchdetail(BatchNo:string,ProjectCode:string ){
+ 
+    this.router.navigate(['viewBatchDetail',BatchNo,ProjectCode])
+  }
+  
 
 }

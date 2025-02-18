@@ -50,3 +50,10 @@ export class InquiryComponent {
 
   }
 }
+
+// const a = document.createElement('a');
+//     const url = window.URL.createObjectURL(blob);
+//     a.href = url;
+//     a.download = 'correct-filename.pdf';
+//     a.click();
+//     window.URL.revokeObjectURL(url);

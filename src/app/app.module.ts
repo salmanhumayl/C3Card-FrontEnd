@@ -44,6 +44,7 @@ import { DayEndMessageComponent } from './Admin/day-end-message/day-end-message.
 import { FilterofflinedashboardComponent } from './Admin/filterofflinedashboard/filterofflinedashboard.component';
 import { CardMovementComponent } from './Admin/card-movement/card-movement.component';
 import { TotalComponent } from './Admin/total/total.component';
+import { PendingBatchesComponent } from './Sheet/pending-batches/pending-batches.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { TotalComponent } from './Admin/total/total.component';
     DayEndMessageComponent,
     FilterofflinedashboardComponent,
     CardMovementComponent,
-    TotalComponent
+    TotalComponent,
+    PendingBatchesComponent
   ],
   imports: [
     BrowserModule,

@@ -32,9 +32,9 @@ export class AJESService {
  // headers = new HttpHeaders().set('Access-Control-Allow-Origin', '**');
   constructor(private _http:HttpClient)
      {
-     this.domain="http://ajes-webapp2.ajes.ae:4223/";
+    // this.domain="http://ajes-webapp2.ajes.ae:4223/";
       
-  //   this.domain="https://localhost:7053/";
+    this.domain="https://localhost:7053/";
      }
     
 
@@ -171,8 +171,21 @@ UpdateCardAccountStatus(CardList:PendingBatches[]):Observable<string>{
   return this._http.post<string>(this.domain + "api/AJESData/UpdateCardAccountStatus",CardList,{headers});
 }
 
+RevertEmployeeBatch(CardList:PendingBatches[]):Observable<string>{
+ 
+  const headers = {
+    'Content-Type':'application/json'};
+
+  return this._http.post<string>(this.domain + "api/AJESData/RevertEmployeeBatch",CardList,{headers});
+}
 
 
+
+
+PendingBatches(BatchNo:string,ProjectCode:string):Observable<PendingBatches[]>{
+ 
+  return this._http.get<PendingBatches[]>(this.domain + "api/AJESData/PendingBatches/" + BatchNo  +"/" + ProjectCode);
+}
 
 PendingCardsReceving():Observable<any[]>{
   
@@ -291,10 +304,16 @@ DownloadATMCardRequestInquiry(BatchNo:string){
 
 
 
-DailySummary(DatEnd:boolean):Observable<any>{
-  return this._http.get<any>(this.domain + "api/Batch/ShowSummary?DatEnd=" + DatEnd +"&Print=false");   //querystring 
+DailySummary(DatEnd:boolean,Print:boolean):Observable<any>{
+  return this._http.get<any>(this.domain + "api/Batch/ShowSummary?DatEnd=" + DatEnd +"&Print=" + Print);   //querystring 
   
 }
+
+DownloadDailySummary(DatEnd:boolean,Print:boolean){
+  return this._http.get(this.domain + "api/Batch/ShowSummary?DatEnd=" + DatEnd +"&Print=" + Print,{observe:'response',responseType:'blob'});   //querystring 
+  
+}
+
 
 
 OfflineDashboard():Observable<any>{

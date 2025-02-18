@@ -22,6 +22,7 @@ import { AppliedComponent } from './Admin/Listing/applied/applied.component';
 import { DayEndMessageComponent } from './Admin/day-end-message/day-end-message.component';
 import { FilterofflinedashboardComponent } from './Admin/filterofflinedashboard/filterofflinedashboard.component';
 import { TotalComponent } from './Admin/total/total.component';
+import { PendingBatchesComponent } from './Sheet/pending-batches/pending-batches.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent,pathMatch:'full'},
@@ -45,6 +46,7 @@ const routes: Routes = [
   {path:'filteroffdashboard',component:FilterofflinedashboardComponent},
   {path:'offlinedashboard/:selectedDate',component:OfflinedashboardComponent},
   {path:'listing/:lstType/:dEnd',component:AppliedComponent},
+  {path:'viewBatchDetail/:BatchNo/:projectcode',component:PendingBatchesComponent},
   {path:'lstTotal/:dEnd',component:TotalComponent},
   {path:'DayEnd',component:DayEndMessageComponent},
   {path:'**',redirectTo:'masterfile',pathMatch:'full'}

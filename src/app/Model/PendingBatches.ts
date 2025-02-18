@@ -13,6 +13,7 @@ export interface PendingBatches {
     emidstatus:boolean;
     accNoReceivedOn:Date;
     actualCardReceivedOn:Date;
+    selectEmployee:boolean;
     userName:string;
   
   }
