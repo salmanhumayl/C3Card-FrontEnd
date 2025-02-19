@@ -425,17 +425,17 @@
                          
                         </tr>
                       </thead>
-                      <tbody style="border: solid">
-                        <tr *ngFor="let row of getTableData()">
-                          <td>{{ row.particular }}</td>
-                          <td *ngFor="let day of DailySuumary.ldailyClosing">{{ row[day.closingDate] }}</td>
+                      <tbody >
+                        <tr style="border: solid" *ngFor="let row of getTableData()">
+                          <td >{{ row.particular }}</td>
+                          <td  *ngFor="let day of DailySuumary.ldailyClosing">{{ row[day.closingDate] }}</td>
                         </tr>
                         
                       </tbody>
                       <tfoot>
                         <tr *ngFor="let row of getTableDataGrandTotal()">
-                          <td style="background-color: yellow;font-weight:bold">{{ row.particular }}</td>
-                          <td *ngFor="let day of DailySuumary.lTotalClosing" style="background-color: yellow;font-weight:bold">{{ row[day.closingDate] }}</td>
+                          <td  style="background-color: yellow;font-weight:bold">{{ row.particular }}</td>
+                          <td  *ngFor="let day of DailySuumary.lTotalClosing" style="background-color: yellow;font-weight:bold">{{ row[day.closingDate] }}</td>
 
                         </tr>
                       </tfoot>
@@ -452,8 +452,8 @@
                          
                         </tr>
                       </thead>
-                      <tbody style="border: solid">
-                        <tr *ngFor="let row of getTableDataTotal()">
+                      <tbody >
+                        <tr style="border: solid" *ngFor="let row of getTableDataTotal()">
                           <td style="background-color: yellow;">{{ row.particular }}</td>
                           <td *ngFor="let day of DailySuumary.lTotalClosing" style="background-color: yellow;">{{ row[day.closingDate] }}</td>
                         </tr>
@@ -466,17 +466,25 @@
 
                   <div class ="button-container">
                     <ng-template [ngIf]="msg.$Role.value=='A' && this.selectedValue==undefined">
-                     
                       <button type="button" class="btn btn-success" (click)="Refresh()">Refresh</button>
-                      <button type="button" class="btn btn-warning ms-4" (click)="Download()">Download Summary</button>
+                      <button type="button" class="btn btn-warning ms-4" (click)="Download()">Download Daily Summary</button>
                     </ng-template>
                     <ng-template [ngIf]="msg.$Role.value=='A' && this.selectedValue==undefined">
                       <span class="right">
                        <button type="button" class="btn btn-danger button-container" (click)="InitiateDayEnd()">DayEnd Prcoess</button>
                        </span>  
-                      </ng-template>    
-                    </div>  
+                      </ng-template>
                     
+                      <ng-template [ngIf]="this.selectedValue!=undefined">
+                        <span>
+                         <button type="button" class="btn btn-warning button-container" (click)="offlinedownload()">Download Daily Summary</button>
+                         </span>  
+                        </ng-template>
+                      
+                    </div>  
+                 
+                    
+
               <!-- </div> -->
               
 

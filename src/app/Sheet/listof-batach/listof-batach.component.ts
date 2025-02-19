@@ -59,8 +59,21 @@ export class ListofBatachComponent {
     
     this.ngxService.start();
     this.AJESservice.DownloadATMCardRequest(Batchno).subscribe((data)=>  {
+    //let blob:Blob=data.body as Blob;
+    //let url=window.URL.createObjectURL(blob);
+      
+
     let blob:Blob=data.body as Blob;
     let url=window.URL.createObjectURL(blob);
+    let a=document.createElement('a');
+    a.href=url;
+    a.download= Batchno + ' C3 ATM Cards.xlsx';
+    a.click()
+    window.URL.revokeObjectURL(url);
+    
+
+
+
     window.open(url);  
     this.ngxService.stop();
        

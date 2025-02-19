@@ -32,9 +32,9 @@ export class AJESService {
  // headers = new HttpHeaders().set('Access-Control-Allow-Origin', '**');
   constructor(private _http:HttpClient)
      {
-    this.domain="http://ajes-webapp2.ajes.ae:4223/";
+   this.domain="http://ajes-webapp2.ajes.ae:4223/";
       
-   // this.domain="https://localhost:7053/";
+    //this.domain="https://localhost:7053/";
      }
     
 
@@ -321,10 +321,17 @@ OfflineDashboard():Observable<any>{
   return this._http.get<any>(this.domain + "api/Batch/OfflineDashboard" ); //Route Parameter 
   
 }
-ProcessOfflineDashboard(filterDate:string):Observable<any>{
-  return this._http.get<any>(this.domain + "api/Batch/ProcessOfflineDashboard/" + filterDate ); //Route Parameter 
+ProcessOfflineDashboard(filterDate:string,print:boolean):Observable<any>{
+  return this._http.get<any>(this.domain + "api/Batch/ProcessOfflineDashboard/" + filterDate + "/" +print); //Route Parameter 
   
 }
+
+DownloadOfflineDashboard(filterDate:string,print:boolean):Observable<any>{
+  return this._http.get(this.domain + "api/Batch/ProcessOfflineDashboard/" + filterDate + "/" +print,{observe:'response',responseType:'blob'}); //Route Parameter 
+  
+}
+
+
 
 ShowListing(lstType:string,pramvaluedEnd:string):Observable<any>{
 

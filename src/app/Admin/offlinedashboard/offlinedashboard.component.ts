@@ -33,7 +33,7 @@ constructor(private AJESservice:AJESService,private ngxService:NgxUiLoaderServic
   
   //const filterOn=new Date().toISOString().split('T')[0];
   this.ngxService.start();
-    this.AJESservice.ProcessOfflineDashboard(this.selectedDate).subscribe((data) => {
+    this.AJESservice.ProcessOfflineDashboard(this.selectedDate,false).subscribe((data) => {
     this.Data = data;
     this.showDashnoard=true;
     this.ngxService.stop();

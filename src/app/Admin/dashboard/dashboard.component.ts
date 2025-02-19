@@ -161,8 +161,14 @@ Download(){
    this.AJESservice.DownloadDailySummary(false,true).subscribe((data) => {
 
     let blob:Blob=data.body as Blob;
+    //let url=window.URL.createObjectURL(blob);
     let url=window.URL.createObjectURL(blob);
-    window.open(url);  
+    let a=document.createElement('a');
+    a.href=url;
+    a.download='Daily Summary.xlsx';
+    a.click()
+    window.URL.revokeObjectURL(url);
+   // window.open(url);  
 
     
     this.ngxService.stop();
@@ -172,6 +178,28 @@ Download(){
   }
   );
  }
+
+
+ offlinedownload(){
+
+  this.ngxService.start();
+    this.AJESservice.DownloadOfflineDashboard(this.selectedValue,true).subscribe((data) => {
+    let url=window.URL.createObjectURL(data.body);
+    let a=document.createElement('a');
+    a.href=url;
+    a.download='Daily Summary.xlsx';
+    a.click()
+    window.URL.revokeObjectURL(url);
+   //window.open(url);  
+
+    
+    this.ngxService.stop();
+   
+    this.isloading = true;
+  
+  }
+  );
+ } 
 
 
  DailySummary(){
