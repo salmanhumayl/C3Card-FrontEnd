@@ -30,7 +30,7 @@
                 <tr *ngFor="let e of Batches" >
                   <td>{{e.batchNo}}</td>
                   <td style="color: red;">{{e.bcount}}</td>
-                  <td><app-card-movement [BatchNo]="e.batchNo" ></app-card-movement></td>
+                  <td style="background-color:beige;"><app-card-movement [BatchNo]="e.batchNo"  ></app-card-movement></td>
                   
                   <td>{{e.batchGenerateOn | date:'dd'}}/{{e.batchGenerateOn | date:'MM'}}/{{e.batchGenerateOn | date:'yyyy'}}</td>
                   <td>{{e.batchGenerateBy}}</td>
@@ -45,8 +45,8 @@
                  
 
                     <td>
-                        <button type="button" class="btn btn-info" (click)="ShowBatchDetail(e.batchNo)"><i class="bi bi-info-circle"></i></button>
-                        <button type="button" class="btn btn-secondary mt-2" (click)="downloadC3CardRequet(e.batchNo)"><i class="bi bi-collection"></i></button>
+                        <button type="button" class="btn btn-info btn-sm" (click)="ShowBatchDetail(e.batchNo)"><i class="bi bi-info-circle"></i></button>
+                        <button type="button" class="btn btn-secondary btn-sm ms-2" (click)="downloadC3CardRequet(e.batchNo)"><i class="bi bi-collection"></i></button>
 
                     
                     </td>

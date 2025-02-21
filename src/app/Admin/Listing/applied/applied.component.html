@@ -23,7 +23,8 @@
                     <th>OffShore</th>
                     <th>Designation</th>
                     <th>Remarks</th>
-                    <th>Status</th>
+                   
+                    <th *ngIf="pramvalue!='BCard'">Status</th>
                 </tr>
               </thead>
               <tbody >
@@ -40,6 +41,9 @@
                     <td>{{e.offshoreYn}}</td>
                     <td>{{e.designation}}</td>
                     <td>{{e.empRef2}}</td>
+                    
+                 
+
                     <ng-template [ngIf]="e.cardStatus==0">
                       <td ><span class="badge rounded-pill bg-secondary" style="pointer-events: none">No Action</span></td>
                   </ng-template>    
@@ -63,6 +67,7 @@
                   <ng-template [ngIf]="e.cardStatus==-1" >
                     <td><span class="badge rounded-pill bg-danger text-dark" style="pointer-events: none">Cancelled</span></td>
                 </ng-template> 
+              
                 </tr>
               </tbody>
             </table>

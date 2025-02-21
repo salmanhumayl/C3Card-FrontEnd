@@ -25,11 +25,13 @@
                   <button type="button" class="btn btn-warning ms-3" (click)="Filter(4)">Card Activated</button>
                   <button type="button" class="btn btn-danger ms-3" (click)="Filter(-1)">Cancelled</button>
                   <button type="button" class="btn btn-link ms-3" (click)="RefreshData()">Refresh</button>&nbsp;
-                  <ng-template [ngIf]="msg.$Role.value=='A'">
+
+                  <ng-template [ngIf]="msg.$Role.value=='A' || msg.$Role.value=='O'">
                     <button type="button" class="btn btn-danger rounded-pill ms-4 " style="margin-right: 0rlh;" (click)="generateBatch('8069')">Generate Batch</button>&nbsp;
                     <button type="button" class="btn btn-success ms-3" (click)="ExportToExcel()">Export To Excel</button>
                     <button type="button" class="btn btn-secondary ms-2" (click)="UnMatchedEmiratedID()"><i class="bi bi-collection"></i></button>
                 </ng-template>
+               
               </div>
               </div>
     

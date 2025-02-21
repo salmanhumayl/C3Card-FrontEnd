@@ -72,7 +72,7 @@
 
     
  
-      <ng-template  [ngIf]="msg.$Role.value=='A'">
+      <ng-template  [ngIf]="msg.$Role.value=='A' || msg.$Role.value=='O'">
           <li class="nav-item">
             <a class="nav-link " [routerLink]="['masterfile']">
               <i class="bi bi-person"></i>

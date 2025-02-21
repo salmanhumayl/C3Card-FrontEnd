@@ -55,7 +55,7 @@ export class DashboardComponent implements OnInit {
         { key: "toBeApplied", label: "To be Applied" },
         { key: "accUnderProcess", label: "Account Under Process" },
         { key: "cardunderProcess", label: "Card Under Process" },
-        { key: "bankCard", label: "Bank Card" },
+        { key: "bankCard", label: "Bank/Cards Received" },
       ];
   
       categories.forEach(category => {

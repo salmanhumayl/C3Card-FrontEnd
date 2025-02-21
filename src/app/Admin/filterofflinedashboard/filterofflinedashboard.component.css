@@ -1,0 +1,29 @@
+select {
+    font-weight: bold;
+    font-size: 17px;
+    padding: 8px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    width: 500px;
+  }
+  
+  /* Style the dropdown options */
+  select option {
+    font-weight: bold;
+    padding: 10px;
+    background-color: #f8f8f8;
+    color: #333;
+  }
+  
+  /* Highlight selected option */
+  select option:checked {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Hover effect for options (for some browsers) */
+  select:hover {
+    border-color: #007bff;
+  }

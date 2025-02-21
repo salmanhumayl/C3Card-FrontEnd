@@ -10,8 +10,8 @@
 
 
               <div class="col-12">
-                <label for="inputAddress" class="form-label">Date </label>
-                <select class="form-select" id="dates" name="dates" [(ngModel)]="selectedValue">
+                <label for="inputAddress" class="form-label">Date&nbsp;&nbsp; </label>
+                <select class="select" id="dates" name="dates" [(ngModel)]="selectedValue">
                     <option value=99 selected >Please Select</option>
                     <option *ngFor="let option of filterDates" [value]="option">
                    {{option}}</option>

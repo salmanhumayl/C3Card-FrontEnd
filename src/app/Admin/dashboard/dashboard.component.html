@@ -2,8 +2,8 @@
 
   <ng-template [ngIf]="this.selectedValue!=undefined">
    <div class="pagetitle">
-      <strong>{{this.formateDate}}</strong>
-      
+      <strong style="color: red;font-weight:bold;font-size:large">{{this.formateDate | date:'dd'}}/{{this.formateDate | date:'MM'}}/{{this.formateDate | date:'yyyy'}}</strong>
+     
     </div>
   </ng-template> 
     <!-- End Page Title - -->
@@ -14,15 +14,15 @@
       <div class="row">
 
         <!-- Left side columns -->
-        <div class="col-lg-12">
+        <div class="col-lg-12" >
 
-          <div class="row">
+          <div class="row" >
 
             <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-3"  >
+            <div class="col-xxl-4 col-md-3"   >
               <div class="card info-card sales-card"  >
 
-                <div class="card-body"  >
+                <div class="card-body"   >
                   <h5 class="card-title">Cash Salary Count (Ezware Emp Master) </h5>
 
                   <div class="d-flex align-items-center">
@@ -226,9 +226,9 @@
 
               </div><!-- End Customers Card --> 
 
-
+ 
                <!-- Customers Card -->
-               <div class="col-xxl-4 col-md-3">
+               <div class="col-xxl-4 col-md-3" *ngIf="msg.$Role.value=='A' && this.selectedValue==undefined" >
 
                 <div class="card info-card customers-card" style="background-color:lightgray;">
   
@@ -243,7 +243,7 @@
                           <a [routerLink]="['/listing','RVD',selectedValue]"><i class="bi bi-people"></i></a>
                       </ng-template>
                       <ng-template  [ngIf]="this.selectedValue==undefined">
-                       <i class="bi bi-people"></i>
+                        <a [routerLink]="['/onlinelisting','RVD']"><i class="bi bi-people"></i></a>
                      </ng-template>
                       </div>
                       <div class="ps-3"  *ngIf="isloading">
@@ -258,7 +258,7 @@
               </div><!-- End Customers Card -->
 
                      <!-- Customers Card -->
-                     <div class="col-xxl-4 col-md-3">
+                     <div class="col-xxl-4 col-md-3" *ngIf="msg.$Role.value=='A' && this.selectedValue==undefined" >
 
                       <div class="card info-card customers-card" style="background-color:lightgray;">
         
@@ -474,7 +474,11 @@
                        <button type="button" class="btn btn-danger button-container" (click)="InitiateDayEnd()">DayEnd Prcoess</button>
                        </span>  
                       </ng-template>
-                    
+                      <ng-template [ngIf]="msg.$Role.value=='O' && this.selectedValue==undefined">
+                        <button type="button" class="btn btn-success" (click)="Refresh()">Refresh</button>
+                        <button type="button" class="btn btn-warning ms-4" (click)="Download()">Download Daily Summary</button>
+                      </ng-template> 
+
                       <ng-template [ngIf]="this.selectedValue!=undefined">
                         <span>
                          <button type="button" class="btn btn-warning button-container" (click)="offlinedownload()">Download Daily Summary</button>

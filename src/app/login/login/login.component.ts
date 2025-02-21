@@ -39,7 +39,7 @@ export class LoginComponent {
             this.router.navigate(['/masterfile']);  
         }
         else if(response.role=="O"){
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/masterfile']);
         }
         else {
           this.router.navigate(['/filteroffdashboard']);
