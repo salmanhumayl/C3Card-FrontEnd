@@ -439,8 +439,6 @@
 
                         </tr>
                       </tfoot>
-
-
                     </table>
 
 
@@ -454,7 +452,7 @@
                       </thead>
                       <tbody >
                         <tr style="border: solid" *ngFor="let row of getTableDataTotal()">
-                          <td style="background-color: yellow;">{{ row.particular }}</td>
+                          <td style="background-color: yellow;">{{ row.particular }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                           <td *ngFor="let day of DailySuumary.lTotalClosing" style="background-color: yellow;">{{ row[day.closingDate] }}</td>
                         </tr>
                         

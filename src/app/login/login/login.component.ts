@@ -7,6 +7,7 @@ import { loginmodel } from '../../Model/loginmodel';
 import { AJESService } from '../../service/app.service';
 import { AuthenticationService } from '../../service/authentication.service';
 import { MessengerService } from '../..//service/messenger.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -21,12 +22,13 @@ export class LoginComponent {
 
   constructor(private AJESservice:AJESService,private modelService:BsModalService,
                  private ngxService:NgxUiLoaderService,private router:Router,
-                 public authService: AuthenticationService,private msg:MessengerService){}
+                 public authService: AuthenticationService,private msg:MessengerService,private toastrService:ToastrService){}
 
   onSubmitlogin(form:NgForm){
     this.ngxService.start();
 
     this.AJESservice.Login(this.LoginModel).subscribe((response:any)=>{
+    
       if (response.token!=null){
         //this.authService.storeTokenvalidity(response.expiration);
         this.authService.storeToken(response.token);
@@ -47,8 +49,9 @@ export class LoginComponent {
         this.ngxService.stop();
        }
        else{
-        //this.notify.showError(response.message);
-         //this.displaymessage.nativeElement.innerHTML=response.message;
+        alert("Invalid Credentials");
+         //this.toastrService.success("Invalid Credentails");
+         
          form.reset();
          this.ngxService.stop();
        }

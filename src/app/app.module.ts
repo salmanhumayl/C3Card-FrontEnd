@@ -93,11 +93,11 @@ import { OnlinelistingComponent } from './Admin/onlinelisting/onlinelisting.comp
     ConfirmBoxConfigModule.forRoot(),
     BsDatepickerModule.forRoot(),
     ToastrModule.forRoot({
-      timeOut: 10000, // 15 seconds
+      timeOut: 6500, // 15 seconds
        positionClass:'toast-botton-left',
        preventDuplicates:true,
-       closeButton: true,
-       progressBar: true,
+       //closeButton: true,
+       //progressBar: true,
 
     }),
   ],

@@ -100,10 +100,11 @@ export class CardAccountDetailComponent implements OnInit {
      
     }
 
-      Revert(EmpCode:string)
+      Revert(EmpCode:string,ProjectCode:string)
       {
         
           this.UpdateModel.EmpCode=EmpCode;
+          this.UpdateModel.projectCode=ProjectCode;
           this.showModal = true;  
       
           
