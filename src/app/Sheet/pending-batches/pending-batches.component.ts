@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { AJESService } from 'src/app/service/app.service';
+import { MessengerService } from 'src/app/service/messenger.service';
 
 @Component({
   selector: 'app-pending-batches',
@@ -14,7 +15,7 @@ export class PendingBatchesComponent {
   BatchNo:any;
   ProjectCode:any;
      constructor(private AJESservice:AJESService,private modelService:BsModalService,
-                 private ngxService:NgxUiLoaderService,private route:ActivatedRoute)
+                 private ngxService:NgxUiLoaderService,private route:ActivatedRoute,public msg:MessengerService)
                  {}
 
     
