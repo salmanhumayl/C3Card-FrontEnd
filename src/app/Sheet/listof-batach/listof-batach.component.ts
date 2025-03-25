@@ -5,6 +5,7 @@ import * as XLSX from 'xlsx';
 
 import { AJESService } from 'src/app/service/app.service';
 import { Router } from '@angular/router';
+import { MessengerService } from 'src/app/service/messenger.service';
 
 @Component({
   selector: 'app-listof-batach',
@@ -19,7 +20,7 @@ export class ListofBatachComponent {
    
 
    constructor(private AJESservice:AJESService,private modelService:BsModalService,private ngxService:NgxUiLoaderService,
-    private router:Router
+    private router:Router,public msg:MessengerService
    ){}
      
     ngOnInit(): void {

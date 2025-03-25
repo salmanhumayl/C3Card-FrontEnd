@@ -5,6 +5,7 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { AJESService } from 'src/app/service/app.service';
+import { MessengerService } from 'src/app/service/messenger.service';
 
 declare var $: any;
 
@@ -25,7 +26,7 @@ export class CardReceivedComponent implements OnInit {
    //RDate=formatDate(this.currentrDate,'dd/MM/yyyy','en-US');
 
    constructor(private AJESservice:AJESService,private modelService:BsModalService,
-               private ngxService:NgxUiLoaderService,private router:Router){
+               private ngxService:NgxUiLoaderService,private router:Router,public msg:MessengerService){
 
 
                 this.datePickerConfig=Object.assign({},

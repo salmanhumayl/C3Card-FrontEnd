@@ -5,6 +5,7 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { PendingBatches } from 'src/app/Model/PendingBatches';
 import { UpDateStatus } from 'src/app/Model/UpDateStatus';
 import { AJESService } from 'src/app/service/app.service';
+import { MessengerService } from 'src/app/service/messenger.service';
 
 @Component({
   selector: 'app-card-detail',
@@ -22,7 +23,7 @@ export class CardDetailComponent implements OnInit {
 
   datePickerConfig: { todayHighlight: boolean; containerClass: string; showWeekNumbers: boolean; dateInputFormat: string; customTodayClass: string; };
   
-  constructor(private AJESservice:AJESService,private route:ActivatedRoute,private ngxService:NgxUiLoaderService){
+  constructor(private AJESservice:AJESService,private route:ActivatedRoute,private ngxService:NgxUiLoaderService,public msg:MessengerService){
 
     this.datePickerConfig=Object.assign({},
       {

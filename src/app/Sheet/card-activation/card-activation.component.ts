@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { AJESService } from 'src/app/service/app.service';
+import { MessengerService } from 'src/app/service/messenger.service';
 
 @Component({
   selector: 'app-card-activation',
@@ -14,7 +15,7 @@ export class CardActivationComponent implements OnInit{
   Cards:any[] ;
 
    constructor(private AJESservice:AJESService,private modelService:BsModalService,
-               private ngxService:NgxUiLoaderService,private router:Router){}
+               private ngxService:NgxUiLoaderService,private router:Router,public msg:MessengerService){}
 
   ngOnInit(): void {
 

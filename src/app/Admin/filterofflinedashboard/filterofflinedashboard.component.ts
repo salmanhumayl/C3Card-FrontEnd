@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { AJESService } from 'src/app/service/app.service';
+import { MessengerService } from 'src/app/service/messenger.service';
 
 @Component({
   selector: 'app-filterofflinedashboard',
@@ -13,7 +14,7 @@ export class FilterofflinedashboardComponent {
 
   filterDates:any;
   selectedValue:string;
-constructor(private AJESservice:AJESService,private ngxService:NgxUiLoaderService,private router:Router){}
+constructor(private AJESservice:AJESService,private ngxService:NgxUiLoaderService,private router:Router, public msg:MessengerService){}
    ngOnInit(): void {
   
      this.ShowDashboard();

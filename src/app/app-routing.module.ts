@@ -24,10 +24,11 @@ import { FilterofflinedashboardComponent } from './Admin/filterofflinedashboard/
 import { TotalComponent } from './Admin/total/total.component';
 import { PendingBatchesComponent } from './Sheet/pending-batches/pending-batches.component';
 import { OnlinelistingComponent } from './Admin/onlinelisting/onlinelisting.component';
+import { IsAdminGuard } from './guard/auth.guard.guard';
 
 const routes: Routes = [
   {path:'',component:LoginComponent,pathMatch:'full'},
-  {path:'masterfile',component:MasterFileComponent},
+  {path:'masterfile',component:MasterFileComponent,canActivate:[IsAdminGuard]},
   {path:'ajescashATM',component:AJESCashComponent},
   {path:'cashbank',component:CashtoBankComponent},
   {path:'ATMCard',component:AtmCardComponent},
@@ -41,17 +42,16 @@ const routes: Routes = [
   {path:'viewcardActivation/:BatchNo',component:CardActivationProcessComponent},
   {path:'inquiry',component:InquiryComponent},
   {path:'VBDetail/:BatchNo',component:BatchDetailComponent},
-  {path:'login',component:LoginComponent},
   {path:'logout',component:LogoutComponent},
-  {path:'dashboard',component:DashboardComponent},
+  {path:'dashboard',component:DashboardComponent,canActivate:[IsAdminGuard]},
   {path:'filteroffdashboard',component:FilterofflinedashboardComponent},
-  {path:'offlinedashboard/:selectedDate',component:OfflinedashboardComponent},
+  {path:'offlinedashboard/:selectedDate',component:OfflinedashboardComponent,canActivate:[IsAdminGuard]},
   {path:'listing/:lstType/:dEnd',component:AppliedComponent},
   {path:'onlinelisting/:lstType',component:OnlinelistingComponent},
   {path:'viewBatchDetail/:BatchNo/:projectcode',component:PendingBatchesComponent},
   {path:'lstTotal/:dEnd',component:TotalComponent},
   {path:'DayEnd',component:DayEndMessageComponent},
-  {path:'**',redirectTo:'masterfile',pathMatch:'full'}
+  {path:'**',redirectTo:'login',pathMatch:'full'}
 
   
 

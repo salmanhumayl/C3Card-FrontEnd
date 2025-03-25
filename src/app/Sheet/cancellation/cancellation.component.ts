@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { AJESService } from 'src/app/service/app.service';
+import { MessengerService } from 'src/app/service/messenger.service';
 
 @Component({
   selector: 'app-cancellation',
@@ -12,7 +13,7 @@ export class CancellationComponent implements OnInit {
   CashBankRecord:any[] | undefined;
   nTotalRecord:number;
 
-  constructor(private AJESservice:AJESService,private ngxService:NgxUiLoaderService){}
+  constructor(private AJESservice:AJESService,private ngxService:NgxUiLoaderService,public msg:MessengerService){}
    
   ngOnInit(): void {
  

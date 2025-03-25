@@ -46,6 +46,7 @@ import { CardMovementComponent } from './Admin/card-movement/card-movement.compo
 import { TotalComponent } from './Admin/total/total.component';
 import { PendingBatchesComponent } from './Sheet/pending-batches/pending-batches.component';
 import { OnlinelistingComponent } from './Admin/onlinelisting/onlinelisting.component';
+import { MessengerService } from './service/messenger.service';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,6 @@ import { OnlinelistingComponent } from './Admin/onlinelisting/onlinelisting.comp
   providers: [
       {provide: LocationStrategy,useClass:HashLocationStrategy},
       { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
-      
     ],
   
     bootstrap: [AppComponent]

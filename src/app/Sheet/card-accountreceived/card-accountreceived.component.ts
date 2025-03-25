@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { AJESService } from 'src/app/service/app.service';
+import { MessengerService } from 'src/app/service/messenger.service';
 
 @Component({
   selector: 'app-card-accountreceived',
@@ -18,7 +19,7 @@ export class CardAccountreceivedComponent implements OnInit {
   datePickerConfig:Partial<BsDatepickerConfig>
 
     constructor(private AJESservice:AJESService,
-                 private ngxService:NgxUiLoaderService,private router:Router){
+                 private ngxService:NgxUiLoaderService,private router:Router,public msg:MessengerService){
   
   
                   this.datePickerConfig=Object.assign({},

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { PendingBatches } from 'src/app/Model/PendingBatches';
 import { AJESService } from 'src/app/service/app.service';
+import { MessengerService } from 'src/app/service/messenger.service';
 
 @Component({
   selector: 'app-card-activation-process',
@@ -17,7 +18,7 @@ export class CardActivationProcessComponent implements OnInit {
     allSelected=false;
 
 
-   constructor(private AJESservice:AJESService,private router:Router,private route:ActivatedRoute,private ngxService:NgxUiLoaderService){
+   constructor(private AJESservice:AJESService,private router:Router,private route:ActivatedRoute,private ngxService:NgxUiLoaderService,public msg:MessengerService){
    }
     
       ngOnInit(): void {

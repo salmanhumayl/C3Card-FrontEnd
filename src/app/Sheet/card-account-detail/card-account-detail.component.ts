@@ -6,6 +6,7 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { PendingBatches } from 'src/app/Model/PendingBatches';
 import { UpDateStatus } from 'src/app/Model/UpDateStatus';
 import { AJESService } from 'src/app/service/app.service';
+import { MessengerService } from 'src/app/service/messenger.service';
 
 @Component({
   selector: 'app-card-account-detail',
@@ -26,7 +27,7 @@ export class CardAccountDetailComponent implements OnInit {
     datePickerConfig:Partial<BsDatepickerConfig>
   
 
-   constructor(private AJESservice:AJESService,private route:ActivatedRoute,private ngxService:NgxUiLoaderService){
+   constructor(private AJESservice:AJESService,private route:ActivatedRoute,private ngxService:NgxUiLoaderService,public msg:MessengerService){
   
     this.datePickerConfig=Object.assign({},
       {
