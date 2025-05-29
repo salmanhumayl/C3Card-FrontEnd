@@ -47,6 +47,7 @@ import { TotalComponent } from './Admin/total/total.component';
 import { PendingBatchesComponent } from './Sheet/pending-batches/pending-batches.component';
 import { OnlinelistingComponent } from './Admin/onlinelisting/onlinelisting.component';
 import { MessengerService } from './service/messenger.service';
+import { OnlineRVDComponent } from './Admin/online-rvd/online-rvd.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { MessengerService } from './service/messenger.service';
     CardMovementComponent,
     TotalComponent,
     PendingBatchesComponent,
-    OnlinelistingComponent
+    OnlinelistingComponent,
+    OnlineRVDComponent
   ],
   imports: [
     BrowserModule,

@@ -244,10 +244,10 @@
                     <div class="d-flex align-items-center">
                       <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                         <ng-template  [ngIf]="this.selectedValue!=undefined">
-                          <a [routerLink]="['/listing','RVD',selectedValue]"><i class="bi bi-people"></i></a>
+                          <!-- <a [routerLink]="['/listing','RVD',selectedValue]"><i class="bi bi-people"></i></a> -->
                       </ng-template>
                       <ng-template  [ngIf]="this.selectedValue==undefined">
-                        <a [routerLink]="['/onlinelisting','RVD']"><i class="bi bi-people"></i></a>
+                        <a [routerLink]="['/onlineRVD']"><i class="bi bi-people"></i></a>
                      </ng-template>
                       </div>
                       <div class="ps-3"  *ngIf="isloading">

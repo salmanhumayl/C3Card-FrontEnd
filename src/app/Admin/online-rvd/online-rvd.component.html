@@ -1,0 +1,54 @@
+<ng-template [ngIf]="msg.isLoggedIn$.value">
+  <app-topnav></app-topnav>
+</ng-template>
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Card Received : {{this.HCount}}</h1>
+      
+    </div><!-- End Page Title -->
+<section class="section">
+    <div class="row">
+  
+     <div class="col-lg-12">
+      <button type="button" class="btn btn-success ms-3" (click)="ExportToExcel()">Export To Excel</button>
+        <div class="card">
+          <div class="card-body">
+          
+            <!-- Table with hoverable rows -->
+            <table class="table table-hover table-bordered" id="table-data">
+              <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Emp No</th>
+                    <th>Received On</th>
+                    
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let e of Detail;let i=index" >
+                    <td>{{i+1}}</td>
+                    <td>{{e.empCode}}</td>
+                    <ng-template [ngIf]="e.cardReceivedOn!=null">
+                      <td>{{e.cardReceivedOn | date:'dd'}}/{{e.cardReceivedOn | date:'MM'}}/{{e.cardReceivedOn | date:'yyyy'}}</td>
+                   </ng-template>    
+                    <ng-template [ngIf]="e.cardReceivedOn==null">
+                      <td></td>
+                    </ng-template>  
+                   
+                </tr>
+              </tbody>
+            </table>
+            <!-- End Table with hoverable rows -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+
+</main><!-- End #main -->
+

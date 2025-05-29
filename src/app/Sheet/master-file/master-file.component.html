@@ -48,7 +48,7 @@
                   <tr>
                     <th>S.No</th>
                     <th>Status</th>
-                    
+                    <th>B.No</th>
                     <th scope="col">Emp No</th>
                     <th>Name</th>
                     <th>Offshore</th>
@@ -95,6 +95,7 @@
                   <ng-template [ngIf]="e.cardStatus==-1" >
                     <td><span class="badge rounded-pill bg-danger text-dark" style="pointer-events: none">Cancelled</span></td>
                 </ng-template> 
+                 <td>{{e.batchNo}}</td>
                     <td>{{e.empCode}}</td>
                     <td>{{e.empName}}</td>
                     <td>{{e.offshoreYn}}</td>

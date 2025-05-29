@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MessengerService } from 'src/app/service/messenger.service';
 
 @Component({
   selector: 'app-day-end-message',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
 })
 export class DayEndMessageComponent {
 
-  
+  constructor(public msg:MessengerService){}
+      
 }

@@ -344,6 +344,12 @@ OnlineListing(lstType:string):Observable<any>{
   return this._http.get<any>(this.domain + "api/Batch/OnlineListing/" + lstType  ); //Route Parameter 
   
 }
+onlineRVD():Observable<any>{
+
+  return this._http.get<any>(this.domain + "api/Batch/onlineRVD");
+  
+}
+
 
 ShowListingTotal(pramvaluedEnd:string):Observable<any>{
 

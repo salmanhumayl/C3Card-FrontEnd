@@ -25,6 +25,7 @@ import { TotalComponent } from './Admin/total/total.component';
 import { PendingBatchesComponent } from './Sheet/pending-batches/pending-batches.component';
 import { OnlinelistingComponent } from './Admin/onlinelisting/onlinelisting.component';
 import { IsAdminGuard } from './guard/auth.guard.guard';
+import { OnlineRVDComponent } from './Admin/online-rvd/online-rvd.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent,pathMatch:'full'},
@@ -48,6 +49,7 @@ const routes: Routes = [
   {path:'offlinedashboard/:selectedDate',component:OfflinedashboardComponent,canActivate:[IsAdminGuard]},
   {path:'listing/:lstType/:dEnd',component:AppliedComponent},
   {path:'onlinelisting/:lstType',component:OnlinelistingComponent},
+  {path:'onlineRVD',component:OnlineRVDComponent},
   {path:'viewBatchDetail/:BatchNo/:projectcode',component:PendingBatchesComponent},
   {path:'lstTotal/:dEnd',component:TotalComponent},
   {path:'DayEnd',component:DayEndMessageComponent},
