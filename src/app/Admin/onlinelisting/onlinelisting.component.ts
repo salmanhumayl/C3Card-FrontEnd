@@ -19,6 +19,7 @@ export class OnlinelistingComponent {
   Detail:any[];
   Heading:string;
   HCount:number;
+  errorflag:string;
 
    constructor(private AJESservice:AJESService,private ngxService:NgxUiLoaderService,private route:ActivatedRoute,public msg:MessengerService){}
     
@@ -69,9 +70,19 @@ export class OnlinelistingComponent {
   ShowListing(){
     this.ngxService.start();
     this.AJESservice.OnlineListing( this.pramvalue).subscribe((data)=>  {
-  
+      if (this.pramvalue=="EMID")
+      {
+       
+         this.Detail=data.result;
+         this.HCount=data.result.length;
+         this.errorflag=data.message; 
+      }
+      else{
       this.Detail=data;
       this.HCount=data.length;
+
+      }
+
       this.ngxService.stop();
     });
   }

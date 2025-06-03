@@ -5,8 +5,13 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>{{this.Heading}} : {{this.HCount}}</h1>
-      
+        <h1>{{this.Heading}} : {{this.HCount}} </h1>
+        <ng-template [ngIf]="errorflag!=null">
+            <h1 class="alert alert-danger">{{this.errorflag}} </h1>
+        
+        </ng-template>
+
+        
     </div><!-- End Page Title -->
 <section class="section">
     <div class="row">

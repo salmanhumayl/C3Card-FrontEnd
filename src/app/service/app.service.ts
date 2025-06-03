@@ -34,7 +34,7 @@ export class AJESService {
      {
    this.domain="http://ajes-webapp2.ajes.ae:4223/";
       
-   //this.domain="https://localhost:7053/";
+  // this.domain="https://localhost:7053/";
      }
     
 
