@@ -23,6 +23,8 @@
                     <th>S.No</th>
                     <th>Emp No</th>
                     <th>Received On</th>
+                    <th>Batch No</th>
+                    
                     
                 </tr>
               </thead>
@@ -36,7 +38,7 @@
                     <ng-template [ngIf]="e.cardReceivedOn==null">
                       <td></td>
                     </ng-template>  
-                   
+                   <td>{{e.batchNo}}</td>
                 </tr>
               </tbody>
             </table>
