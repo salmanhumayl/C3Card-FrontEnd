@@ -18,7 +18,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./master-file.component.css']
 })
 export class MasterFileComponent implements OnInit {
-
+ 
   MasterRecord:any[] | undefined;
   batchGenerate:String;
   modelRef:BsModalRef; 
