@@ -45,7 +45,7 @@ const routes: Routes = [
   {path:'VBDetail/:BatchNo',component:BatchDetailComponent},
   {path:'logout',component:LogoutComponent},
   {path:'dashboard',component:DashboardComponent,canActivate:[IsAdminGuard]},
-  {path:'filteroffdashboard',component:FilterofflinedashboardComponent},
+  {path:'filteroffdashboard',component:FilterofflinedashboardComponent,canActivate:[IsAdminGuard]},
   {path:'offlinedashboard/:selectedDate',component:OfflinedashboardComponent,canActivate:[IsAdminGuard]},
   {path:'listing/:lstType/:dEnd',component:AppliedComponent},
   {path:'onlinelisting/:lstType',component:OnlinelistingComponent},
