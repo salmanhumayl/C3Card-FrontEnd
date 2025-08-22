@@ -30,6 +30,11 @@
                 <tbody >
                   <tr *ngFor="let e of Data;let i=index" >
                     <td>{{i+1}}</td>
+
+                     <ng-template [ngIf]="e.status==1" s>
+                      <td><span class="badge rounded-pill bg-info text-dark" style="pointer-events: none">Batch Generated</span></td>
+                  </ng-template>   
+
                     <ng-template [ngIf]="e.status==2">
                       <td ><span class="badge rounded-pill bg-success" style="pointer-events: none">Card Applied</span></td>
                   </ng-template>

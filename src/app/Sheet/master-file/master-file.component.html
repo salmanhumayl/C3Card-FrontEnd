@@ -65,6 +65,8 @@
                     <th>Exp On</th>
                     <th>Nationality</th>
                     <th>PP</th>
+                    <th>Category</th>
+                    
                     <th>Action</th>
                     
                   </tr>
@@ -140,6 +142,7 @@
                     </ng-template>   
                     <td style="background-color: burlywood;">{{e.english}}</td>
                     <td style="background-color: burlywood;">{{e.epasspNo}}</td>
+                      <td style="background-color: burlywood;">{{e.category}}</td>
                    
                     <ng-template [ngIf]="e.cardStatus==0  &&  msg.$Role.value=='A'">
                       <td>
