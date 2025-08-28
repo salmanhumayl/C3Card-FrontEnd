@@ -26,6 +26,7 @@ import { PendingBatchesComponent } from './Sheet/pending-batches/pending-batches
 import { OnlinelistingComponent } from './Admin/onlinelisting/onlinelisting.component';
 import { IsAdminGuard } from './guard/auth.guard.guard';
 import { OnlineRVDComponent } from './Admin/online-rvd/online-rvd.component';
+import { EzwareComponent } from './Sheet/ezware/ezware.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent,pathMatch:'full'},
@@ -53,6 +54,7 @@ const routes: Routes = [
   {path:'viewBatchDetail/:BatchNo/:projectcode',component:PendingBatchesComponent},
   {path:'lstTotal/:dEnd',component:TotalComponent},
   {path:'DayEnd',component:DayEndMessageComponent},
+  {path:'ezware',component:EzwareComponent},
   {path:'**',redirectTo:'login',pathMatch:'full'}
 
   

@@ -48,6 +48,7 @@ import { PendingBatchesComponent } from './Sheet/pending-batches/pending-batches
 import { OnlinelistingComponent } from './Admin/onlinelisting/onlinelisting.component';
 import { MessengerService } from './service/messenger.service';
 import { OnlineRVDComponent } from './Admin/online-rvd/online-rvd.component';
+import { EzwareComponent } from './Sheet/ezware/ezware.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { OnlineRVDComponent } from './Admin/online-rvd/online-rvd.component';
     TotalComponent,
     PendingBatchesComponent,
     OnlinelistingComponent,
-    OnlineRVDComponent
+    OnlineRVDComponent,
+    EzwareComponent
   ],
   imports: [
     BrowserModule,

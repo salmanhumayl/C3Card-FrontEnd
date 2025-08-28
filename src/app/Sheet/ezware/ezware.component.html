@@ -1,0 +1,93 @@
+<ng-template [ngIf]="msg.isLoggedIn$.value">
+  <app-topnav></app-topnav>
+</ng-template>
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Ezware File {{nTotalRecord}}</h1>
+       
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+    
+       <div class="col-lg-12">
+
+          
+            <div class="card">
+                <div class="card-body">
+   
+                    <button type="button" class="btn btn-success ms-3" (click)="ExportToExcel()">Export To Excel</button>
+               
+              </div>
+              </div>
+    
+          <div class="card">
+            <div class="card-body">
+             
+              <!-- Table with hoverable rows -->
+              <table class="table table-hover table-bordered" id="table-data">
+                <thead>
+                  <tr>
+                    <th>S.No</th>
+                    <th>Emp No</th>
+                    <th>Name</th>
+                    <th>DOJ</th>
+                    <th>Designation</th>
+                    <th>Offshore</th>
+                    <th>Payment Mode</th>
+                    <th>ATM</th>
+                    <th>WPS</th>
+                    <th>MOL#</th>
+                    <th>LC#</th>
+                    <th>Emirates ID</th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr *ngFor="let e of MasterRecord;let i=index" >
+                    <td>{{i+1}}</td>
+                    <td>{{e.empCode}}</td>
+                    <td>{{e.empName}}</td>
+                    <ng-template [ngIf]="e.joiningDate!=null">
+                      <td>{{e.joiningDate | date:'dd'}}/{{e.joiningDate | date:'MM'}}/{{e.joiningDate | date:'yyyy'}}</td>
+                  </ng-template>
+                    <td>{{e.designation}}</td>
+                    <td>{{e.offshoreYn}}</td>
+                       <ng-template [ngIf]="e.salaryTypeBct=='C'">
+                          <td>Cash</td>
+                       </ng-template>
+                       <ng-template [ngIf]="e.salaryTypeBct=='T'">
+                          <td>Bank</td>
+                       </ng-template>   
+                    <td>{{e.atmyn}}</td>
+                    <td>{{e.wpsYn}}</td>
+                    <td style="background-color: burlywood;">{{e.labPersno}}</td> 
+                     <td style="background-color: burlywood;">{{e.labIdNo}}</td>
+                     <td style="background-color: burlywood;">{{e.emiratesIdNumber}}</td>
+                  
+                     
+                 
+                  </tr>
+                </tbody>
+              </table>
+              <!-- End Table with hoverable rows -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+  </main><!-- End #main -->
+
+
+   
+ 
+
+
+

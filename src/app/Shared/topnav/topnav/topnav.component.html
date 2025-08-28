@@ -144,6 +144,15 @@
             </a>
           </li>
       </ng-template>  
+
+      <ng-template  [ngIf]="msg.$Role.value=='A'  || msg.$Role.value=='O'">
+        <li class="nav-item">
+          <a class="nav-link "[routerLink]="['/ezware']">
+            <i class="bi bi-grid"></i>
+            <span>Ezware</span>
+          </a>
+          </li>
+      </ng-template>
       
       <ng-template  [ngIf]="msg.$Role.value=='S'">
         <li class="nav-item">

@@ -142,8 +142,12 @@
                     </ng-template>   
                     <td style="background-color: burlywood;">{{e.english}}</td>
                     <td style="background-color: burlywood;">{{e.epasspNo}}</td>
-                      <td style="background-color: burlywood;">{{e.category}}</td>
+
+                    
+                         <td style="background-color: burlywood;">{{e.category}}</td>
                    
+                  
+                     
                     <ng-template [ngIf]="e.cardStatus==0  &&  msg.$Role.value=='A'">
                       <td>
                            <!-- <button type="button" class="btn btn-primary btn-sm" (click)="openModel(template)">Mark as CBank</button>  -->
