@@ -35,6 +35,7 @@ export class LoginComponent {
         this.authService.storeToken(response.token);
         localStorage.setItem('Name', response.name);
         localStorage.setItem('Role', response.role);
+        localStorage.setItem('ProjectName', response.projectName);
         this.msg.isLoggedIn$.next(true);
         this.msg.isWelComeName$.next(response.name);
         this.msg.$Role.next(response.role);
