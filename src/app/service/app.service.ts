@@ -34,7 +34,7 @@ export class AJESService {
      {
  this.domain="http://ajes-webapp2.ajes.ae:4223/";
       
-// this.domain="https://localhost:7053/";
+//this.domain="https://localhost:7053/";
      }
     
 
@@ -102,7 +102,7 @@ Filter(status:number):Observable<any[]>{
 
 UnMatchedEmiratedID():Observable<any[]>{
 
-  return this._http.get<any[]>(this.domain + "api/AJESData/UnMatchedEmiratedID/" + "8069")
+  return this._http.get<any[]>(this.domain + "api/AJESData/UnMatchedEmiratedID")
   
 }
 
@@ -153,9 +153,9 @@ BatchDetail(BatchNo:string):Observable<any[]>{
 RejectedBatchItems(BatchNo:string):Observable<any[]>{
   return this._http.get<any[]>(this.domain + "api/AJESData/RejectedBatchItems?BatchNo=" +BatchNo);
 }
-BatchesMovement(BatchNo:string,ProjectCode:String):Observable<any[]>{
+BatchesMovement(BatchNo:string):Observable<any[]>{
 
-  return this._http.get<any[]>(this.domain + "api/AJESData/BatchesMovement/" + BatchNo + "/" + ProjectCode );
+  return this._http.get<any[]>(this.domain + "api/AJESData/BatchesMovement/" + BatchNo );
 }
 
 
@@ -254,9 +254,9 @@ UpdateCardActivation(CardList:PendingBatches[]):Observable<string>{
 
 
 
-generateBatch(ProjectCode:string):Observable<any>{
+generateBatch():Observable<any>{
   
-  return this._http.get<any>(this.domain + "api/AJESData/GenerateBatch?ProjectCode=" + ProjectCode);
+  return this._http.get<any>(this.domain + "api/AJESData/GenerateBatch");
   
 }
 
@@ -277,10 +277,10 @@ UpdateBatchReceivedDate(BatchNo:string,rDate:string):Observable<any>{
 }
 
 
-MarkAsBank(EmpCode:string,Status:number,eformId:number,projectCode:string):Observable<string>{
+MarkAsBank(EmpCode:string,Status:number,eformId:number):Observable<string>{
   
 
-  return this._http.get<string>(this.domain + "api/AJESData/MarkAsBank?EmpCode=" + EmpCode +"&Status=" + Status +"&eFORMID=" +eformId +"&projectCode=" + projectCode);
+  return this._http.get<string>(this.domain + "api/AJESData/MarkAsBank?EmpCode=" + EmpCode +"&Status=" + Status +"&eFORMID=" +eformId);
   
 }
 

@@ -89,7 +89,7 @@ export class MasterFileComponent implements OnInit {
       });
       }
 
-    generateBatch(projectCode:string)
+    generateBatch()
     {
     
     
@@ -120,7 +120,7 @@ export class MasterFileComponent implements OnInit {
               this.ngxService.start();
              
             
-              this.AJESservice.generateBatch(projectCode).subscribe((data)=>  {
+              this.AJESservice.generateBatch().subscribe((data)=>  {
               
                 var Result=JSON.parse(JSON.stringify(data));
                 
@@ -148,12 +148,12 @@ export class MasterFileComponent implements OnInit {
      
       }
 
-      MarkAsBank(empCode:string,Status:number,eformId:number,projectCode:string)
+      MarkAsBank(empCode:string,Status:number,eformId:number)
       {
           const shoulddelete=window.confirm("Are you sure to Continue");
           if (shoulddelete){
           this.ngxService.start();
-          this.AJESservice.MarkAsBank(empCode,Status,eformId,projectCode).subscribe((data)=>  {
+          this.AJESservice.MarkAsBank(empCode,Status,eformId).subscribe((data)=>  {
           
             var Result=JSON.parse(JSON.stringify(data));
             

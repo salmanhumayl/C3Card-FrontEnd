@@ -27,7 +27,7 @@ export class LoginComponent {
 
   onSubmitlogin(form:NgForm){
     this.ngxService.start();
-
+this.LoginModel.ProjectCode="8069";
     this.AJESservice.Login(this.LoginModel).subscribe({
      next:response=>{
       if (response.token!=null){

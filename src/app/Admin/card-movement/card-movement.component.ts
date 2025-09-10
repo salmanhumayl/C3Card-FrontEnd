@@ -14,7 +14,7 @@ export class CardMovementComponent {
 BatchNo:string;
 
 
-ProjectCode:string="8069";
+
 
 bMovement:any;
   constructor(private AJESservice:AJESService,private ngxService:NgxUiLoaderService){}
@@ -25,7 +25,7 @@ bMovement:any;
   }
   BatchMovement(){
     this.ngxService.start();
-    this.AJESservice.BatchesMovement(this.BatchNo,this.ProjectCode).subscribe((data)=>  {
+    this.AJESservice.BatchesMovement(this.BatchNo).subscribe((data)=>  {
 
       this.bMovement=data;
     
