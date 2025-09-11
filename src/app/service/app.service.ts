@@ -32,9 +32,9 @@ export class AJESService {
  // headers = new HttpHeaders().set('Access-Control-Allow-Origin', '**');
   constructor(private _http:HttpClient)
      {
- this.domain="http://ajes-webapp2.ajes.ae:4223/";
+// this.domain="http://ajes-webapp2.ajes.ae:4223/";
       
-//this.domain="https://localhost:7053/";
+this.domain="https://localhost:7053/";
      }
     
 
@@ -74,6 +74,17 @@ private handleError(errorResponse:HttpErrorResponse){
 
 }
 
+
+
+
+getProjects():Observable<any[]>{
+
+    const headers = {
+    'Content-Type':'application/json'};
+
+  return this._http.get<any[]>(this.domain + "api/Authenticate/ProjectList");
+  
+}
 
 
 GetEwareFile():Observable<any[]>{

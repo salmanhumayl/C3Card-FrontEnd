@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BsModalService } from 'ngx-bootstrap/modal';
@@ -17,9 +17,11 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   LoginModel:loginmodel=new loginmodel();
+  pcode:string; 
+  items:any[] = [];
 
   constructor(private AJESservice:AJESService,private modelService:BsModalService,
                  private ngxService:NgxUiLoaderService,private router:Router,
@@ -27,7 +29,7 @@ export class LoginComponent {
 
   onSubmitlogin(form:NgForm){
     this.ngxService.start();
-this.LoginModel.ProjectCode="8069";
+    this.LoginModel.ProjectCode=this.pcode;
     this.AJESservice.Login(this.LoginModel).subscribe({
      next:response=>{
       if (response.token!=null){
@@ -38,6 +40,7 @@ this.LoginModel.ProjectCode="8069";
         localStorage.setItem('ProjectName', response.projectName);
         this.msg.isLoggedIn$.next(true);
         this.msg.isWelComeName$.next(response.name);
+        this.msg.ProjectName$.next(response.projectName);
         this.msg.$Role.next(response.role);
         if (response.role=="A"){
             this.router.navigate(['/masterfile']);  
@@ -69,5 +72,21 @@ this.LoginModel.ProjectCode="8069";
 
     
   }
+ngOnInit(): void {
+      
+      this.getProjects()
+      
+    }
 
+     getProjects(){
+      this.ngxService.start();
+      this.AJESservice.getProjects().subscribe((data)=>  {
+    
+        this.items=data;
+    
+        this.pcode = '8069';  
+        this.ngxService.stop();
+      });
+  
+    }
 }

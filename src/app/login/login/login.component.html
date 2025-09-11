@@ -45,6 +45,16 @@
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
 
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">Project</label>
+                      <select [(ngModel)]="pcode"  id="project"  name="project" class="form-select" required>
+                      
+                        <option *ngFor="let item of items" [value]="item.projectCode">
+                        {{ item.projectName }}
+  </option>
+</select>
+
+                    </div>
                   
                     <div class="col-12">
                         <button  type="submit" [disabled]="loginform.invalid" class="btn btn-primary w-10" type="submit">Login</button>

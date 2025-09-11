@@ -8,10 +8,13 @@ export class MessengerService {
 
   isLoggedIn$=new BehaviorSubject(false);
   isWelComeName$=new BehaviorSubject('');
+  ProjectName$=new BehaviorSubject('');
   $Role=new BehaviorSubject('');
   constructor() { 
     this.isLoggedIn$.subscribe();
     this.isWelComeName$.subscribe();
+   this.ProjectName$.subscribe();
+
 
     this.initializeAuth();
 
@@ -25,6 +28,8 @@ export class MessengerService {
      if (token) {
        this.isLoggedIn$.next(true);
        this.isWelComeName$.next(localStorage.getItem('Name')||'');
+       this.ProjectName$.next(localStorage.getItem('ProjectName')||'');
+        
      }
      else{
        this.clearAuth();
@@ -35,9 +40,12 @@ export class MessengerService {
      // alert("clearAuth");
       this.isLoggedIn$.next(false);
       this.isWelComeName$.next('');
+      this.ProjectName$.next('');
       this.$Role.next('');
       
       localStorage.removeItem('Name');
+      localStorage.removeItem('ProjectName');
+      
       localStorage.removeItem('token');
     
     }
